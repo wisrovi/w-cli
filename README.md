@@ -46,3 +46,15 @@
 
 ## wmongo
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wmongo?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wmongo)
+
+
+## wclickhouse
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/wclickhouse?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wclickhouse)
+
+
+## audioProcessingWisrovi
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/audioProcessingWisrovi?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/audioProcessingWisrovi)
+
+
+## AudioAugmentation
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/AudioAugmentation?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/AudioAugmentation)

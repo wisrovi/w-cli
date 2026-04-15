@@ -1,5 +1,3 @@
-# wbase_lib
-
 # w libraries
 
 ## wpipe

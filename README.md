@@ -4,7 +4,7 @@
 
 [![wFabricSecurity : PyPI Downloads](https://static.pepy.tech/personalized-badge/wfabricsecurity?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wfabricsecurity)
 
-wkafka  : [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wkafka?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wkafka)
+wkafka  : [![PyPI](https://static.pepy.tech/personalized-badge/wkafka?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wkafka)
 
 [![wpostgresql : PyPI Downloads](https://static.pepy.tech/personalized-badge/wpostgresql?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wpostgresql)
 

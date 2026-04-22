@@ -2,7 +2,7 @@
 
 ## 🎯 Bienvenido a la Suite de Librerías Profesionales
 
-Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear soluciones innovadoras y de alto rendimiento para Python. He desarrollado una suite completa de **14 librerías profesionales** que transforman la forma en que los desarrolladores construyen aplicaciones escalables, seguras y performantes.
+Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear soluciones innovadoras y de alto rendimiento para Python. He desarrollado una suite completa de **15 librerías profesionales** que transforman la forma en que los desarrolladores construyen aplicaciones escalables, seguras y performantes.
 
 ### 🔗 [Visita wisrovi.dev](https://wisrovi.dev) - Tu portal de marketing profesional
 
@@ -27,12 +27,13 @@ Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear solucio
 | **WClickHouse** | Driver ClickHouse optimizado | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wclickhouse?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wclickhouse) | [📦](https://pypi.org/project/wclickhouse/) | [wclickhouse.wisrovi.dev](https://wclickhouse.wisrovi.dev/) |
 | **AudioProcessingWisrovi** | Procesamiento avanzado de audio | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/audioProcessingWisrovi?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/audioProcessingWisrovi) | [📦](https://pypi.org/project/audioProcessingWisrovi/) | - |
 | **AudioAugmentation** | Aumentación de datos de audio | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/AudioAugmentation?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/AudioAugmentation) | [📦](https://pypi.org/project/AudioAugmentation/) | - |
+| **WTicket** | Gestor de helpdesk integral | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wticket?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wticket) | [📦](https://pypi.org/project/wticket/) | [wticket.wisrovi.dev](https://wticket.wisrovi.dev/) |
 
 ---
 
 ## 🌟 Características Clave
 
-✅ **14+ Librerías Profesionales** - Arquitectura modular y totalmente integrable  
+✅ **15+ Librerías Profesionales** - Arquitectura modular y totalmente integrable  
 ✅ **10M+ Descargas** - Confiables y probadas en producción  
 ✅ **Open Source MIT** - Código abierto y libre para usar  
 ✅ **Performance** - Optimizadas para máxima velocidad y eficiencia  

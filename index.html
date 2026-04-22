@@ -272,8 +272,8 @@
 
         .lib-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(79, 172, 254, 0.5);
-            box-shadow: 0 20px 40px rgba(79, 172, 254, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(0, 242, 254, 0.2);
         }
 
         .lib-card:hover::before { opacity: 1; }
@@ -309,28 +309,40 @@
 
         .lib-stats {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.6rem;
             margin-bottom: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            align-items: center;
         }
 
         .lib-stat {
-            text-align: center;
+            background: rgba(0, 242, 254, 0.08);
+            padding: 0.35rem 0.75rem;
+            border-radius: 99px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: 1px solid rgba(0, 242, 254, 0.15);
+            transition: all 0.3s;
+        }
+
+        .lib-stat:hover {
+            background: rgba(0, 242, 254, 0.15);
+            border-color: var(--primary);
         }
 
         .lib-stat span:first-child {
-            display: block;
             color: var(--primary);
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 0.8rem;
         }
 
         .lib-stat span:last-child {
-            display: block;
-            color: #64748b;
-            font-size: 0.8rem;
-            margin-top: 0.25rem;
+            color: #94a3b8;
+            font-size: 0.7rem;
+            font-weight: 500;
         }
 
         .lib-links {
@@ -587,7 +599,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>&lt;1ms</span><span>Latencia</span></div>
                             <div class="lib-stat"><span>100%</span><span>Async</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wpipe" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wpipe?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -610,7 +622,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>WAL</span><span>Enabled</span></div>
                             <div class="lib-stat"><span>Pool</span><span>Ready</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wsqlite" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wsqlite?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -633,7 +645,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>RBAC</span><span>Support</span></div>
                             <div class="lib-stat"><span>Audit</span><span>Trail</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wfabricsecurity" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wfabricsecurity?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -656,7 +668,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>Auto</span><span>Reconnect</span></div>
                             <div class="lib-stat"><span>Partition</span><span>Smart</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wkafka" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wkafka?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -679,7 +691,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>Pool</span><span>Ready</span></div>
                             <div class="lib-stat"><span>Tx</span><span>Advanced</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wpostgresql" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wpostgresql?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -702,7 +714,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>DSP</span><span>Engine</span></div>
                             <div class="lib-stat"><span>RT</span><span>Ready</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/ProcessAudio" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/ProcessAudio?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -725,7 +737,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>JWT</span><span>OAuth2</span></div>
                             <div class="lib-stat"><span>MFA</span><span>Ready</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wauth" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wauth?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -748,7 +760,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>Cache</span><span>Smart</span></div>
                             <div class="lib-stat"><span>Retry</span><span>Auto</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wdecorators" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wdecorators?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -771,7 +783,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>&lt;1ms</span><span>Latency</span></div>
                             <div class="lib-stat"><span>PubSub</span><span>Ready</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wredis" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wredis?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -794,7 +806,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>IoC</span><span>Pattern</span></div>
                             <div class="lib-stat"><span>Auto</span><span>Wire</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wcontainer" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wcontainer?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -817,7 +829,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>100+</span><span>Functions</span></div>
                             <div class="lib-stat"><span>Utils</span><span>Box</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wiliutils" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wiliutils?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -840,7 +852,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>Query</span><span>Builder</span></div>
                             <div class="lib-stat"><span>Pool</span><span>Smart</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wmongo" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wmongo?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -863,7 +875,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>Batch</span><span>Optimized</span></div>
                             <div class="lib-stat"><span>TS</span><span>Ready</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/wclickhouse" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/wclickhouse?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -886,7 +898,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>ML</span><span>Ready</span></div>
                             <div class="lib-stat"><span>Features</span><span>Rich</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/audioProcessingWisrovi" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/audioProcessingWisrovi?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -909,7 +921,7 @@
                         <div class="lib-stats">
                             <div class="lib-stat"><span>10+</span><span>Techniques</span></div>
                             <div class="lib-stat"><span>ML</span><span>Focused</span></div>
-                            <div class="lib-stat" style="flex: 2; display: flex; justify-content: center; align-items: center;">
+                            <div style="display: flex; align-items: center; min-height: 32px;">
                                 <a href="https://pepy.tech/projects/AudioAugmentation" target="_blank" style="text-decoration: none;">
                                     <img src="https://static.pepy.tech/personalized-badge/AudioAugmentation?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads" style="height: 22px;">
                                 </a>
@@ -1051,9 +1063,8 @@ result = pipeline.run({<span style="color: #a5d6ff;">"value"</span>: <span style
                                     // Crear badge de estrellas
                                     const starBadge = document.createElement('div');
                                     starBadge.className = 'lib-stat';
-                                    starBadge.style.cssText = 'flex: 1.5; display: flex; justify-content: center; align-items: center;';
                                     starBadge.innerHTML = `
-                                        <a href="https://github.com/wisrovi/${repo}" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 4px; color: var(--primary); font-weight: 600;">
+                                        <a href="https://github.com/wisrovi/${repo}" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 5px; color: var(--primary); font-weight: 700; font-size: 0.8rem;">
                                             <i class="fas fa-star" style="color: #f59e0b;"></i> <span>${stars}</span>
                                         </a>
                                     `;

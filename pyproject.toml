@@ -3,22 +3,21 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "wpipe"
-version = "1.5.3"
+name = "w-cli"
+version = "1.0.0"
 authors = [
     { name = "William Steve Rodriguez Villamizar", email = "wisrovi.rodriguez@gmail.com" }
 ]
-description = "Pipeline library with API integration for task orchestration and execution tracking"
+description = "Central CLI manager and package installer for the wisrovi Libraries Suite"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.9"
 keywords = [
-    "pipeline",
-    "workflow",
-    "tasks",
-    "orchestration",
-    "api",
-    "worker",
+    "cli",
+    "manager",
+    "installer",
+    "wisrovi",
+    "monorepo",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -26,24 +25,17 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
-    "Topic :: Software Development :: Libraries :: Python Modules",
     "Intended Audience :: Developers",
-    "Development Status :: 5 - Production/Stable",
 ]
 dependencies = [
     "requests>=2.31.0",
     "loguru>=0.7.0",
-    "pandas>=2.0.0",
-    "pyyaml>=6.0.1",
-    "tqdm>=4.66.0",
     "rich>=13.7.0",
-    "pydantic>=2.0.0",
-    "fastapi>=0.100.0",
-    "uvicorn>=0.23.0",
-    "wsqlite>=0.1.0",
+    "typer>=0.9.0",
+    "click>=8.0.0",
+    "tomli>=2.0.0; python_version < '3.11'",
 ]
 
 [project.optional-dependencies]
@@ -54,51 +46,28 @@ dev = [
     "ruff>=0.1.0",
     "mypy>=1.7.0",
 ]
-docs = [
-    "sphinx>=7.2.0",
-    "sphinx-rtd-theme>=2.0.0",
-    "sphinx-copybutton>=0.5.0",
-    "myst-parser>=2.0.0",
-    "sphinx-sitemap>=2.5.0",
-    "sphinx-design>=0.5.0",
-]
 
 [project.urls]
-Homepage = "https://github.com/wisrovi/wpipe"
-Documentation = "https://wpipe.readthedocs.io/en/latest/"
-Repository = "https://github.com/wisrovi/wpipe"
-Issues = "https://github.com/wisrovi/wpipe/issues"
-Changelog = "https://github.com/wisrovi/wpipe/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/wisrovi/w-cli"
+Repository = "https://github.com/wisrovi/w-cli"
+Issues = "https://github.com/wisrovi/w-cli/issues"
+
+[project.scripts]
+w = "module.main:app"
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "/wpipe",
-    "/examples/01_basic_pipeline",
-    "/examples/02_api_pipeline",
-    "/examples/11_checkpointing",
-    "/examples/12_timeouts",
-    "/examples/13_type_hinting",
-    "/examples/14_resource_monitor",
-    "/examples/15_export",
-    "/examples/16_parallelism",
+    "/module",
     "/test",
 ]
 exclude = [
-    "**/*.db",
-    "**/*.log",
-    "**/*.zip",
     "**/__pycache__",
-    "**/configs",
     "**/logs",
-    "**/*.yaml",
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["wpipe"]
+packages = ["module"]
 exclude = [
-    "**/*.db",
-    "**/*.log",
-    "**/*.zip",
     "**/__pycache__",
 ]
 
@@ -110,12 +79,14 @@ python_functions = ["test_*"]
 addopts = "-v --tb=short"
 
 [tool.coverage.run]
-source = ["wpipe"]
+source = ["module"]
 branch = true
 omit = [
     "*/tests/*",
     "*/examples/*",
+    "module/submodule/*",
 ]
+
 
 [tool.coverage.report]
 exclude_lines = [
@@ -125,7 +96,7 @@ exclude_lines = [
     "if __name__ == .__main__.:",
 ]
 show_missing = true
-fail_under = 72
+fail_under = 80
 
 [tool.black]
 line-length = 88

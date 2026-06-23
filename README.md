@@ -1,6 +1,10 @@
-# 🧱 Wisrovi Libraries Suite (w-libraries)
+# 🧱 Wisrovi Libraries Suite CLI Launcher (`w-cli`)
 
-A comprehensive catalog of high-performance wrappers, ORMs, utility frameworks, and MLOps tools built and maintained by **William Rodriguez (wisrovi)**.
+A centralized CLI package manager, documentation lookup indexer, environment auditor, and development workspace helper for the **wisrovi Libraries Suite**.
+
+Allows users to manage and install packages dynamically using simplified command interfaces (e.g. `w install redis` maps to installing `wredis` package on the system).
+
+---
 
 ## 📊 Complete Libraries Map
 
@@ -20,7 +24,7 @@ A comprehensive catalog of high-performance wrappers, ORMs, utility frameworks, 
 | **`wWonka`** | Utility Helpers | `Development` | Internal utilities helper library. | Internal classes, logging setups, reusable core interfaces. |
 | **`wauth`** | Security Vault | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wauth?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wauth) | Machine-locked secrets encryption vault. | Fernet encryption using deterministic keys derived from machine-spec ID (OS salted hash). |
 | **`wclickhouse`** | Database ORM | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wclickhouse?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wclickhouse) | ClickHouse ORM mapping using clickhouse-connect. | Pydantic v2 schemas, massive bulk inserts, partition tracking helpers. |
-| **`wcontainer` | DevOps Tool | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wcontainer?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wcontainer) | Docker SDK automation utility library. | Automates local container discovery, health status polls, and restarts. |
+| **`wcontainer`** | DevOps Tool | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wcontainer?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wcontainer) | Docker SDK automation utility library. | Automates local container discovery, health status polls, and restarts. |
 | **`wdatabricks`** | Database ORM | `Development` | Databricks SQL ORM framework. | Database session pooling, type-safe query parameters mapping. |
 | **`wdecorators`** | Code Utility | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wdecorators?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wdecorators) | Reusable high-level decorator collection. | `@retry`, `@timeout`, transaction handlers, execution tracers, periodic loops. |
 | **`whaproxy`** | DevOps Tool | `Development` | HAProxy configuration compiler and controller. | Dynamically parses balancing configs and updates active nodes list. |
@@ -37,3 +41,96 @@ A comprehensive catalog of high-performance wrappers, ORMs, utility frameworks, 
 | **`wutils`** | Code Utility | `Development` | Common script scheduling and format checkers. | Periodic task wrappers, duration parsing, network checkers. |
 | **`wyolo`** | MLOps / Vision | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wyolo?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wyolo)  | MLflow and S3 YOLO/RT-DETR training workflow. | State machine orchestrator, MLflow metrics logger, autobatching optimization. |
 | **`wzeroMQ`** | Messaging | `Development` | IPC/TCP network sockets wrapper using ZeroMQ. | Message formatting, async ZeroMQ socket pooling. |
+
+---
+
+## 🚀 Installation & Local Setup
+
+Install the CLI tool locally in editable mode to register the `w` script command on the shell path:
+
+```bash
+# Clone the repository
+git clone https://github.com/wisrovi/w-cli.git
+cd w-cli
+
+# Install globally or to virtual environment in editable development mode
+pip install -e .
+```
+
+---
+
+## ⌨️ CLI Command Reference
+
+Execute the `w` command to see all available subcommands:
+
+### 1. Install Packages
+Downloads and installs any package of the wisrovi suite. Automatically detects whether your active directory uses `pip`, `poetry`, or `pipenv` and runs the installation accordingly.
+
+```bash
+# Map and install wredis
+w install redis
+
+# Map and install wsqlite
+w install sqlite
+
+# Map and install wpipe
+w install pipe
+
+# Install ALL packages of the suite
+w install all
+```
+
+### 2. Check Documentation
+Retrieves PyPI documentation links and opens them in the default browser. If no package is specified, lists a table referencing all shortnames.
+
+```bash
+# List all libraries mappings
+w doc
+
+# Show reference card and open browser for wpipe documentation
+w doc pipe
+
+# Print info card without opening web browser
+w doc redis --no-open
+```
+
+### 3. Check Package Status
+Analyzes the active Python context path to audit which suite packages are installed locally.
+
+```bash
+w status
+```
+
+### 4. Create Boilerplates
+Generates typical scripts or Docker testing environment wrappers matching project standards.
+
+```bash
+# Create a skeleton script for wpipe execution runs
+w create pipeline --name my_pipeline
+
+# Create docker testing runner script and unit test boilerplate file
+w create docker-test
+```
+
+---
+
+## 🧪 Unit Testing and Coverage
+
+We implement automated static analysis and unit testing using `pytest`.
+
+### Run Tests inside Docker (Isolated Environment)
+Consistent with project testing rules, the test suite runs inside an isolated Docker container:
+
+```bash
+# Execute unit tests inside clean container context
+./docker_test_runner.sh
+```
+
+### Run Coverage locally
+Calculate code coverage metrics locally on development machines:
+
+```bash
+# Run tests and compile code coverage metrics report
+./run_coverage.sh
+```
+HTML coverage results are written directly to `coverage_reports/htmlcov/index.html`.

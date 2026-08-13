@@ -36,20 +36,25 @@ Este repositorio y su conjunto de librerías son desarrollado y mantenido por **
 | **`whaproxy`** | `whaproxy` | DevOps Tool | `Development` | HAProxy configuration compiler and controller. |
 | **`wimage`** | `wimage` | Code Utility | `Development` | Image resizing and transformation library. |
 | **`wkafka`** | `wkafka` | Messaging | [![PyPI](https://img.shields.io/pypi/dm/wkafka?color=green)](https://pepy.tech/projects/wkafka) | Decorator-based wrapper for Apache Kafka. |
+| **`wkafka-mcp`** | `wkafka-mcp` | MCP | `Internal` | Model Context Protocol server for Kafka integration and remote topic handling. |
 | **`wmariadb`** | `wmariadb` | Database ORM | `Development` | Pydantic ORM wrapper for MariaDB. |
 | **`wmessenger`** | `wmessenger` | Messaging | `Development` | Telegram, WhatsApp, and Slack client API. |
 | **`wmongo`** | `wmongo` | Database ORM | [![PyPI](https://img.shields.io/pypi/dm/wmongo?color=green)](https://pepy.tech/projects/wmongo) | MongoDB document mapper utilizing Pydantic. |
 | **`wmysql`** | `wmysql` | Database ORM | `Development` | Pydantic ORM wrapper for MySQL. |
 | **`wnats`** | `wnats` | Messaging | `Development` | NATS message broker wrappers. |
 | **`wredis`** | `wredis` | Database ORM | [![PyPI](https://img.shields.io/pypi/dm/wredis?color=green)](https://pepy.tech/projects/wredis) | Redis sync/async integration & caching suite. |
+| **`wredis-mcp`** | `wredis-mcp` | MCP | `Internal` | Model Context Protocol server for Redis integration and cache management. |
 | **`wsqlite`** | `wsqlite` | Database ORM | [![PyPI](https://img.shields.io/pypi/dm/wsqlite?color=green)](https://pepy.tech/projects/wsqlite) | High-performance SQLite ORM. |
+| **`wsqlite-mcp`** | `wsqlite-mcp` | MCP | `Internal` | Model Context Protocol server for SQLite integration and database management. |
 | **`wticket`** | `wticket` | Remote API | `Development` | License validator using JSONBin.io backend. |
 | **`wutils`** | `wutils` | Code Utility | `Development` | Common script scheduling and format checkers. |
 | **`wyolo`** | `wyolo` | MLOps / Vision | [![PyPI](https://img.shields.io/pypi/dm/wyolo?color=green)](https://pepy.tech/projects/wyolo) | MLflow and S3 YOLO/RT-DETR training workflow. |
 | **`wyoloservice-mcp`** | `wyoloservice-mcp` | MCP Server | [![PyPI](https://img.shields.io/pypi/v/wyoloservice-mcp.svg)](https://pypi.org/project/wyoloservice-mcp/) | MCP server for NeuralForgeAI YOLO training cluster, remote datasets and worker nodes. |
 | **`wzeroMQ`** | `wzeroMQ` | Messaging | `Development` | IPC/TCP network sockets wrapper using ZeroMQ. |
 
-**Total de librerías en tu monorepo:** 30
+**Total de librerías en tu monorepo:** 37
+
+_(37 = 27 librerías mapping original + 3 MCP independientes + 1 wyoloservice-mcp + 4 directorios *_os)_
 
 ---
 

@@ -6,13 +6,7 @@ Allows users to manage and install packages dynamically using simplified command
 
 ---
 
-## 👨‍💻 Hecho por Wisrovi Rodríguez
-
-Este repositorio y su conjunto de librerías son desarrollado y mantenido por **Wisrovi Rodríguez**. Todo el ecosistema de paquetes mostrado a continuación forma parte del portafolio corporativo de soluciones de código abierto y herramientas internas identificadas con la marca `wisrovi`.
-
----
-
-## 📊 Complete Libraries Map (Mapa Corporativo de Librerías)
+## 📊 Complete Libraries Map
 
 | Short Name | Package | Type | Registry / PyPI | Description |
 | :--- | :--- | :--- | :--- | :--- |
@@ -52,9 +46,7 @@ Este repositorio y su conjunto de librerías son desarrollado y mantenido por **
 | **`wyoloservice-mcp`** | `wyoloservice-mcp` | MCP Server | [![PyPI](https://img.shields.io/pypi/v/wyoloservice-mcp.svg)](https://pypi.org/project/wyoloservice-mcp/) | MCP server for NeuralForgeAI YOLO training cluster, remote datasets and worker nodes. |
 | **`wzeroMQ`** | `wzeroMQ` | Messaging | `Development` | IPC/TCP network sockets wrapper using ZeroMQ. |
 
-**Total de librerías en tu monorepo:** 37
-
-_(37 = 27 librerías mapping original + 3 MCP independientes + 1 wyoloservice-mcp + 4 directorios *_os)_
+**Total: 37 libraries**
 
 ---
 

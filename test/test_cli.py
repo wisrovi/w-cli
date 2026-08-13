@@ -6,9 +6,17 @@
 import os
 import pytest
 import subprocess
+import tomli_w
 from unittest.mock import patch, MagicMock
 from typer.testing import CliRunner
-from module.main import app, LIBRARY_MAPPING, detect_package_manager, run_install_command
+from module.main import (
+    app, 
+    LIBRARY_MAPPING, 
+    detect_package_manager, 
+    run_install_command, 
+    get_monorepo_root, 
+    get_package_local_path
+)
 
 runner = CliRunner()
 
@@ -219,7 +227,7 @@ def test_install_failure_handling(mock_run):
         result = runner.invoke(app, ["install", "redis"])
         
     assert result.exit_code == 0
-    assert "Installation failed for wredis" in result.stdout
+    assert "Command failed for wredis" in result.stdout
     assert "Failed to install wredis" in result.stdout
 
 
@@ -246,6 +254,16 @@ def test_detect_package_manager_logic(tmp_path):
         assert detect_package_manager() == "pipenv"
     pipfile.unlink()
 
+    # Test parent directory lookup traversal logic
+    child_path = tmp_path / "subdir" / "child"
+    child_path.mkdir(parents=True)
+    poetry_lock_parent = tmp_path / "poetry.lock"
+    poetry_lock_parent.touch()
+    with patch("os.getcwd", return_value=str(child_path)):
+        assert detect_package_manager() == "poetry"
+    poetry_lock_parent.unlink()
+
+
 
 @patch("subprocess.run")
 def test_package_manager_not_found_fallback(mock_run):
@@ -258,4 +276,157 @@ def test_package_manager_not_found_fallback(mock_run):
 
     result = run_install_command("wredis", "poetry")
     assert result is True, "Should fall back and return True on pip success."
+    assert mock_run.call_count == 2
+
+
+def test_search_command():
+    """
+    Test Case: Verifies the 'w search <query>' subcommand logic.
+    Ensures matching packages are mapped and displayed correctly in table format,
+    while non-existing inputs return appropriate warnings.
+    """
+    # Query matching 'redis'
+    result = runner.invoke(app, ["search", "redis"])
+    assert result.exit_code == 0, "Query search should succeed."
+    assert "wredis" in result.stdout, "Renders redis search mappings."
+    assert "Found" in result.stdout
+
+    # Query matching nothing
+    result = runner.invoke(app, ["search", "non_existent_key_query"])
+    assert result.exit_code == 0
+    assert "No matching library tags found" in result.stdout
+
+
+@patch("subprocess.run")
+def test_check_command_logic(mock_run):
+    """
+    Test Case: Verifies the 'w check <library>' linter/security auditing router.
+    Confirms ruff check and bandit run loops are executed on paths.
+    """
+    mock_response = MagicMock()
+    mock_response.returncode = 0
+    mock_run.return_value = mock_response
+
+    # Mock the directory resolver to return a dummy folder path
+    with patch("module.main.get_package_local_path", return_value="/tmp/wredis"):
+        result = runner.invoke(app, ["check", "redis"])
+
+    assert result.exit_code == 0
+    assert mock_run.call_count == 2, "Should execute Ruff and Bandit."
+
+
+def test_sync_versions_logic(tmp_path):
+    """
+    Test Case: Validates the 'w sync-versions <new_version>' subcommand.
+    Mocks the monorepo root folder using a tmp_path containing dummy packages,
+    and updates their pyproject.toml version strings.
+    """
+    # Create two dummy packages in our mock monorepo root
+    pkg1 = tmp_path / "wredis"
+    pkg1.mkdir()
+    pyproj1 = pkg1 / "pyproject.toml"
+    
+    dummy_toml = {
+        "project": {
+            "name": "wredis",
+            "version": "1.0.0"
+        }
+    }
+    with open(pyproj1, "wb") as f:
+        tomli_w.dump(dummy_toml, f)
+
+    # Execute version synchronization via patch
+    with patch("module.main.get_monorepo_root", return_value=str(tmp_path)):
+        result = runner.invoke(app, ["sync-versions", "2.5.0"])
+
+    assert result.exit_code == 0, "Sync versions run should succeed."
+    
+    # Read TOML back and verify version update
+    with open(pyproj1, "rb") as f:
+        try:
+            import tomllib
+            updated = tomllib.load(f)
+        except ImportError:
+            import tomli
+            updated = tomli.load(f)
+            
+    assert updated["project"]["version"] == "2.5.0", "Version tag should be synchronized to 2.5.0."
+
+
+@patch("subprocess.run")
+def test_link_command_logic(mock_run):
+    """
+    Test Case: Validates 'w link <library>' command executing editable developer installs.
+    """
+    mock_response = MagicMock()
+    mock_response.returncode = 0
+    mock_run.return_value = mock_response
+
+    # Mock path resolution and package manager detection
+    with patch("module.main.get_package_local_path", return_value="/tmp/wredis"), \
+         patch("module.main.detect_package_manager", return_value="pip"):
+        result = runner.invoke(app, ["link", "redis"])
+
+    assert result.exit_code == 0, "Link command should finish with success."
+    assert "Successfully linked" in result.stdout
+    mock_run.assert_called_once()
+    called_cmd = mock_run.call_args[0][0]
+    assert "-e" in called_cmd, "Should use editable parameter flag."
+
+
+def test_completion_command():
+    """
+    Test Case: Verifies completion command render instructions.
+    """
+    result = runner.invoke(app, ["completion"])
+    assert result.exit_code == 0
+    assert "--install-completion" in result.stdout
+
+
+@patch("subprocess.run")
+def test_link_all_packages(mock_run, tmp_path):
+    """
+    Test Case: Verifies 'w link all' iterates over directories containing package setups.
+    """
+    mock_response = MagicMock()
+    mock_response.returncode = 0
+    mock_run.return_value = mock_response
+
+    # Create dummy package directories containing setup.py or pyproject.toml
+    dir1 = tmp_path / "wredis"
+    dir1.mkdir()
+    (dir1 / "pyproject.toml").touch()
+
+    dir2 = tmp_path / "wsqlite"
+    dir2.mkdir()
+    (dir2 / "setup.py").touch()
+
+    with patch("module.main.get_monorepo_root", return_value=str(tmp_path)), \
+         patch("module.main.detect_package_manager", return_value="pip"):
+        result = runner.invoke(app, ["link", "all"])
+
+    assert result.exit_code == 0
+    assert "Found 2 linkable local libraries." in result.stdout
+    assert mock_run.call_count == 2
+
+
+@patch("subprocess.run")
+def test_check_all_packages(mock_run, tmp_path):
+    """
+    Test Case: Verifies 'w check all' routes audits across all packages in directory.
+    """
+    mock_response = MagicMock()
+    mock_response.returncode = 0
+    mock_run.return_value = mock_response
+
+    # Create directories
+    dir1 = tmp_path / "wredis"
+    dir1.mkdir()
+    (dir1 / "pyproject.toml").touch()
+
+    with patch("module.main.get_monorepo_root", return_value=str(tmp_path)):
+        result = runner.invoke(app, ["check", "all"])
+
+    assert result.exit_code == 0
+    # Runs ruff and bandit once each
     assert mock_run.call_count == 2

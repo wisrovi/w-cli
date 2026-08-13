@@ -112,6 +112,52 @@ w create pipeline --name my_pipeline
 w create docker-test
 ```
 
+### 5. Link Local Packages (Editable Development Mode)
+Finds the local subfolder path in your monorepo and links it dynamically to your virtual environment in editable mode. Extremely helpful to implement local changes immediately across projects.
+
+```bash
+# Link the local wredis package
+w link redis
+
+# Link ALL packages containing setup.py or pyproject.toml inside the monorepo root
+w link all
+```
+
+### 6. Audit & Check Code Quality
+Executes static syntax linting (`ruff`) and structural security code auditor scans (`bandit`) on specified local projects.
+
+```bash
+# Run audits on wredis directory
+w check redis
+
+# Audit all packages in the monorepo
+w check all
+```
+
+### 7. Sync Version Tags
+Iterates over all directories under the monorepo root containing `pyproject.toml` files and updates their version properties in block.
+
+```bash
+# Sincronizar todos los pyproject.toml de la suite a la versión 2.5.0
+w sync-versions 2.5.0
+```
+
+### 8. Search Registered Packages
+Performs clean matching searches inside shortnames, official names and descriptions.
+
+```bash
+# Search for packages related to 'database'
+w search sqlite
+```
+
+### 9. Install Shell Completion
+Enables native auto-completion of commands and package names in your shell environment.
+
+```bash
+# Register completion scripts inside active shell configs (~/.bashrc or ~/.zshrc)
+w --install-completion
+```
+
 ---
 
 ## 🧪 Unit Testing and Coverage

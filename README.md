@@ -46,9 +46,10 @@ Este repositorio y su conjunto de librerías son desarrollado y mantenido por **
 | **`wticket`** | `wticket` | Remote API | `Development` | License validator using JSONBin.io backend. |
 | **`wutils`** | `wutils` | Code Utility | `Development` | Common script scheduling and format checkers. |
 | **`wyolo`** | `wyolo` | MLOps / Vision | [![PyPI](https://img.shields.io/pypi/dm/wyolo?color=green)](https://pepy.tech/projects/wyolo) | MLflow and S3 YOLO/RT-DETR training workflow. |
+| **`wyoloservice-mcp`** | `wyoloservice-mcp` | MCP Server | [![PyPI](https://img.shields.io/pypi/v/wyoloservice-mcp.svg)](https://pypi.org/project/wyoloservice-mcp/) | MCP server for NeuralForgeAI YOLO training cluster, remote datasets and worker nodes. |
 | **`wzeroMQ`** | `wzeroMQ` | Messaging | `Development` | IPC/TCP network sockets wrapper using ZeroMQ. |
 
-**Total de librerías registradas:** 37
+**Total de librerías en tu monorepo:** 30
 
 ---
 

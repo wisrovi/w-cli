@@ -41,7 +41,9 @@ LIBRARY_MAPPING = {
     "nats": ("wnats", "NATS message broker wrappers", "https://github.com/wisrovi/w-cli"),
     "zeromq": ("wzeroMQ", "IPC/TCP network sockets wrapper using ZeroMQ", "https://github.com/wisrovi/w-cli"),
     "ticket": ("wticket", "Remote license/ticket validator suite", "https://pypi.org/project/wticket/"),
-    "utils": ("wutils", "Common script scheduling and format checkers", "https://github.com/wisrovi/w-cli")
+    "utils": ("wutils", "Common script scheduling and format checkers", "https://github.com/wisrovi/w-cli"),
+    "wpostgresql-mcp": ("wpostgresql-mcp", "MCP Server for WPostgreSQL AI agent integration", "https://pypi.org/project/wpostgresql-mcp/"),
+    "wpostgresql_mcp": ("wpostgresql-mcp", "MCP Server for WPostgreSQL AI agent integration", "https://pypi.org/project/wpostgresql-mcp/")
 }
 
 

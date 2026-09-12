@@ -299,10 +299,75 @@
             margin: 0 auto;
         }
 
+        /* Dual Solar System Layout */
+        .dual-solar-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.95fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .solar-universe-wrapper, .mcp-universe-wrapper {
+            background: rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+            padding: 2.5rem 1.5rem;
+            position: relative;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .universe-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 99px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-core-sol {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+
+        .badge-mcp-sol {
+            background: rgba(139, 92, 246, 0.15);
+            color: #c084fc;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+        }
+
+        .universe-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .universe-sub {
+            color: var(--gray);
+            font-size: 0.88rem;
+            text-align: center;
+            max-width: 440px;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        /* Macro Universe (Core Suite) */
         .solar-universe {
             position: relative;
-            width: 820px;
-            height: 820px;
+            width: 620px;
+            height: 620px;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -311,15 +376,15 @@
 
         /* The Sun: WPipe */
         .solar-sun {
-            width: 146px;
-            height: 146px;
+            width: 126px;
+            height: 126px;
             background: radial-gradient(circle, #fef08a 0%, #f59e0b 55%, #b45309 100%);
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 60px rgba(245, 158, 11, 0.85), 0 0 100px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 0 50px rgba(245, 158, 11, 0.85), 0 0 90px rgba(239, 68, 68, 0.35);
             z-index: 25;
             text-decoration: none;
             color: #0f172a;
@@ -334,17 +399,72 @@
         }
 
         .solar-sun .sun-title {
-            font-size: 1.45rem;
+            font-size: 1.3rem;
             letter-spacing: -0.5px;
             line-height: 1.1;
         }
 
         .solar-sun .sun-sub {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #78350f;
             font-weight: 800;
+        }
+
+        /* Micro Universe: FastMCP Constellation */
+        .mcp-universe {
+            position: relative;
+            width: 460px;
+            height: 460px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mcp-sun {
+            width: 110px;
+            height: 110px;
+            background: radial-gradient(circle, #ddd6fe 0%, #8b5cf6 55%, #4c1d95 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.85), 0 0 80px rgba(6, 182, 212, 0.4);
+            z-index: 25;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 900;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .mcp-sun:hover {
+            transform: scale(1.12);
+        }
+
+        .mcp-sun i {
+            font-size: 1.6rem;
+            margin-bottom: 2px;
+            color: #fef08a;
+        }
+
+        .mcp-sun .sun-title {
+            font-size: 0.98rem;
+            letter-spacing: -0.3px;
+            line-height: 1.1;
+        }
+
+        .mcp-sun .sun-sub {
+            font-size: 0.58rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ddd6fe;
+            font-weight: 700;
         }
 
         /* Orbits */
@@ -358,9 +478,14 @@
             animation: rotateOrbit infinite linear;
         }
 
-        .orbit-1 { width: 300px; height: 300px; animation-duration: 26s; }
-        .orbit-2 { width: 500px; height: 500px; animation-duration: 45s; animation-direction: reverse; }
-        .orbit-3 { width: 720px; height: 720px; animation-duration: 70s; }
+        /* Macro Universe Orbits */
+        .orbit-1 { width: 230px; height: 230px; animation-duration: 25s; }
+        .orbit-2 { width: 390px; height: 390px; animation-duration: 42s; animation-direction: reverse; }
+        .orbit-3 { width: 550px; height: 550px; animation-duration: 65s; }
+
+        /* Micro Universe Orbits (FastMCP) */
+        .orbit-mcp-1 { width: 240px; height: 240px; animation-duration: 22s; border-color: rgba(139, 92, 246, 0.25); }
+        .orbit-mcp-2 { width: 390px; height: 390px; animation-duration: 38s; animation-direction: reverse; border-color: rgba(6, 182, 212, 0.25); }
 
         @keyframes rotateOrbit {
             from { transform: rotate(0deg); }
@@ -369,27 +494,30 @@
 
         .planet {
             position: absolute;
-            width: 72px;
-            height: 72px;
+            width: 62px;
+            height: 62px;
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 0.68rem;
+            font-size: 0.64rem;
             font-weight: 700;
             text-decoration: none;
             color: #fff;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             transition: all 0.3s;
             text-align: center;
-            padding: 5px;
+            padding: 4px;
             animation: counterRotate infinite linear;
         }
 
-        .orbit-1 .planet { animation-duration: 26s; }
-        .orbit-2 .planet { animation-duration: 45s; animation-direction: reverse; }
-        .orbit-3 .planet { animation-duration: 70s; }
+        .orbit-1 .planet { animation-duration: 25s; }
+        .orbit-2 .planet { animation-duration: 42s; animation-direction: reverse; }
+        .orbit-3 .planet { animation-duration: 65s; }
+
+        .orbit-mcp-1 .planet { animation-duration: 22s; width: 58px; height: 58px; font-size: 0.62rem; }
+        .orbit-mcp-2 .planet { animation-duration: 38s; animation-direction: reverse; width: 60px; height: 60px; font-size: 0.62rem; }
 
         @keyframes counterRotate {
             from { transform: rotate(0deg); }
@@ -402,27 +530,34 @@
             box-shadow: 0 0 25px currentColor;
         }
 
-        /* Orbit 1 Planets: Extensions & MCP */
-        .p-wpipe-mcp { background: linear-gradient(135deg, #06b6d4, #0891b2); top: -36px; left: calc(50% - 36px); }
-        .p-wpipe-steps { background: linear-gradient(135deg, #eab308, #ca8a04); color: #0f172a; bottom: -36px; left: calc(50% - 36px); }
-        .p-wpipe-plugins { background: linear-gradient(135deg, #8b5cf6, #6d28d9); right: -36px; top: calc(50% - 36px); }
-        .p-wdecorators { background: linear-gradient(135deg, #ec4899, #be185d); left: -36px; top: calc(50% - 36px); }
+        /* Macro Planets */
+        .p-wkafka { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; top: -31px; left: calc(50% - 31px); }
+        .p-wredis { background: linear-gradient(135deg, #ef4444, #b91c1c); right: -31px; top: calc(50% - 31px); }
+        .p-wdecorators { background: linear-gradient(135deg, #ec4899, #be185d); bottom: -31px; left: calc(50% - 31px); }
+        .p-wsteps { background: linear-gradient(135deg, #eab308, #ca8a04); color: #0f172a; left: -31px; top: calc(50% - 31px); }
 
-        /* Orbit 2 Planets: Databases, Cache, Messaging, Security */
-        .p-wkafka { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; top: -36px; left: calc(50% - 36px); }
-        .p-wredis { background: linear-gradient(135deg, #ef4444, #b91c1c); right: -36px; top: calc(50% - 36px); }
-        .p-wsqlite { background: linear-gradient(135deg, #10b981, #047857); bottom: -36px; left: calc(50% - 36px); }
-        .p-wfabric { background: linear-gradient(135deg, #64748b, #334155); left: -36px; top: calc(50% - 36px); }
-        .p-wpostgresql { background: linear-gradient(135deg, #3b82f6, #1d4ed8); top: 50px; right: 20px; }
-        .p-wmongo { background: linear-gradient(135deg, #14b8a6, #0d9488); bottom: 50px; left: 20px; }
+        .p-wsqlite { background: linear-gradient(135deg, #10b981, #047857); top: -31px; left: calc(50% - 31px); }
+        .p-wpostgresql { background: linear-gradient(135deg, #3b82f6, #1d4ed8); right: -31px; top: calc(50% - 31px); }
+        .p-wfabric { background: linear-gradient(135deg, #64748b, #334155); bottom: -31px; left: calc(50% - 31px); }
+        .p-wmongo { background: linear-gradient(135deg, #14b8a6, #0d9488); left: -31px; top: calc(50% - 31px); }
+        .p-wplugins { background: linear-gradient(135deg, #8b5cf6, #6d28d9); top: 38px; right: 18px; }
+        .p-wutils { background: linear-gradient(135deg, #f97316, #c2410c); bottom: 38px; left: 18px; }
 
-        /* Orbit 3 Planets: Flagship Systems & Orchestration */
-        .p-wyolo { background: linear-gradient(135deg, #10b981, #059669); top: -36px; left: calc(50% - 36px); }
-        .p-wyoloservice-mcp { background: linear-gradient(135deg, #ec4899, #db2777); right: -36px; top: calc(50% - 36px); }
-        .p-wcontainer { background: linear-gradient(135deg, #0284c7, #0369a1); bottom: -36px; left: calc(50% - 36px); }
-        .p-wclickhouse { background: linear-gradient(135deg, #f97316, #ea580c); left: -36px; top: calc(50% - 36px); }
-        .p-wauth { background: linear-gradient(135deg, #d946ef, #a21caf); top: 90px; right: 40px; }
-        .p-wisrovi-py { background: linear-gradient(135deg, #38bdf8, #0284c7); bottom: 90px; left: 40px; }
+        .p-wyolo { background: linear-gradient(135deg, #10b981, #059669); top: -31px; left: calc(50% - 31px); }
+        .p-wcontainer { background: linear-gradient(135deg, #0284c7, #0369a1); right: -31px; top: calc(50% - 31px); }
+        .p-wclickhouse { background: linear-gradient(135deg, #f97316, #ea580c); bottom: -31px; left: calc(50% - 31px); }
+        .p-wauth { background: linear-gradient(135deg, #d946ef, #a21caf); left: -31px; top: calc(50% - 31px); }
+        .p-wisrovi-py { background: linear-gradient(135deg, #38bdf8, #0284c7); top: 72px; right: 35px; }
+        .p-processaudio { background: linear-gradient(135deg, #a855f7, #7e22ce); bottom: 72px; left: 35px; }
+
+        /* FastMCP Micro Planets */
+        .p-mcp-pipe { background: linear-gradient(135deg, #06b6d4, #0891b2); top: -29px; left: calc(50% - 29px); }
+        .p-mcp-yolo { background: linear-gradient(135deg, #ec4899, #db2777); bottom: -29px; right: 35px; }
+        .p-mcp-redis { background: linear-gradient(135deg, #ef4444, #dc2626); bottom: -29px; left: 35px; }
+
+        .p-mcp-sqlite { background: linear-gradient(135deg, #10b981, #059669); top: -30px; left: calc(50% - 30px); }
+        .p-mcp-postgres { background: linear-gradient(135deg, #3b82f6, #2563eb); bottom: -30px; left: calc(50% - 30px); }
+        .p-mcp-kafka { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; right: -30px; top: calc(50% - 30px); }
 
         /* Flagship MLOps Section */
         .mlops-section {
@@ -799,9 +934,16 @@
         .footer-links a:hover { color: var(--primary); }
 
         /* Responsive */
+        @media (max-width: 1200px) {
+            .dual-solar-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .solar-universe { max-width: 100%; }
+            .mcp-universe { max-width: 100%; }
+        }
+
         @media (max-width: 992px) {
             .hero-pillars-grid { grid-template-columns: 1fr; }
-            .solar-universe { width: 100%; height: 600px; transform: scale(0.75); }
+            .solar-universe { width: 100%; height: 500px; transform: scale(0.8); }
+            .mcp-universe { width: 100%; height: 420px; transform: scale(0.85); }
             .academic-grid { grid-template-columns: 1fr; }
             .mlops-grid { grid-template-columns: 1fr; }
             .metrics-grid { grid-template-columns: repeat(2, 1fr); }
@@ -811,7 +953,8 @@
             .hero h1 { font-size: 2.8rem; }
             .hero .subtitle { font-size: 1.3rem; }
             .nav-links { display: none; }
-            .solar-universe { height: 460px; transform: scale(0.55); }
+            .solar-universe { height: 380px; transform: scale(0.58); }
+            .mcp-universe { height: 340px; transform: scale(0.68); }
         }
     </style>
 </head>
@@ -888,93 +1031,158 @@
     <section class="solar-system-section" id="solar">
         <div class="container">
             <div class="solar-system-header">
-                <h2>El Sistema Solar de la Suite Wisrovi</h2>
+                <h2>El Universo Binario de la Suite Wisrovi</h2>
                 <p>
-                    <code>wpipe</code> actúa como el Sol gravitacional: el motor declarativo central que coordina el flujo contextual, alimentando órbitas concéntricas de servidores FastMCP, persistencia transaccional (<code>wredis</code>, <code>wsqlite</code>, <code>wpostgresql</code>), mensajería (<code>wkafka</code>), seguridad (<code>wFabricSecurity</code>) y la plataforma de entrenamiento distribuido (<code>wyolo / wyoloservice</code>).
+                    Arquitectura visual en dos sistemas gravitacionales sincronizados: el <strong>Universo Principal</strong> con <code>wpipe</code> como Sol central coordinando persistencia, mensajería y MLOps distribuido; y la <strong>Constelación Agéntica</strong> donde el <strong>AI Agent Hub</strong> orbita con los 6 servidores <strong>FastMCP</strong> oficiales para la interacción con LLMs.
                 </p>
             </div>
 
-            <div class="solar-universe">
-                <!-- Sun: WPipe -->
-                <a href="https://pypi.org/project/wpipe/" target="_blank" class="solar-sun" title="WPipe: Sol Central del Ecosistema">
-                    <span class="sun-title">wpipe</span>
-                    <span class="sun-sub">SOL CENTRAL</span>
-                </a>
+            <div class="dual-solar-grid">
+                <!-- Columna Izquierda: Macro Sistema Solar (Suite Core & Backends) -->
+                <div class="solar-universe-wrapper">
+                    <span class="universe-badge badge-core-sol">
+                        <i class="fas fa-sun"></i> UNIVERSO PRINCIPAL
+                    </span>
+                    <h3 class="universe-title">Ecosistema Base Python & MLOps</h3>
+                    <p class="universe-sub">
+                        <code>wpipe</code> como Sol central coordinando streaming, persistencia transaccional, seguridad Zero Trust y entrenamiento distribuido.
+                    </p>
 
-                <!-- Orbit 1: Core Extensions, Step Plugins & MCP -->
-                <div class="orbit orbit-1">
-                    <a href="https://pypi.org/project/wpipe-mcp/" target="_blank" class="planet p-wpipe-mcp" title="wpipe-mcp: Servidor FastMCP para wpipe">
-                        <i class="fas fa-robot"></i>
-                        <span>pipe-mcp</span>
-                    </a>
-                    <a href="https://pypi.org/project/wpipe-steps/" target="_blank" class="planet p-wpipe-steps" title="wpipe-steps: Pasos modulares para pipelines">
-                        <i class="fas fa-layer-group"></i>
-                        <span>pipe-steps</span>
-                    </a>
-                    <a href="https://pypi.org/project/wpipe-plugins/" target="_blank" class="planet p-wpipe-plugins" title="wpipe-plugins: Plugins de la comunidad">
-                        <i class="fas fa-puzzle-piece"></i>
-                        <span>plugins</span>
-                    </a>
-                    <a href="https://pypi.org/project/wdecorators/" target="_blank" class="planet p-wdecorators" title="wdecorators: Decoradores de resiliencia y telemetría">
-                        <i class="fas fa-wand-magic-sparkles"></i>
-                        <span>wdecorators</span>
-                    </a>
+                    <div class="solar-universe">
+                        <!-- Sun: WPipe -->
+                        <a href="https://pypi.org/project/wpipe/" target="_blank" class="solar-sun" title="WPipe: Sol Central del Ecosistema">
+                            <span class="sun-title">wpipe</span>
+                            <span class="sun-sub">SOL CENTRAL</span>
+                        </a>
+
+                        <!-- Orbit 1: Core Extensions & High Downloads -->
+                        <div class="orbit orbit-1">
+                            <a href="https://pypi.org/project/wkafka/" target="_blank" class="planet p-wkafka" title="wkafka: Streaming reactivo para Apache Kafka (~1,558/mes)">
+                                <i class="fas fa-stream"></i>
+                                <span>wkafka</span>
+                            </a>
+                            <a href="https://pypi.org/project/wredis/" target="_blank" class="planet p-wredis" title="wredis: Caché distribuido y distributed locks (~798/mes)">
+                                <i class="fas fa-bolt"></i>
+                                <span>wredis</span>
+                            </a>
+                            <a href="https://pypi.org/project/wdecorators/" target="_blank" class="planet p-wdecorators" title="wdecorators: Resiliencia y telemetría (~655/mes)">
+                                <i class="fas fa-wand-magic-sparkles"></i>
+                                <span>wdecor</span>
+                            </a>
+                            <a href="https://pypi.org/project/wpipe-steps/" target="_blank" class="planet p-wsteps" title="wpipe-steps: Pasos modulares para pipelines (~184/mes)">
+                                <i class="fas fa-layer-group"></i>
+                                <span>steps</span>
+                            </a>
+                        </div>
+
+                        <!-- Orbit 2: Databases, Security & Utility -->
+                        <div class="orbit orbit-2">
+                            <a href="https://pypi.org/project/wsqlite/" target="_blank" class="planet p-wsqlite" title="wsqlite: SQLite empresarial con WAL y TableSync">
+                                <i class="fas fa-database"></i>
+                                <span>wsqlite</span>
+                            </a>
+                            <a href="https://pypi.org/project/wpostgresql/" target="_blank" class="planet p-wpostgresql" title="wpostgresql: Conexiones ACID y mapeo ORM (~303/mes)">
+                                <i class="fas fa-server"></i>
+                                <span>wpostgres</span>
+                            </a>
+                            <a href="https://pypi.org/project/wFabricSecurity/" target="_blank" class="planet p-wfabric" title="wFabricSecurity: Zero Trust para Hyperledger Fabric">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>wfabric</span>
+                            </a>
+                            <a href="https://pypi.org/project/wmongo/" target="_blank" class="planet p-wmongo" title="wmongo: ODM reactivo con Pydantic">
+                                <i class="fas fa-leaf"></i>
+                                <span>wmongo</span>
+                            </a>
+                            <a href="https://pypi.org/project/wpipe-plugins/" target="_blank" class="planet p-wplugins" title="wpipe-plugins: Extensiones y plugins de la comunidad">
+                                <i class="fas fa-puzzle-piece"></i>
+                                <span>plugins</span>
+                            </a>
+                            <a href="https://pypi.org/project/wutils/" target="_blank" class="planet p-wutils" title="wutils: Schedulers y validación de formatos">
+                                <i class="fas fa-toolbox"></i>
+                                <span>wutils</span>
+                            </a>
+                        </div>
+
+                        <!-- Orbit 3: MLOps Distribuido, Big Data & Contenedores -->
+                        <div class="orbit orbit-3">
+                            <a href="https://pypi.org/project/wyolo/" target="_blank" class="planet p-wyolo" title="wyolo: Wrapper de entrenamiento YOLO/RT-DETR con MLflow y S3">
+                                <i class="fas fa-crosshairs"></i>
+                                <span>wyolo</span>
+                            </a>
+                            <a href="https://pypi.org/project/wcontainer/" target="_blank" class="planet p-wcontainer" title="wcontainer: Contenedores efímeros Docker y cuotas GPU">
+                                <i class="fab fa-docker"></i>
+                                <span>container</span>
+                            </a>
+                            <a href="https://pypi.org/project/wclickhouse/" target="_blank" class="planet p-wclickhouse" title="wclickhouse: ClickHouse ORM para analytics OLAP">
+                                <i class="fas fa-chart-line"></i>
+                                <span>clickhouse</span>
+                            </a>
+                            <a href="https://pypi.org/project/wauth/" target="_blank" class="planet p-wauth" title="wauth: Bóveda de secretos AES-256 Fernet locked a hardware">
+                                <i class="fas fa-key"></i>
+                                <span>wauth</span>
+                            </a>
+                            <a href="https://pypi.org/project/wisrovi-python/" target="_blank" class="planet p-wisrovi-py" title="wisrovi-python: Tipos fundacionales y algoritmos de la suite">
+                                <i class="fab fa-python"></i>
+                                <span>core-py</span>
+                            </a>
+                            <a href="https://pypi.org/project/ProcessAudio/" target="_blank" class="planet p-processaudio" title="ProcessAudio: Procesamiento y análisis espectral de audio">
+                                <i class="fas fa-wave-square"></i>
+                                <span>audio</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Orbit 2: Databases, Cache, Messaging, Security -->
-                <div class="orbit orbit-2">
-                    <a href="https://pypi.org/project/wkafka/" target="_blank" class="planet p-wkafka" title="wkafka: Streaming reactivo para Apache Kafka">
-                        <i class="fas fa-stream"></i>
-                        <span>wkafka</span>
-                    </a>
-                    <a href="https://pypi.org/project/wredis/" target="_blank" class="planet p-wredis" title="wredis: Caché distribuido y distributed locks">
-                        <i class="fas fa-bolt"></i>
-                        <span>wredis</span>
-                    </a>
-                    <a href="https://pypi.org/project/wsqlite/" target="_blank" class="planet p-wsqlite" title="wsqlite: SQLite empresarial con WAL y TableSync">
-                        <i class="fas fa-database"></i>
-                        <span>wsqlite</span>
-                    </a>
-                    <a href="https://pypi.org/project/wFabricSecurity/" target="_blank" class="planet p-wfabric" title="wFabricSecurity: Zero Trust para Hyperledger Fabric">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>wfabric</span>
-                    </a>
-                    <a href="https://pypi.org/project/wpostgresql/" target="_blank" class="planet p-wpostgresql" title="wpostgresql: Pool de conexiones y transacciones ACID">
-                        <i class="fas fa-server"></i>
-                        <span>wpostgres</span>
-                    </a>
-                    <a href="https://pypi.org/project/wmongo/" target="_blank" class="planet p-wmongo" title="wmongo: ODM reactivo para MongoDB con Pydantic">
-                        <i class="fas fa-leaf"></i>
-                        <span>wmongo</span>
-                    </a>
-                </div>
+                <!-- Columna Derecha: Micro Sistema Solar Agéntico (FastMCP Constellation) -->
+                <div class="mcp-universe-wrapper">
+                    <span class="universe-badge badge-mcp-sol">
+                        <i class="fas fa-brain"></i> CONSTELACIÓN AGÉNTICA
+                    </span>
+                    <h3 class="universe-title">FastMCP Hub para Agentes LLM</h3>
+                    <p class="universe-sub">
+                        El núcleo agéntico autónomo alimentado por los <strong>6 Servidores FastMCP</strong> oficiales para Claude, Cursor y Antigravity.
+                    </p>
 
-                <!-- Orbit 3: Distributed MLOps, Big Data & Containers -->
-                <div class="orbit orbit-3">
-                    <a href="https://pypi.org/project/wyolo/" target="_blank" class="planet p-wyolo" title="wyolo / wyoloservice: Entrenamiento distribuido YOLO y RT-DETR">
-                        <i class="fas fa-crosshairs"></i>
-                        <span>wyolo</span>
-                    </a>
-                    <a href="https://pypi.org/project/wyoloservice-mcp/" target="_blank" class="planet p-wyoloservice-mcp" title="wyoloservice-mcp: Orquestación FastMCP del cluster de entrenamiento">
-                        <i class="fas fa-brain"></i>
-                        <span>yolo-mcp</span>
-                    </a>
-                    <a href="https://pypi.org/project/wcontainer/" target="_blank" class="planet p-wcontainer" title="wcontainer: Contenedores efímeros Docker y cuotas GPU">
-                        <i class="fab fa-docker"></i>
-                        <span>container</span>
-                    </a>
-                    <a href="https://pypi.org/project/wclickhouse/" target="_blank" class="planet p-wclickhouse" title="wclickhouse: ClickHouse ORM para analytics masivo">
-                        <i class="fas fa-chart-line"></i>
-                        <span>clickhouse</span>
-                    </a>
-                    <a href="https://pypi.org/project/wauth/" target="_blank" class="planet p-wauth" title="wauth: Bóveda de secretos cifrada con AES-256 Fernet">
-                        <i class="fas fa-key"></i>
-                        <span>wauth</span>
-                    </a>
-                    <a href="https://pypi.org/project/wisrovi-python/" target="_blank" class="planet p-wisrovi-py" title="wisrovi-python: Tipos fundacionales y algoritmos de la suite">
-                        <i class="fab fa-python"></i>
-                        <span>core-py</span>
-                    </a>
+                    <div class="mcp-universe">
+                        <!-- Agentic Core: AI LLM Agent Hub -->
+                        <div class="mcp-sun" title="FastMCP Core Hub: Conexión nativa con Agentes Autónomos (Claude, Antigravity, Cursor)">
+                            <i class="fas fa-robot"></i>
+                            <span class="sun-title">AI AGENT</span>
+                            <span class="sun-sub">MCP HUB</span>
+                        </div>
+
+                        <!-- Inner Orbit: Core Flow & MLOps Tools -->
+                        <div class="orbit-mcp-1 orbit">
+                            <a href="https://pypi.org/project/wpipe-mcp/" target="_blank" class="planet p-mcp-pipe" title="wpipe-mcp: Servidor FastMCP para generación, validación y dry-run de pipelines wpipe">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>pipe-mcp</span>
+                            </a>
+                            <a href="https://pypi.org/project/wyoloservice-mcp/" target="_blank" class="planet p-mcp-yolo" title="wyoloservice-mcp: Orquestación agéntica de clusters de entrenamiento GPU y HPO Optuna">
+                                <i class="fas fa-brain"></i>
+                                <span>yolo-mcp</span>
+                            </a>
+                            <a href="https://pypi.org/project/wredis-mcp/" target="_blank" class="planet p-mcp-redis" title="wredis-mcp: Servidor FastMCP para inspección de caché, claves y distributed locks">
+                                <i class="fas fa-bolt"></i>
+                                <span>redis-mcp</span>
+                            </a>
+                        </div>
+
+                        <!-- Outer Orbit: Persistence & Streaming Tools -->
+                        <div class="orbit-mcp-2 orbit">
+                            <a href="https://pypi.org/project/wsqlite-mcp/" target="_blank" class="planet p-mcp-sqlite" title="wsqlite-mcp: Herramientas MCP para consultas SQL seguras e inspección de esquemas SQLite">
+                                <i class="fas fa-database"></i>
+                                <span>sqlite-mcp</span>
+                            </a>
+                            <a href="https://pypi.org/project/wpostgresql-mcp/" target="_blank" class="planet p-mcp-postgres" title="wpostgresql-mcp: Servidor FastMCP para bases de datos relacionales PostgreSQL empresariales">
+                                <i class="fas fa-server"></i>
+                                <span>pgsql-mcp</span>
+                            </a>
+                            <a href="https://pypi.org/project/wkafka-mcp/" target="_blank" class="planet p-mcp-kafka" title="wkafka-mcp: Servidor FastMCP para streaming de eventos y supervisión de tópicos Kafka">
+                                <i class="fas fa-stream"></i>
+                                <span>kafka-mcp</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

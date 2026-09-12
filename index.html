@@ -44,10 +44,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.92);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding: 0.9rem 0;
+            padding: 0.85rem 0;
             z-index: 1000;
         }
 
@@ -105,7 +105,7 @@
         .lang-switch-wrapper {
             display: inline-flex;
             align-items: center;
-            background: rgba(30, 41, 59, 0.8);
+            background: rgba(30, 41, 59, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 99px;
             padding: 3px;
@@ -118,7 +118,7 @@
             color: var(--gray);
             font-weight: 700;
             font-size: 0.78rem;
-            padding: 4px 10px;
+            padding: 4px 11px;
             border-radius: 99px;
             cursor: pointer;
             transition: all 0.25s ease;
@@ -131,9 +131,7 @@
             box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
         }
 
-        .lang-btn:hover:not(.active) {
-            color: #fff;
-        }
+        .lang-btn:hover:not(.active) { color: #fff; }
 
         /* Hero Section */
         .hero {
@@ -323,7 +321,8 @@
 
         .solar-system-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+            position: relative;
         }
 
         .solar-system-header h2 {
@@ -338,7 +337,29 @@
             color: var(--gray);
             font-size: 1.1rem;
             max-width: 820px;
-            margin: 0 auto;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Solar Animation Pause Control */
+        .solar-ctrl-btn {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 0.45rem 1.2rem;
+            border-radius: 99px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .solar-ctrl-btn:hover {
+            background: rgba(245, 158, 11, 0.2);
+            border-color: #f59e0b;
+            color: #fbbf24;
         }
 
         /* Dual Solar System Layout */
@@ -347,7 +368,7 @@
             grid-template-columns: 1.3fr 0.95fr;
             gap: 2.5rem;
             align-items: center;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .solar-universe-wrapper, .mcp-universe-wrapper {
@@ -436,9 +457,7 @@
             cursor: pointer;
         }
 
-        .solar-sun:hover {
-            transform: scale(1.1);
-        }
+        .solar-sun:hover { transform: scale(1.1); }
 
         .solar-sun .sun-title {
             font-size: 1.3rem;
@@ -485,9 +504,7 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-        .mcp-sun:hover {
-            transform: scale(1.12);
-        }
+        .mcp-sun:hover { transform: scale(1.12); }
 
         .mcp-sun i {
             font-size: 1.6rem;
@@ -518,6 +535,11 @@
             align-items: center;
             justify-content: center;
             animation: rotateOrbit infinite linear;
+        }
+
+        /* Paused animation state */
+        .orbit.paused, .orbit.paused .planet {
+            animation-play-state: paused !important;
         }
 
         /* Macro Universe Orbits */
@@ -650,6 +672,78 @@
             color: var(--primary);
         }
 
+        /* MLOps Architecture Pipeline Flow Diagram */
+        .mlops-pipeline-diagram {
+            margin-top: 3.5rem;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(0, 242, 254, 0.15);
+            border-radius: 1.2rem;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .diagram-title {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .flow-nodes-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .flow-node {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.9rem 1rem;
+            text-align: center;
+            flex: 1;
+            min-width: 140px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .flow-node:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.2);
+        }
+
+        .flow-node i {
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        .flow-node .node-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .flow-node .node-sub {
+            font-size: 0.68rem;
+            color: var(--gray);
+            font-family: 'Fira Code', monospace;
+            margin-top: 2px;
+        }
+
+        .flow-arrow {
+            color: var(--primary);
+            font-size: 1.1rem;
+            opacity: 0.6;
+        }
+
         /* Academic Research Section */
         .academic-section {
             padding: 6rem 0;
@@ -738,12 +832,125 @@
             letter-spacing: 0.5px;
         }
 
-        /* 23 Libraries Section */
+        /* Preprints Interactive Accordion & Table */
+        .preprints-accordion-wrapper {
+            margin-top: 3.5rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(166, 206, 57, 0.25);
+            border-radius: 1.2rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .preprints-toggle-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .preprints-search-box {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .preprints-search-box input {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.55rem 1rem 0.55rem 2.4rem;
+            border-radius: 99px;
+            color: #fff;
+            font-size: 0.86rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .preprints-search-box input:focus {
+            border-color: #a6ce39;
+            box-shadow: 0 0 15px rgba(166, 206, 57, 0.25);
+        }
+
+        .preprints-search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .preprints-table-container {
+            margin-top: 1.5rem;
+            max-height: 520px;
+            overflow-y: auto;
+            border-radius: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .preprints-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.88rem;
+        }
+
+        .preprints-table th {
+            background: rgba(30, 41, 59, 0.95);
+            padding: 0.9rem 1.2rem;
+            color: #bef264;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .preprints-table td {
+            padding: 0.85rem 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: #cbd5e1;
+        }
+
+        .preprints-table tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .preprint-code-tag {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .preprint-doi-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #38bdf8;
+            text-decoration: none;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .preprint-doi-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* 23 Libraries Section with Search */
         .libraries { padding: 6rem 0; }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-title h2 {
@@ -759,6 +966,41 @@
             font-size: 1.15rem;
             max-width: 700px;
             margin: 0 auto;
+        }
+
+        /* Live Instant Search Bar for Libraries */
+        .search-wrapper {
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+        }
+
+        .search-wrapper input {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.95rem 1.4rem 0.95rem 3.2rem;
+            border-radius: 99px;
+            color: #fff;
+            font-size: 0.98rem;
+            outline: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+
+        .search-wrapper input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .search-wrapper .search-icon {
+            position: absolute;
+            left: 1.3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.15rem;
         }
 
         .filter-tabs {
@@ -828,6 +1070,33 @@
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
+        }
+
+        .lib-header-right {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 1-Click Copy Badge on Cards */
+        .btn-copy-mini {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .btn-copy-mini:hover {
+            background: rgba(0, 242, 254, 0.15);
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .lib-type-tag {
@@ -939,7 +1208,7 @@
             letter-spacing: 1px;
         }
 
-        /* CTA */
+        /* CTA with 1-Click Copy */
         .cta {
             padding: 6rem 0;
             text-align: center;
@@ -960,18 +1229,70 @@
             margin: 0 auto 2rem;
         }
 
-        .code-box {
+        .code-box-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
             background: rgba(15, 23, 42, 0.9);
-            padding: 1.2rem 2.2rem;
+            padding: 0.8rem 1.6rem;
             border-radius: 0.75rem;
-            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            margin-bottom: 2rem;
+        }
+
+        .code-box {
             font-family: 'Fira Code', monospace;
             color: #38bdf8;
             font-weight: 600;
             font-size: 1.05rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-            margin-bottom: 2rem;
+        }
+
+        .btn-copy-terminal {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 0.45rem 0.9rem;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-copy-terminal:hover {
+            background: var(--primary);
+            color: var(--dark);
+            border-color: var(--primary);
+        }
+
+        /* Toast Feedback */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #10b981;
+            color: #0f172a;
+            padding: 0.8rem 1.4rem;
+            border-radius: 99px;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            pointer-events: none;
+        }
+
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         /* Footer */
@@ -1009,6 +1330,7 @@
             .academic-grid { grid-template-columns: 1fr; }
             .mlops-grid { grid-template-columns: 1fr; }
             .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .flow-arrow { display: none; }
         }
 
         @media (max-width: 768px) {
@@ -1017,11 +1339,19 @@
             .nav-links { display: none; }
             .solar-universe { height: 380px; transform: scale(0.58); }
             .mcp-universe { height: 340px; transform: scale(0.68); }
+            .preprints-toggle-header { flex-direction: column; align-items: stretch; }
+            .preprints-search-box { max-width: 100%; }
         }
 
     </style>
 </head>
 <body>
+
+    <!-- Toast Notification for 1-Click Copy -->
+    <div id="toastNotification" class="toast-notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastText">Copied to clipboard!</span>
+    </div>
 
     <!-- Navigation -->
     <nav>
@@ -1098,7 +1428,7 @@
         </div>
     </section>
 
-    <!-- Dual Solar System Section -->
+    <!-- Dual Solar System Section with Animation Toggle -->
     <section class="solar-system-section" id="solar">
         <div class="container">
             <div class="solar-system-header">
@@ -1106,6 +1436,9 @@
                 <p data-i18n="solar_header_desc">
                     Visual architecture spanning two synchronized gravitational systems: the <strong>Main Universe</strong> with <code>wpipe</code> as the central Sun coordinating persistence, messaging, and distributed MLOps; and the <strong>Agentic Constellation</strong> where the <strong>AI Agent Hub</strong> orbits with 6 official <strong>FastMCP</strong> servers for seamless LLM interactions.
                 </p>
+                <button type="button" class="solar-ctrl-btn" id="btnToggleOrbits" onclick="toggleSolarAnimation()">
+                    <i class="fas fa-pause" id="orbitIcon"></i> <span id="orbitBtnText" data-i18n="solar_pause_btn">Pause Orbits</span>
+                </button>
             </div>
 
             <div class="dual-solar-grid">
@@ -1119,7 +1452,7 @@
                         <code>wpipe</code> as the central Sun coordinating streaming, transactional persistence, Zero Trust security, and distributed cluster training.
                     </p>
 
-                    <div class="solar-universe">
+                    <div class="solar-universe" id="macroSolarSystem">
                         <!-- Sun: WPipe -->
                         <a href="https://pypi.org/project/wpipe/" target="_blank" class="solar-sun" title="WPipe: Central Sun of Ecosystem">
                             <span class="sun-title" data-i18n="sun_wpipe_title">wpipe</span>
@@ -1214,7 +1547,7 @@
                         Autonomous agentic core powered by the <strong>6 official FastMCP Servers</strong> for Claude, Cursor, and Antigravity.
                     </p>
 
-                    <div class="mcp-universe">
+                    <div class="mcp-universe" id="microSolarSystem">
                         <!-- Agentic Core: AI LLM Agent Hub -->
                         <div class="mcp-sun" title="FastMCP Core Hub: Native tools for Autonomous LLMs (Claude, Antigravity, Cursor)">
                             <i class="fas fa-robot"></i>
@@ -1259,7 +1592,7 @@
         </div>
     </section>
 
-    <!-- Flagship MLOps Platform Section (wyoloservice / train_service_2) -->
+    <!-- Flagship MLOps Platform Section with Flow Diagram -->
     <section class="mlops-section" id="mlops">
         <div class="container">
             <div class="mlops-grid">
@@ -1299,10 +1632,55 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Interactive Architecture Flow Diagram -->
+            <div class="mlops-pipeline-diagram">
+                <h4 class="diagram-title">
+                    <i class="fas fa-network-wired" style="color: var(--primary);"></i> 
+                    <span data-i18n="mlops_diagram_title">NeuralForgeAI Distributed Lifecycle Architecture</span>
+                </h4>
+                <div class="flow-nodes-container">
+                    <div class="flow-node">
+                        <i class="fas fa-globe" style="color: #00f2fe;"></i>
+                        <div class="node-title" data-i18n="mlops_diag_step1">REST Gateway (:23442)</div>
+                        <div class="node-sub">FastAPI / React 19</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flow-node">
+                        <i class="fas fa-layer-group" style="color: #ef4444;"></i>
+                        <div class="node-title" data-i18n="mlops_diag_step2">Redis Queue (:23438)</div>
+                        <div class="node-sub">gpus_high/med/low</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flow-node">
+                        <i class="fas fa-dna" style="color: #f59e0b;"></i>
+                        <div class="node-title" data-i18n="mlops_diag_step3">Optuna Genetic Sweep</div>
+                        <div class="node-sub">TPESampler HPO</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flow-node">
+                        <i class="fas fa-microchip" style="color: #10b981;"></i>
+                        <div class="node-title" data-i18n="mlops_diag_step4">GPU Quota Governor</div>
+                        <div class="node-sub">Invoker Daemon</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flow-node">
+                        <i class="fab fa-docker" style="color: #0284c7;"></i>
+                        <div class="node-title" data-i18n="mlops_diag_step5">22-Step Forensic WTrain</div>
+                        <div class="node-sub">XAI, AUC, PGD, Noise</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flow-node">
+                        <i class="fas fa-cloud-arrow-up" style="color: #a855f7;"></i>
+                        <div class="node-title" data-i18n="mlops_diag_step6">S3 & MLflow Telemetry</div>
+                        <div class="node-sub">:23448 & :23435</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Doctoral & Academic Research Hub -->
+    <!-- Doctoral & Academic Research Hub with Preprints Explorer -->
     <section class="academic-section" id="academic">
         <div class="container">
             <div class="academic-grid">
@@ -1359,15 +1737,232 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Interactive 26-Preprints Portfolio Table & Live Search -->
+            <div class="preprints-accordion-wrapper" id="preprintsPortfolio">
+                <div class="preprints-toggle-header">
+                    <button type="button" class="btn btn-secondary" id="btnTogglePreprints" onclick="togglePreprintsView()">
+                        <i class="fas fa-list-check" style="color: #a6ce39;"></i> 
+                        <span id="preprintsBtnText" data-i18n="preprints_toggle_btn">Browse All 26 Scientific Preprints (CERN/Zenodo)</span>
+                    </button>
+                    <div class="preprints-search-box" id="preprintsSearchBox" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="preprintsSearchInput" oninput="filterPreprints()" placeholder="Filter preprints by title, code or research field...">
+                    </div>
+                </div>
+
+                <div class="preprints-table-container" id="preprintsTableContainer" style="display: none;">
+                    <table class="preprints-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;" data-i18n="preprints_col_code">Code</th>
+                                <th style="width: 46%;" data-i18n="preprints_col_title">Manuscript Title</th>
+                                <th style="width: 24%;" data-i18n="preprints_col_field">Research Frontier</th>
+                                <th style="width: 20%;" data-i18n="preprints_col_doi">Official DOI Record</th>
+                            </tr>
+                        </thead>
+                        <tbody id="preprintsTableBody">
+
+                        <tr class="preprint-row" data-search="rnd-01 predicting downstream performance degradation in computer vision models under representation-level domain shift domain shift & latent features domain shift & espacio latente">
+                            <td><span class="preprint-code-tag">RND-01</span></td>
+                            <td><strong style="color: #fff;">Predicting Downstream Performance Degradation in Computer Vision Models Under Representation-Level Domain Shift</strong></td>
+                            <td><span style="color: #8b5cf6; font-weight: 600;" class="preprint-area-text" data-area-en="Domain Shift & Latent Features" data-area-es="Domain Shift & Espacio Latente">Domain Shift & Latent Features</span></td>
+                            <td><a href="https://zenodo.org/records/22716928" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22716928</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="rnd-02 an autonomous evaluation framework for quantitative robustness, faithful explainability, and failure-mode auditing in vision models explainable ai (xai) & saliency ia explicable (xai) & saliency">
+                            <td><span class="preprint-code-tag">RND-02</span></td>
+                            <td><strong style="color: #fff;">An Autonomous Evaluation Framework for Quantitative Robustness, Faithful Explainability, and Failure-Mode Auditing in Vision Models</strong></td>
+                            <td><span style="color: #f59e0b; font-weight: 600;" class="preprint-area-text" data-area-en="Explainable AI (XAI) & Saliency" data-area-es="IA Explicable (XAI) & Saliency">Explainable AI (XAI) & Saliency</span></td>
+                            <td><a href="https://zenodo.org/records/22716935" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22716935</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="rnd-03 agentic mlops: llm-driven orchestration of distributed vision training clusters via model context protocol agentic mlops & fastmcp mlops agéntico & fastmcp">
+                            <td><span class="preprint-code-tag">RND-03</span></td>
+                            <td><strong style="color: #fff;">Agentic MLOps: LLM-Driven Orchestration of Distributed Vision Training Clusters via Model Context Protocol</strong></td>
+                            <td><span style="color: #06b6d4; font-weight: 600;" class="preprint-area-text" data-area-en="Agentic MLOps & FastMCP" data-area-es="MLOps Agéntico & FastMCP">Agentic MLOps & FastMCP</span></td>
+                            <td><a href="https://zenodo.org/records/22715752" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715752</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="rnd-04 automated dataset profiling and exploratory validation in the wyoloservice2 stack explainable ai (xai) & saliency ia explicable (xai) & saliency">
+                            <td><span class="preprint-code-tag">RND-04</span></td>
+                            <td><strong style="color: #fff;">Automated Dataset Profiling and Exploratory Validation in the wyoloservice2 Stack</strong></td>
+                            <td><span style="color: #f59e0b; font-weight: 600;" class="preprint-area-text" data-area-en="Explainable AI (XAI) & Saliency" data-area-es="IA Explicable (XAI) & Saliency">Explainable AI (XAI) & Saliency</span></td>
+                            <td><a href="https://zenodo.org/records/22715756" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715756</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="rnd-05 quantifying yolo model robustness — adversarial attacks, noise resilience, and uncertainty estimation adversarial robustness & noise robustez adversarial & ruido">
+                            <td><span class="preprint-code-tag">RND-05</span></td>
+                            <td><strong style="color: #fff;">Quantifying YOLO Model Robustness — Adversarial Attacks, Noise Resilience, and Uncertainty Estimation</strong></td>
+                            <td><span style="color: #ef4444; font-weight: 600;" class="preprint-area-text" data-area-en="Adversarial Robustness & Noise" data-area-es="Robustez Adversarial & Ruido">Adversarial Robustness & Noise</span></td>
+                            <td><a href="https://zenodo.org/records/22715764" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715764</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="rnd-06 automated cross-domain generalization assessment for yolo object detection: fid-based domain shift quantification and hardware profiling domain shift & latent features domain shift & espacio latente">
+                            <td><span class="preprint-code-tag">RND-06</span></td>
+                            <td><strong style="color: #fff;">Automated Cross-Domain Generalization Assessment for YOLO Object Detection: FID-Based Domain Shift Quantification and Hardware Profiling</strong></td>
+                            <td><span style="color: #8b5cf6; font-weight: 600;" class="preprint-area-text" data-area-en="Domain Shift & Latent Features" data-area-es="Domain Shift & Espacio Latente">Domain Shift & Latent Features</span></td>
+                            <td><a href="https://zenodo.org/records/22715775" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715775</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="rnd-07 llm-powered automated research reporting for computer vision pipelines: from training metrics to scientific narratives agentic mlops & fastmcp mlops agéntico & fastmcp">
+                            <td><span class="preprint-code-tag">RND-07</span></td>
+                            <td><strong style="color: #fff;">LLM-Powered Automated Research Reporting for Computer Vision Pipelines: From Training Metrics to Scientific Narratives</strong></td>
+                            <td><span style="color: #06b6d4; font-weight: 600;" class="preprint-area-text" data-area-en="Agentic MLOps & FastMCP" data-area-es="MLOps Agéntico & FastMCP">Agentic MLOps & FastMCP</span></td>
+                            <td><a href="https://zenodo.org/records/22715785" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715785</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="rnd-08 decentralized mlops architecture for autonomous training and integrated explainability explainable ai (xai) & saliency ia explicable (xai) & saliency">
+                            <td><span class="preprint-code-tag">RND-08</span></td>
+                            <td><strong style="color: #fff;">Decentralized MLOps Architecture for Autonomous Training and Integrated Explainability</strong></td>
+                            <td><span style="color: #f59e0b; font-weight: 600;" class="preprint-area-text" data-area-en="Explainable AI (XAI) & Saliency" data-area-es="IA Explicable (XAI) & Saliency">Explainable AI (XAI) & Saliency</span></td>
+                            <td><a href="https://zenodo.org/records/22715789" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715789</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="rnd-09 beyond metrics: autonomous evaluation of neural networks via grad-cam and local llms explainable ai (xai) & saliency ia explicable (xai) & saliency">
+                            <td><span class="preprint-code-tag">RND-09</span></td>
+                            <td><strong style="color: #fff;">Beyond Metrics: Autonomous Evaluation of Neural Networks via Grad-CAM and Local LLMs</strong></td>
+                            <td><span style="color: #f59e0b; font-weight: 600;" class="preprint-area-text" data-area-en="Explainable AI (XAI) & Saliency" data-area-es="IA Explicable (XAI) & Saliency">Explainable AI (XAI) & Saliency</span></td>
+                            <td><a href="https://zenodo.org/records/22715803" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715803</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-01 neuralforge: a distributed mlops framework for automated yolo hyperparameter optimization distributed mlops architecture arquitectura mlops distribuida">
+                            <td><span class="preprint-code-tag">NP-01</span></td>
+                            <td><strong style="color: #fff;">NeuralForge: A Distributed MLOps Framework for Automated YOLO Hyperparameter Optimization</strong></td>
+                            <td><span style="color: #3b82f6; font-weight: 600;" class="preprint-area-text" data-area-en="Distributed MLOps Architecture" data-area-es="Arquitectura MLOps Distribuida">Distributed MLOps Architecture</span></td>
+                            <td><a href="https://zenodo.org/records/22715816" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715816</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-02 industrial experience report: the invoker-executor pattern for fault isolation in distributed yolo training distributed mlops architecture arquitectura mlops distribuida">
+                            <td><span class="preprint-code-tag">NP-02</span></td>
+                            <td><strong style="color: #fff;">Industrial Experience Report: The Invoker-Executor Pattern for Fault Isolation in Distributed YOLO Training</strong></td>
+                            <td><span style="color: #3b82f6; font-weight: 600;" class="preprint-area-text" data-area-en="Distributed MLOps Architecture" data-area-es="Arquitectura MLOps Distribuida">Distributed MLOps Architecture</span></td>
+                            <td><a href="https://zenodo.org/records/22715827" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715827</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-03 wpipe: a declarative pipeline framework with forensic tracking for ml workflows distributed mlops architecture arquitectura mlops distribuida">
+                            <td><span class="preprint-code-tag">NP-03</span></td>
+                            <td><strong style="color: #fff;">WPipe: A Declarative Pipeline Framework with Forensic Tracking for ML Workflows</strong></td>
+                            <td><span style="color: #3b82f6; font-weight: 600;" class="preprint-area-text" data-area-en="Distributed MLOps Architecture" data-area-es="Arquitectura MLOps Distribuida">Distributed MLOps Architecture</span></td>
+                            <td><a href="https://zenodo.org/records/22715839" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715839</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-04 outlier failure analysis: a data-centric approach to hard-negative mining in yolo distributed mlops architecture arquitectura mlops distribuida">
+                            <td><span class="preprint-code-tag">NP-04</span></td>
+                            <td><strong style="color: #fff;">Outlier Failure Analysis: A Data-Centric Approach to Hard-Negative Mining in YOLO</strong></td>
+                            <td><span style="color: #3b82f6; font-weight: 600;" class="preprint-area-text" data-area-en="Distributed MLOps Architecture" data-area-es="Arquitectura MLOps Distribuida">Distributed MLOps Architecture</span></td>
+                            <td><a href="https://zenodo.org/records/22715846" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715846</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-05 automated hardware complexity profiling for edge-deployed yolo models distributed mlops architecture arquitectura mlops distribuida">
+                            <td><span class="preprint-code-tag">NP-05</span></td>
+                            <td><strong style="color: #fff;">Automated Hardware Complexity Profiling for Edge-Deployed YOLO Models</strong></td>
+                            <td><span style="color: #3b82f6; font-weight: 600;" class="preprint-area-text" data-area-en="Distributed MLOps Architecture" data-area-es="Arquitectura MLOps Distribuida">Distributed MLOps Architecture</span></td>
+                            <td><a href="https://zenodo.org/records/22715852" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715852</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-06 automated explainable ai pipeline for yolo models: from grad-cam to quantitative fidelity validation explainable ai (xai) & saliency ia explicable (xai) & saliency">
+                            <td><span class="preprint-code-tag">NP-06</span></td>
+                            <td><strong style="color: #fff;">Automated Explainable AI Pipeline for YOLO Models: From Grad-CAM to Quantitative Fidelity Validation</strong></td>
+                            <td><span style="color: #f59e0b; font-weight: 600;" class="preprint-area-text" data-area-en="Explainable AI (XAI) & Saliency" data-area-es="IA Explicable (XAI) & Saliency">Explainable AI (XAI) & Saliency</span></td>
+                            <td><a href="https://zenodo.org/records/22715858" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715858</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-07 quantifying yolo model robustness: adversarial attacks, noise resilience, and uncertainty estimation in real-world deployment adversarial robustness & noise robustez adversarial & ruido">
+                            <td><span class="preprint-code-tag">NP-07</span></td>
+                            <td><strong style="color: #fff;">Quantifying YOLO Model Robustness: Adversarial Attacks, Noise Resilience, and Uncertainty Estimation in Real-World Deployment</strong></td>
+                            <td><span style="color: #ef4444; font-weight: 600;" class="preprint-area-text" data-area-en="Adversarial Robustness & Noise" data-area-es="Robustez Adversarial & Ruido">Adversarial Robustness & Noise</span></td>
+                            <td><a href="https://zenodo.org/records/22715864" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715864</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-08 robustness and noise evaluation for real-world object detection: defending against sensor degradation adversarial robustness & noise robustez adversarial & ruido">
+                            <td><span class="preprint-code-tag">NP-08</span></td>
+                            <td><strong style="color: #fff;">Robustness and Noise Evaluation for Real-World Object Detection: Defending Against Sensor Degradation</strong></td>
+                            <td><span style="color: #ef4444; font-weight: 600;" class="preprint-area-text" data-area-en="Adversarial Robustness & Noise" data-area-es="Robustez Adversarial & Ruido">Adversarial Robustness & Noise</span></td>
+                            <td><a href="https://zenodo.org/records/22715870" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715870</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-09 statistical rigor in yolo model evaluation: bootstrap confidence intervals and failure mode analysis statistical rigor & bootstrapping rigor estadístico & bootstrapping">
+                            <td><span class="preprint-code-tag">NP-09</span></td>
+                            <td><strong style="color: #fff;">Statistical Rigor in YOLO Model Evaluation: Bootstrap Confidence Intervals and Failure Mode Analysis</strong></td>
+                            <td><span style="color: #10b981; font-weight: 600;" class="preprint-area-text" data-area-en="Statistical Rigor & Bootstrapping" data-area-es="Rigor Estadístico & Bootstrapping">Statistical Rigor & Bootstrapping</span></td>
+                            <td><a href="https://zenodo.org/records/22715887" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715887</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-10 cross-domain generalization assessment for object detection models: fid-based domain shift detection domain shift & latent features domain shift & espacio latente">
+                            <td><span class="preprint-code-tag">NP-10</span></td>
+                            <td><strong style="color: #fff;">Cross-Domain Generalization Assessment for Object Detection Models: FID-Based Domain Shift Detection</strong></td>
+                            <td><span style="color: #8b5cf6; font-weight: 600;" class="preprint-area-text" data-area-en="Domain Shift & Latent Features" data-area-es="Domain Shift & Espacio Latente">Domain Shift & Latent Features</span></td>
+                            <td><a href="https://zenodo.org/records/22715899" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715899</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="np-11 llm-assisted training report generation in a distributed mlops pipeline: architecture, deterministic fallback, and empirical evaluation agentic mlops & fastmcp mlops agéntico & fastmcp">
+                            <td><span class="preprint-code-tag">NP-11</span></td>
+                            <td><strong style="color: #fff;">LLM-Assisted Training Report Generation in a Distributed MLOps Pipeline: Architecture, Deterministic Fallback, and Empirical Evaluation</strong></td>
+                            <td><span style="color: #06b6d4; font-weight: 600;" class="preprint-area-text" data-area-en="Agentic MLOps & FastMCP" data-area-es="MLOps Agéntico & FastMCP">Agentic MLOps & FastMCP</span></td>
+                            <td><a href="https://zenodo.org/records/22715914" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22715914</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="phd-01 self-healing distributed mlops: autonomous fault detection node eviction and resilient state reconciliation doctoral frontiers & formal verification fronteras doctorales & verificación formal">
+                            <td><span class="preprint-code-tag">PHD-01</span></td>
+                            <td><strong style="color: #fff;">Self-Healing Distributed MLOps: Autonomous Fault Detection Node Eviction and Resilient State Reconciliation</strong></td>
+                            <td><span style="color: #bef264; font-weight: 600;" class="preprint-area-text" data-area-en="Doctoral Frontiers & Formal Verification" data-area-es="Fronteras Doctorales & Verificación Formal">Doctoral Frontiers & Formal Verification</span></td>
+                            <td><a href="https://zenodo.org/records/22716656" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22716656</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="phd-02 formal verification of agentic mlops protocols: model checking and liveness guarantees in distributed model context protocol workflows doctoral frontiers & formal verification fronteras doctorales & verificación formal">
+                            <td><span class="preprint-code-tag">PHD-02</span></td>
+                            <td><strong style="color: #fff;">Formal Verification of Agentic MLOps Protocols: Model Checking and Liveness Guarantees in Distributed Model Context Protocol Workflows</strong></td>
+                            <td><span style="color: #bef264; font-weight: 600;" class="preprint-area-text" data-area-en="Doctoral Frontiers & Formal Verification" data-area-es="Fronteras Doctorales & Verificación Formal">Doctoral Frontiers & Formal Verification</span></td>
+                            <td><a href="https://zenodo.org/records/22716667" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22716667</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="phd-03 causal saliency regularization: mitigating clever hans artifacts in deep object detectors via in-training explainability penalties doctoral frontiers & formal verification fronteras doctorales & verificación formal">
+                            <td><span class="preprint-code-tag">PHD-03</span></td>
+                            <td><strong style="color: #fff;">Causal Saliency Regularization: Mitigating Clever Hans Artifacts in Deep Object Detectors via In-Training Explainability Penalties</strong></td>
+                            <td><span style="color: #bef264; font-weight: 600;" class="preprint-area-text" data-area-en="Doctoral Frontiers & Formal Verification" data-area-es="Fronteras Doctorales & Verificación Formal">Doctoral Frontiers & Formal Verification</span></td>
+                            <td><a href="https://zenodo.org/records/22716676" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22716676</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="phd-04 conformal prediction and epistemic uncertainty decomposition for safety-critical edge vision under dynamic domain shift doctoral frontiers & formal verification fronteras doctorales & verificación formal">
+                            <td><span class="preprint-code-tag">PHD-04</span></td>
+                            <td><strong style="color: #fff;">Conformal Prediction and Epistemic Uncertainty Decomposition for Safety-Critical Edge Vision under Dynamic Domain Shift</strong></td>
+                            <td><span style="color: #bef264; font-weight: 600;" class="preprint-area-text" data-area-en="Doctoral Frontiers & Formal Verification" data-area-es="Fronteras Doctorales & Verificación Formal">Doctoral Frontiers & Formal Verification</span></td>
+                            <td><a href="https://zenodo.org/records/22716681" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22716681</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="phd-05 carbon-aware edge shrinkage: dynamic head pruning and adaptive voltage-frequency scaling for green object detection doctoral frontiers & formal verification fronteras doctorales & verificación formal">
+                            <td><span class="preprint-code-tag">PHD-05</span></td>
+                            <td><strong style="color: #fff;">Carbon-Aware Edge Shrinkage: Dynamic Head Pruning and Adaptive Voltage-Frequency Scaling for Green Object Detection</strong></td>
+                            <td><span style="color: #bef264; font-weight: 600;" class="preprint-area-text" data-area-en="Doctoral Frontiers & Formal Verification" data-area-es="Fronteras Doctorales & Verificación Formal">Doctoral Frontiers & Formal Verification</span></td>
+                            <td><a href="https://zenodo.org/records/22716692" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22716692</a></td>
+                        </tr>
+
+                        <tr class="preprint-row" data-search="phd-06 zero-shot diffusion purification: stochastic denoising defense for yolo detectors against transferable adversarial attacks doctoral frontiers & formal verification fronteras doctorales & verificación formal">
+                            <td><span class="preprint-code-tag">PHD-06</span></td>
+                            <td><strong style="color: #fff;">Zero-Shot Diffusion Purification: Stochastic Denoising Defense for YOLO Detectors against Transferable Adversarial Attacks</strong></td>
+                            <td><span style="color: #bef264; font-weight: 600;" class="preprint-area-text" data-area-en="Doctoral Frontiers & Formal Verification" data-area-es="Fronteras Doctorales & Verificación Formal">Doctoral Frontiers & Formal Verification</span></td>
+                            <td><a href="https://zenodo.org/records/22716695" target="_blank" class="preprint-doi-link"><i class="fas fa-external-link-alt"></i> 10.5281/zenodo.22716695</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Complete 23-Libraries PyPI Catalog (Matched exactly with w-cli) -->
+    <!-- Complete 23-Libraries PyPI Catalog with Instant Search -->
     <section class="libraries" id="libraries">
         <div class="container">
             <div class="section-title">
                 <h2 data-i18n="catalog_title">Official Suite Catalog (23 PyPI Packages)</h2>
                 <p data-i18n="catalog_desc">All 23 public PyPI packages actively maintained and installable via the automated <code>w-cli</code> terminal suite.</p>
+            </div>
+
+            <!-- Live Search Bar -->
+            <div class="search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="libSearchInput" oninput="handleLibrarySearch()" placeholder="Search 23 libraries by name, technology or keyword (e.g. kafka, wal, mcp, zero trust)...">
             </div>
 
             <!-- Categories Tabs -->
@@ -1383,11 +1978,16 @@
 
             <div class="libraries-grid" id="libGrid">
 
-                <div class="lib-card" data-cat="core" id="card-wpipe">
+                <div class="lib-card" data-cat="core" data-search="wpipe core sun high-performance python pipeline orchestrator (sync/async). declarative dag core engine with real gil-bypass parallelism, sqlite wal checkpoints, and contextual dependency injection. motor de pipelines desacoplado de alto rendimiento (sync/async). motor central declarativo con paralelismo real e inyección contextual de dependencias." id="card-wpipe">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-sun" style="color: #fbbf24;"></i></div>
-                            <span class="lib-type-tag tag-core" id="libtag-wpipe">CORE SUN</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wpipe')" title="Copy pip install wpipe">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-core" id="libtag-wpipe">CORE SUN</span>
+                            </div>
                         </div>
                         <h3>wpipe</h3>
                         <p id="libdesc-wpipe">High-performance Python pipeline orchestrator (Sync/Async). Declarative DAG core engine with real GIL-bypass parallelism, SQLite WAL checkpoints, and contextual dependency injection.</p>
@@ -1403,11 +2003,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="messaging" id="card-wkafka">
+                <div class="lib-card" data-cat="messaging" data-search="wkafka streaming decorator-based high-throughput wrapper for apache kafka. non-blocking consumers/producers with automated reconnection, thread pools, and backpressure handling. abstracción declarativa para apache kafka con decoradores de suscripción/publicación, procesamiento multihilo y reconexión automática." id="card-wkafka">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-stream" style="color: #f59e0b;"></i></div>
-                            <span class="lib-type-tag tag-msg" id="libtag-wkafka">Streaming</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wkafka')" title="Copy pip install wkafka">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-msg" id="libtag-wkafka">Streaming</span>
+                            </div>
                         </div>
                         <h3>wkafka</h3>
                         <p id="libdesc-wkafka">Decorator-based high-throughput wrapper for Apache Kafka. Non-blocking consumers/producers with automated reconnection, thread pools, and backpressure handling.</p>
@@ -1423,11 +2028,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="database" id="card-wredis">
+                <div class="lib-card" data-cat="database" data-search="wredis cache & locks ultra-fast redis sync/async integration & caching suite. connection pooling, token-bucket distributed rate limiters, pub/sub streams, and atomic distributed locks. suite de caché y mensajería redis de alto rendimiento con pooling optimizado, limitadores de tasa token-bucket y distributed locks atómicos." id="card-wredis">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-bolt" style="color: #ef4444;"></i></div>
-                            <span class="lib-type-tag tag-db" id="libtag-wredis">Cache & Locks</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wredis')" title="Copy pip install wredis">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wredis">Cache & Locks</span>
+                            </div>
                         </div>
                         <h3>wredis</h3>
                         <p id="libdesc-wredis">Ultra-fast Redis sync/async integration & caching suite. Connection pooling, token-bucket distributed rate limiters, pub/sub streams, and atomic distributed locks.</p>
@@ -1443,11 +2053,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="core" id="card-wdecorators">
+                <div class="lib-card" data-cat="core" data-search="wdecorators resilience reusable high-level decorator suite. implements exponential backoff with full jitter, runtime latency profiling, memory tracing, and structured loguru logging. colección de decoradores avanzados para reintentos exponenciales con jitter, perfilado de latencia en microsegundos y telemetría estructurada." id="card-wdecorators">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-wand-magic-sparkles" style="color: #ec4899;"></i></div>
-                            <span class="lib-type-tag tag-core" id="libtag-wdecorators">Resilience</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wdecorators')" title="Copy pip install wdecorators">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-core" id="libtag-wdecorators">Resilience</span>
+                            </div>
                         </div>
                         <h3>wdecorators</h3>
                         <p id="libdesc-wdecorators">Reusable high-level decorator suite. Implements exponential backoff with full jitter, runtime latency profiling, memory tracing, and structured Loguru logging.</p>
@@ -1463,11 +2078,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mcp" id="card-wpipe-mcp">
+                <div class="lib-card" data-cat="mcp" data-search="wpipe-mcp fastmcp official fastmcp server for wpipe pipeline architecture. enables llm agents (claude, cursor, antigravity) to design, inspect, formally verify, and dry-run dag execution flows. servidor fastmcp oficial para wpipe. permite a modelos de lenguaje (claude, antigravity, cursor) inspeccionar, verificar formalmente y ejecutar pipelines wpipe." id="card-wpipe-mcp">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-robot" style="color: #06b6d4;"></i></div>
-                            <span class="lib-type-tag tag-mcp" id="libtag-wpipe-mcp">FastMCP</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wpipe-mcp')" title="Copy pip install wpipe-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wpipe-mcp">FastMCP</span>
+                            </div>
                         </div>
                         <h3>wpipe-mcp</h3>
                         <p id="libdesc-wpipe-mcp">Official FastMCP Server for wpipe pipeline architecture. Enables LLM agents (Claude, Cursor, Antigravity) to design, inspect, formally verify, and dry-run DAG execution flows.</p>
@@ -1483,11 +2103,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="database" id="card-wpostgresql">
+                <div class="lib-card" data-cat="database" data-search="wpostgresql relational high-concurrency postgresql connection pooler and enterprise orm mapper. thread-safe connection pools, acid transaction decorators, and pydantic model synchronization. pooler de conexiones empresarial y mapeador orm para postgresql con actualización dinámica de esquemas, soporte acid y modelos pydantic." id="card-wpostgresql">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-server" style="color: #3b82f6;"></i></div>
-                            <span class="lib-type-tag tag-db" id="libtag-wpostgresql">Relational</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wpostgresql')" title="Copy pip install wpostgresql">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wpostgresql">Relational</span>
+                            </div>
                         </div>
                         <h3>wpostgresql</h3>
                         <p id="libdesc-wpostgresql">High-concurrency PostgreSQL connection pooler and enterprise ORM mapper. Thread-safe connection pools, ACID transaction decorators, and Pydantic model synchronization.</p>
@@ -1503,11 +2128,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="core" id="card-wpipe-steps">
+                <div class="lib-card" data-cat="core" data-search="wpipe-steps modular steps official catalog of production-ready modular steps for wpipe. pre-built, strongly typed steps for data ingestion, etl, computer vision, and ml transformations. catálogo oficial de pasos modulares listos para producción para el orquestador wpipe en ingesta de datos, etl, visión y ml." id="card-wpipe-steps">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-layer-group" style="color: #eab308;"></i></div>
-                            <span class="lib-type-tag tag-core" id="libtag-wpipe-steps">Modular Steps</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wpipe-steps')" title="Copy pip install wpipe-steps">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-core" id="libtag-wpipe-steps">Modular Steps</span>
+                            </div>
                         </div>
                         <h3>wpipe-steps</h3>
                         <p id="libdesc-wpipe-steps">Official catalog of production-ready modular steps for wpipe. Pre-built, strongly typed steps for data ingestion, ETL, computer vision, and ML transformations.</p>
@@ -1523,11 +2153,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="database" id="card-wsqlite">
+                <div class="lib-card" data-cat="database" data-search="wsqlite embedded db high-performance sqlite orm wrapper featuring reactive tablesync. optimized multi-thread write-ahead logging (wal) mode, connection pooling, and automated schema migration. orm de alto rendimiento para sqlite con tablesync reactivo, serialización pydantic v2 y soporte nativo para modo wal concurrente multihilo." id="card-wsqlite">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-database" style="color: #10b981;"></i></div>
-                            <span class="lib-type-tag tag-db" id="libtag-wsqlite">Embedded DB</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wsqlite')" title="Copy pip install wsqlite">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wsqlite">Embedded DB</span>
+                            </div>
                         </div>
                         <h3>wsqlite</h3>
                         <p id="libdesc-wsqlite">High-performance SQLite ORM wrapper featuring reactive TableSync. Optimized multi-thread Write-Ahead Logging (WAL) mode, connection pooling, and automated schema migration.</p>
@@ -1543,11 +2178,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mlops" id="card-wyolo">
+                <div class="lib-card" data-cat="mlops" data-search="wyolo computer vision complete lifecycle training wrapper for yolo (v8, v11, yolo26) and rt-detr. seamless synchronization of weights to minio s3 and real-time metric logging to mlflow. wrapper de ciclo de vida completo para modelos yolo (v8, v11, yolo26) y rt-detr con telemetría integrada a mlflow y almacenamiento en minio s3." id="card-wyolo">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-crosshairs" style="color: #10b981;"></i></div>
-                            <span class="lib-type-tag tag-dev" id="libtag-wyolo">Computer Vision</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wyolo')" title="Copy pip install wyolo">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-dev" id="libtag-wyolo">Computer Vision</span>
+                            </div>
                         </div>
                         <h3>wyolo</h3>
                         <p id="libdesc-wyolo">Complete lifecycle training wrapper for YOLO (v8, v11, YOLO26) and RT-DETR. Seamless synchronization of weights to MinIO S3 and real-time metric logging to MLflow.</p>
@@ -1563,11 +2203,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mcp" id="card-wyoloservice-mcp">
+                <div class="lib-card" data-cat="mcp" data-search="wyoloservice-mcp fastmcp cluster fastmcp server for neuralforgeai yolo cluster orchestration. enables llms to validate datasets, generate sweeper v2 configurations, inspect gpu queues, and dispatch optuna sweeps. servidor fastmcp para orquestación agéntica de clusters neuralforgeai: validación de datasets, generación de configs sweeper v2 y despacho de estudios optuna." id="card-wyoloservice-mcp">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-brain" style="color: #ec4899;"></i></div>
-                            <span class="lib-type-tag tag-mcp" id="libtag-wyoloservice-mcp">FastMCP Cluster</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wyoloservice-mcp')" title="Copy pip install wyoloservice-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wyoloservice-mcp">FastMCP Cluster</span>
+                            </div>
                         </div>
                         <h3>wyoloservice-mcp</h3>
                         <p id="libdesc-wyoloservice-mcp">FastMCP Server for NeuralForgeAI YOLO cluster orchestration. Enables LLMs to validate datasets, generate Sweeper v2 configurations, inspect GPU queues, and dispatch Optuna sweeps.</p>
@@ -1583,11 +2228,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="security" id="card-wauth">
+                <div class="lib-card" data-cat="security" data-search="wauth credentials vault cryptographic secrets encryption vault locked to host hardware fingerprints (machine-salted). aes-256 fernet symmetric encryption protecting sensitive cluster configurations. bóveda criptográfica de credenciales vinculada a huellas de hardware del host (machine-salted) con cifrado simétrico fernet aes-256." id="card-wauth">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-key" style="color: #d946ef;"></i></div>
-                            <span class="lib-type-tag tag-sec" id="libtag-wauth">Credentials Vault</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wauth')" title="Copy pip install wauth">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-sec" id="libtag-wauth">Credentials Vault</span>
+                            </div>
                         </div>
                         <h3>wauth</h3>
                         <p id="libdesc-wauth">Cryptographic secrets encryption vault locked to host hardware fingerprints (machine-salted). AES-256 Fernet symmetric encryption protecting sensitive cluster configurations.</p>
@@ -1603,11 +2253,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="security" id="card-wFabricSecurity">
+                <div class="lib-card" data-cat="security" data-search="wfabricsecurity zero trust industrial zero trust security architecture for hyperledger fabric networks. ecdsa p-256 digital signature validation, sha-256 code integrity hashing, and cryptographic audits. arquitectura de seguridad zero trust para hyperledger fabric con verificación criptográfica ecdsa p-256 e integridad forense de código por sha-256." id="card-wFabricSecurity">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-shield-halved" style="color: #64748b;"></i></div>
-                            <span class="lib-type-tag tag-sec" id="libtag-wFabricSecurity">Zero Trust</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wFabricSecurity')" title="Copy pip install wFabricSecurity">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-sec" id="libtag-wFabricSecurity">Zero Trust</span>
+                            </div>
                         </div>
                         <h3>wFabricSecurity</h3>
                         <p id="libdesc-wFabricSecurity">Industrial Zero Trust security architecture for Hyperledger Fabric networks. ECDSA P-256 digital signature validation, SHA-256 code integrity hashing, and cryptographic audits.</p>
@@ -1623,11 +2278,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mlops" id="card-ProcessAudio">
+                <div class="lib-card" data-cat="mlops" data-search="processaudio audio ml / dsp scikit-learn compatible transformers for audio feature extraction (mel spectrograms, mfcc, fft spectral centroid) and real-time acoustic data augmentation pipelines. transformadores scikit-learn para espectrogramas mel, extracción de características acústicas mfcc, análisis espectral fft y aumentación de audio." id="card-ProcessAudio">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-wave-square" style="color: #8b5cf6;"></i></div>
-                            <span class="lib-type-tag tag-dev" id="libtag-ProcessAudio">Audio ML / DSP</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install ProcessAudio')" title="Copy pip install ProcessAudio">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-dev" id="libtag-ProcessAudio">Audio ML / DSP</span>
+                            </div>
                         </div>
                         <h3>ProcessAudio</h3>
                         <p id="libdesc-ProcessAudio">Scikit-learn compatible transformers for audio feature extraction (Mel spectrograms, MFCC, FFT spectral centroid) and real-time acoustic data augmentation pipelines.</p>
@@ -1643,11 +2303,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="database" id="card-wclickhouse">
+                <div class="lib-card" data-cat="database" data-search="wclickhouse olap analytics high-throughput clickhouse orm mapping using clickhouse-connect. optimized for bulk batch insertions, columnar time-series aggregation, and deep learning inference telemetry. mapeador orm para clickhouse orientado a analítica olap masiva por lotes (bulk inserts) y telemetría columnar de modelos de deep learning." id="card-wclickhouse">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-chart-line" style="color: #f97316;"></i></div>
-                            <span class="lib-type-tag tag-db" id="libtag-wclickhouse">OLAP Analytics</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wclickhouse')" title="Copy pip install wclickhouse">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wclickhouse">OLAP Analytics</span>
+                            </div>
                         </div>
                         <h3>wclickhouse</h3>
                         <p id="libdesc-wclickhouse">High-throughput ClickHouse ORM mapping using clickhouse-connect. Optimized for bulk batch insertions, columnar time-series aggregation, and deep learning inference telemetry.</p>
@@ -1663,11 +2328,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mlops" id="card-wcontainer">
+                <div class="lib-card" data-cat="mlops" data-search="wcontainer docker sdk docker sdk automation engine: ephemeral container spawner, gpu vram & cpu quota enforcement governors, and embedded trivy vulnerability scanning. automatización de docker sdk: gobernador de cuotas vram/cpu, escaneo de vulnerabilidades trivy y gestión de contenedores efímeros aislados." id="card-wcontainer">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-docker" style="color: #0284c7;"></i></div>
-                            <span class="lib-type-tag tag-dev" id="libtag-wcontainer">Docker SDK</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wcontainer')" title="Copy pip install wcontainer">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-dev" id="libtag-wcontainer">Docker SDK</span>
+                            </div>
                         </div>
                         <h3>wcontainer</h3>
                         <p id="libdesc-wcontainer">Docker SDK automation engine: ephemeral container spawner, GPU VRAM & CPU quota enforcement governors, and embedded Trivy vulnerability scanning.</p>
@@ -1683,11 +2353,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="database" id="card-wmongo">
+                <div class="lib-card" data-cat="database" data-search="wmongo document nosql reactive mongodb document mapper utilizing pydantic models. features automatic query caching on wredis, safe aggregation pipelines, and lifecycle event listeners. mapeador documental para mongodb con modelos pydantic, caché reactiva de consultas en redis y listeners de eventos de ciclo de vida." id="card-wmongo">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-leaf" style="color: #10b981;"></i></div>
-                            <span class="lib-type-tag tag-db" id="libtag-wmongo">Document NoSQL</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wmongo')" title="Copy pip install wmongo">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wmongo">Document NoSQL</span>
+                            </div>
                         </div>
                         <h3>wmongo</h3>
                         <p id="libdesc-wmongo">Reactive MongoDB document mapper utilizing Pydantic models. Features automatic query caching on wredis, safe aggregation pipelines, and lifecycle event listeners.</p>
@@ -1703,11 +2378,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mcp" id="card-wkafka-mcp">
+                <div class="lib-card" data-cat="mcp" data-search="wkafka-mcp fastmcp kafka fastmcp server for kafka event streaming and topic inspection. exposes tools for llm agents to monitor topic partitions, consumer group lag, and inject telemetry payloads. servidor fastmcp para streaming de eventos y supervisión de tópicos kafka. herramientas mcp para monitorización de lag de particiones e inyección de eventos." id="card-wkafka-mcp">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-plug" style="color: #f59e0b;"></i></div>
-                            <span class="lib-type-tag tag-mcp" id="libtag-wkafka-mcp">FastMCP Kafka</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wkafka-mcp')" title="Copy pip install wkafka-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wkafka-mcp">FastMCP Kafka</span>
+                            </div>
                         </div>
                         <h3>wkafka-mcp</h3>
                         <p id="libdesc-wkafka-mcp">FastMCP Server for Kafka event streaming and topic inspection. Exposes tools for LLM agents to monitor topic partitions, consumer group lag, and inject telemetry payloads.</p>
@@ -1723,11 +2403,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mcp" id="card-wredis-mcp">
+                <div class="lib-card" data-cat="mcp" data-search="wredis-mcp fastmcp redis fastmcp server for redis cache management and memory profiling. enables ai agents to safely query keys, inspect data structures, and monitor memory fragmentation. servidor fastmcp para inspección, profiling de memoria y administración de instancias redis por agentes llm sin comandos destructivos." id="card-wredis-mcp">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-plug" style="color: #ef4444;"></i></div>
-                            <span class="lib-type-tag tag-mcp" id="libtag-wredis-mcp">FastMCP Redis</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wredis-mcp')" title="Copy pip install wredis-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wredis-mcp">FastMCP Redis</span>
+                            </div>
                         </div>
                         <h3>wredis-mcp</h3>
                         <p id="libdesc-wredis-mcp">FastMCP Server for Redis cache management and memory profiling. Enables AI agents to safely query keys, inspect data structures, and monitor memory fragmentation.</p>
@@ -1743,11 +2428,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mcp" id="card-wpostgresql-mcp">
+                <div class="lib-card" data-cat="mcp" data-search="wpostgresql-mcp fastmcp postgres fastmcp server for postgresql enterprise databases. gives llm agents safe, parameterized query tools, schema inspection capabilities, and role permission validation. servidor fastmcp para integración de agentes de ia con bases de datos postgresql: inspección de esquemas, consultas con timeout y control de accesos." id="card-wpostgresql-mcp">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-plug" style="color: #3b82f6;"></i></div>
-                            <span class="lib-type-tag tag-mcp" id="libtag-wpostgresql-mcp">FastMCP Postgres</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wpostgresql-mcp')" title="Copy pip install wpostgresql-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wpostgresql-mcp">FastMCP Postgres</span>
+                            </div>
                         </div>
                         <h3>wpostgresql-mcp</h3>
                         <p id="libdesc-wpostgresql-mcp">FastMCP Server for PostgreSQL enterprise databases. Gives LLM agents safe, parameterized query tools, schema inspection capabilities, and role permission validation.</p>
@@ -1763,11 +2453,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mcp" id="card-wsqlite-mcp">
+                <div class="lib-card" data-cat="mcp" data-search="wsqlite-mcp fastmcp sqlite fastmcp server for sqlite database inspection and queries. parametric safe queries, index statistics analysis, and audit state extraction for wpipe pipelines. servidor fastmcp para análisis semántico e inspección de bases de datos sqlite por modelos de ia con consultas parametrizadas seguras y estadísticas de índices." id="card-wsqlite-mcp">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-plug" style="color: #10b981;"></i></div>
-                            <span class="lib-type-tag tag-mcp" id="libtag-wsqlite-mcp">FastMCP SQLite</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wsqlite-mcp')" title="Copy pip install wsqlite-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wsqlite-mcp">FastMCP SQLite</span>
+                            </div>
                         </div>
                         <h3>wsqlite-mcp</h3>
                         <p id="libdesc-wsqlite-mcp">FastMCP Server for SQLite database inspection and queries. Parametric safe queries, index statistics analysis, and audit state extraction for wpipe pipelines.</p>
@@ -1783,11 +2478,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="core" id="card-wpipe-plugins">
+                <div class="lib-card" data-cat="core" data-search="wpipe-plugins plugins framework community-driven plugin repository and hot-reloadable extension framework for wpipe. dynamic dependency isolation for custom enterprise pipelines. repositorio de plugins comunitarios y extensiones especializadas para el ecosistema wpipe con carga dinámica y aislamiento de dependencias." id="card-wpipe-plugins">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-puzzle-piece" style="color: #8b5cf6;"></i></div>
-                            <span class="lib-type-tag tag-core" id="libtag-wpipe-plugins">Plugins Framework</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wpipe-plugins')" title="Copy pip install wpipe-plugins">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-core" id="libtag-wpipe-plugins">Plugins Framework</span>
+                            </div>
                         </div>
                         <h3>wpipe-plugins</h3>
                         <p id="libdesc-wpipe-plugins">Community-driven plugin repository and hot-reloadable extension framework for wpipe. Dynamic dependency isolation for custom enterprise pipelines.</p>
@@ -1803,11 +2503,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mlops" id="card-wutils">
+                <div class="lib-card" data-cat="mlops" data-search="wutils utilities & cron essential script scheduling and validation helpers. robust cron expression parser, dataset format verification, and algorithmic data normalization. utilidades esenciales de script scheduling, validación de formatos de datasets, parseo de expresiones cron y normalización algorítmica." id="card-wutils">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-toolbox" style="color: #f97316;"></i></div>
-                            <span class="lib-type-tag tag-dev" id="libtag-wutils">Utilities & Cron</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wutils')" title="Copy pip install wutils">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-dev" id="libtag-wutils">Utilities & Cron</span>
+                            </div>
                         </div>
                         <h3>wutils</h3>
                         <p id="libdesc-wutils">Essential script scheduling and validation helpers. Robust cron expression parser, dataset format verification, and algorithmic data normalization.</p>
@@ -1823,11 +2528,16 @@
                     </div>
                 </div>
 
-                <div class="lib-card" data-cat="mlops" id="card-wisrovi-python">
+                <div class="lib-card" data-cat="mlops" data-search="wisrovi-python core foundational core foundational python types, algorithms, and mathematical structures shared across all packages in the wisrovi ecosystem. optimized for inference efficiency. librería fundacional con utilidades matemáticas, estructuras algorítmicas base y tipos compartidos entre todos los paquetes de la suite wisrovi." id="card-wisrovi-python">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-python" style="color: #38bdf8;"></i></div>
-                            <span class="lib-type-tag tag-dev" id="libtag-wisrovi-python">Core Foundational</span>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wisrovi-python')" title="Copy pip install wisrovi-python">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-dev" id="libtag-wisrovi-python">Core Foundational</span>
+                            </div>
                         </div>
                         <h3>wisrovi-python</h3>
                         <p id="libdesc-wisrovi-python">Core foundational Python types, algorithms, and mathematical structures shared across all packages in the wisrovi ecosystem. Optimized for inference efficiency.</p>
@@ -1842,6 +2552,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div id="noResultsNotice" style="display: none; text-align: center; padding: 3rem 0; color: var(--gray); font-size: 1.1rem;">
+                <i class="fas fa-box-open" style="font-size: 2.5rem; color: rgba(255,255,255,0.15); display: block; margin-bottom: 0.8rem;"></i>
+                <span data-i18n="search_no_results">No libraries found matching your query.</span>
             </div>
         </div>
     </section>
@@ -1873,13 +2588,16 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section with 1-Click Copy -->
     <section class="cta">
         <div class="container">
             <h2 data-i18n="cta_title">Install the Suite with w-cli</h2>
             <p data-i18n="cta_desc">Install and manage any of the 23 official suite libraries with a single interactive terminal interface:</p>
-            <div class="code-box">
-                pip install w-cli &amp;&amp; w install pipe
+            <div class="code-box-wrapper">
+                <div class="code-box" id="terminalCmdText">pip install w-cli &amp;&amp; w install pipe</div>
+                <button type="button" class="btn-copy-terminal" onclick="copyText('pip install w-cli && w install pipe')">
+                    <i class="fas fa-copy"></i> <span data-i18n="copied_feedback">Copy</span>
+                </button>
             </div>
             <br>
             <a href="https://github.com/wisrovi/w-cli" class="btn btn-primary" target="_blank" style="background: var(--dark); color: var(--primary); box-shadow: 0 0 25px rgba(15, 23, 42, 0.6);">
@@ -1907,14 +2625,18 @@
         </div>
     </footer>
 
-    <!-- Core i18n and Filter JavaScript Engine -->
+    <!-- Core i18n, Search, Copy & Animation Engine -->
     <script>
-        const i18nData = {"en": {"page_title": "William Rodriguez (Wisrovi) | Principal AI Engineer & Suite Creator", "meta_desc": "William Steve Rodriguez Villamizar (Wisrovi) - Principal Software Engineer, AI Solutions Architect & Ph.D. Candidate. Python libraries ecosystem, distributed MLOps systems, and scientific research in Causal AI & Formal Verification.", "nav_solar": "Dual Solar System", "nav_mlops": "wyoloservice (MLOps)", "nav_academic": "Research & ORCID", "nav_libraries": "23 PyPI Packages", "doctoral_badge": "Ph.D. Fellowship Candidate in AI & Formal Verification", "hero_title": "William Rodriguez", "hero_subtitle": "Principal Software Engineer | AI Solutions Architect | Suite Creator", "hero_desc": "Distributed systems architect and creator of the <strong>Wisrovi Suite</strong> (23 official PyPI packages). Scientific researcher with 26 preprints indexed with CERN/Zenodo DOIs in Forensic Explainable AI (XAI), Conformal Prediction, and Agentic Formal Verification with LTL.", "hero_pillar1_title": "1. Production Engineering", "hero_pillar1_desc": "Scalable enterprise MLOps platforms (<strong>wyoloservice / NeuralForgeAI</strong>), GPU Celery queues, and reactive microservices.", "hero_pillar2_title": "2. Wisrovi Suite (PyPI)", "hero_pillar2_desc": "23 independent, modular libraries centered around the <code>wpipe</code> gravitational core and official FastMCP servers.", "hero_pillar3_title": "3. Scientific Research", "hero_pillar3_desc": "26 preprints with official CERN/Zenodo DOIs & verified ORCID. Mathematical rigor in causality, bootstrap bounds, and LTL.", "hero_btn_solar": "Explore Solar System", "hero_btn_orcid": "Official ORCID Profile", "hero_btn_github": "GitHub Suite", "solar_header_title": "The Binary Universe of the Wisrovi Suite", "solar_header_desc": "Visual architecture spanning two synchronized gravitational systems: the <strong>Main Universe</strong> with <code>wpipe</code> as the central Sun coordinating persistence, messaging, and distributed MLOps; and the <strong>Agentic Constellation</strong> where the <strong>AI Agent Hub</strong> orbits with 6 official <strong>FastMCP</strong> servers for seamless LLM interactions.", "universe_main_badge": "MAIN UNIVERSE", "universe_main_title": "Python Core Ecosystem & MLOps", "universe_main_desc": "<code>wpipe</code> as the central Sun coordinating streaming, transactional persistence, Zero Trust security, and distributed cluster training.", "sun_wpipe_title": "wpipe", "sun_wpipe_sub": "CENTRAL SUN", "universe_mcp_badge": "AGENTIC CONSTELLATION", "universe_mcp_title": "FastMCP Hub for LLM Agents", "universe_mcp_desc": "Autonomous agentic core powered by the <strong>6 official FastMCP Servers</strong> for Claude, Cursor, and Antigravity.", "sun_agent_title": "AI AGENT", "sun_agent_sub": "MCP HUB", "mlops_pill": "DISTRIBUTED PLATFORM (train_service_2)", "mlops_title": "wyoloservice: Distributed Training Platform", "mlops_desc": "Enterprise-grade distributed MLOps platform for Computer Vision architectures (YOLOv8, YOLOv11, YOLO26) featuring evolutionary optimization via <strong>Optuna TPESampler</strong> and forensic Explainable AI audits.", "mlops_f1": "<strong>22-Step Post-Training Lifecycle:</strong> Execution of multi-scale heatmaps (Grad-CAM/Eigen-CAM on P3/P4/P5), Deletion/Insertion AUC fidelity, and adversarial attacks (FGSM/PGD).", "mlops_f2": "<strong>Isolated Ephemeral Containers:</strong> Worker node daemon with dynamic GPU/VRAM quota governors and Samba CIFS dataset mounting.", "mlops_f3": "<strong>FastMCP Agentic Tools (wyoloservice-mcp):</strong> Enables autonomous LLMs (Claude, Antigravity, Cursor) to manage, validate, and dispatch distributed cluster sweeps in real time.", "academic_badge": "Verified Academic Record", "academic_title": "Scientific Research & Doctoral Aspirations", "academic_desc": "My research agenda combines formal mathematical rigor with mission-critical software engineering. Holding a Master's degree in Artificial Intelligence (VIU, Spain) and a Bachelor's in Electronic Engineering (UDI, Colombia), I pursue doctoral research across three primary frontiers:", "academic_f1_title": "Causal Saliency Regularization (CSR):", "academic_f1_desc": "Analytical mitigation of spurious correlations via truncated Jacobian penalty across the multi-scale PAFPN pyramid.", "academic_f2_title": "Conformal Prediction & Uncertainty Quantification:", "academic_f2_desc": "Finite-sample distribution-free coverage guarantees coupled with variational uncertainty decomposition via MC Dropout (T=30).", "academic_f3_title": "Formal Verification of Agentic Protocols:", "academic_f3_desc": "Model checking and LTL (Linear Temporal Logic) monitor synthesis for mathematical safety validation of FastMCP servers.", "academic_btn_orcid": "View Publications on ORCID", "academic_card_title": "Preprint Portfolio (CERN/Zenodo)", "academic_stat1_num": "26", "academic_stat1_desc": "Scientific Preprints", "academic_stat2_num": "100%", "academic_stat2_desc": "Registered DOIs", "academic_stat3_num": "IEEE", "academic_stat3_desc": "Canonical Format", "academic_card_desc": "Preprints experimentally investigate MLOps scalability, FID latent domain shift quantification, multi-scale Grad-CAM forensic audits, and formal verification in heterogeneous clusters.", "academic_affiliation": "ORCID ID: 0009-0005-0710-1861<br>Affiliation: wisrovi-suit AI Research Initiative, Badajoz, Spain", "catalog_title": "Official Suite Catalog (23 PyPI Packages)", "catalog_desc": "All 23 public PyPI packages actively maintained and installable via the automated <code>w-cli</code> terminal suite.", "tab_all": "All (23)", "tab_core": "Pipeline & Core (4)", "tab_mcp": "FastMCP Servers (6)", "tab_db": "Databases & Cache (5)", "tab_msg": "Messaging & Streaming (1)", "tab_sec": "Zero Trust Security (2)", "tab_mlops": "MLOps & Tools (5)", "metrics_title": "Technical Impact & Scientific Output", "metric1_label": "Official PyPI Libraries", "metric2_label": "Preprints with Zenodo DOI", "metric3_label": "FastMCP Agent Servers", "metric4_label": "Open Source (MIT)", "cta_title": "Install the Suite with w-cli", "cta_desc": "Install and manage any of the 23 official suite libraries with a single interactive terminal interface:", "cta_btn": "View w-cli Repository on GitHub", "footer_role": "Principal Software Engineer & AI Solutions Architect | Ph.D. Fellowship Candidate", "footer_sub": "Badajoz, Spain • wisrovi-suit AI Research Initiative • All packages licensed under MIT.", "footer_orcid": "Official ORCID", "footer_pypi": "PyPI Profile", "footer_github": "GitHub", "footer_linkedin": "LinkedIn"}, "es": {"page_title": "William Rodriguez (Wisrovi) | Principal AI Engineer & Creador de la Suite", "meta_desc": "William Steve Rodriguez Villamizar (Wisrovi) - Principal Software Engineer, AI Solutions Architect y Candidato Doctoral. Ecosistema de librerías Python, sistemas distribuidos MLOps e investigación científica en IA Causal y Verificación Formal.", "nav_solar": "Sistema Solar", "nav_mlops": "wyoloservice (MLOps)", "nav_academic": "Investigación & ORCID", "nav_libraries": "23 Paquetes PyPI", "doctoral_badge": "Candidato a Beca Doctoral en IA & Verificación Formal", "hero_title": "William Rodriguez", "hero_subtitle": "Principal Software Engineer | AI Solutions Architect | Suite Creator", "hero_desc": "Arquitecto de sistemas distribuidos y creador de la <strong>Suite Wisrovi</strong> (23 librerías oficiales en PyPI). Investigador científico con 26 preprints indexados con DOI de CERN/Zenodo en IA Explicable Forense (XAI), Conformal Prediction y Verificación Formal de Agentes con LTL.", "hero_pillar1_title": "1. Ingeniería de Producción", "hero_pillar1_desc": "Plataformas MLOps escalables (<strong>wyoloservice / NeuralForgeAI</strong>), colas Celery GPU y microservicios reactivos.", "hero_pillar2_title": "2. Suite Wisrovi (PyPI)", "hero_pillar2_desc": "23 librerías independientes y modulares estructuradas alrededor del núcleo gravitacional <code>wpipe</code> y servidores FastMCP.", "hero_pillar3_title": "3. Investigación Científica", "hero_pillar3_desc": "26 preprints con DOIs oficiales en Zenodo/CERN y ORCID. Rigor matemático en causalidad, cotas bootstrap y LTL.", "hero_btn_solar": "Explorar Sistema Solar", "hero_btn_orcid": "Perfil Oficial ORCID", "hero_btn_github": "GitHub Suite", "solar_header_title": "El Universo Binario de la Suite Wisrovi", "solar_header_desc": "Arquitectura visual en dos sistemas gravitacionales sincronizados: el <strong>Universo Principal</strong> con <code>wpipe</code> como Sol central coordinando persistencia, mensajería y MLOps distribuido; y la <strong>Constelación Agéntica</strong> donde el <strong>AI Agent Hub</strong> orbita con los 6 servidores <strong>FastMCP</strong> oficiales para la interacción con LLMs.", "universe_main_badge": "UNIVERSO PRINCIPAL", "universe_main_title": "Ecosistema Base Python & MLOps", "universe_main_desc": "<code>wpipe</code> como Sol central coordinando streaming, persistencia transaccional, seguridad Zero Trust y entrenamiento distribuido.", "sun_wpipe_title": "wpipe", "sun_wpipe_sub": "SOL CENTRAL", "universe_mcp_badge": "CONSTELACIÓN AGÉNTICA", "universe_mcp_title": "FastMCP Hub para Agentes LLM", "universe_mcp_desc": "El núcleo agéntico autónomo alimentado por los <strong>6 Servidores FastMCP</strong> oficiales para Claude, Cursor y Antigravity.", "sun_agent_title": "AI AGENT", "sun_agent_sub": "MCP HUB", "mlops_pill": "PLATAFORMA DISTRIBUIDA (train_service_2)", "mlops_title": "wyoloservice: Distributed Training Platform", "mlops_desc": "Plataforma MLOps de grado empresarial para entrenamiento distribuido de modelos de visión artificial (YOLOv8, YOLOv11, YOLO26) con optimización evolutiva mediante <strong>Optuna TPESampler</strong> y auditoría forense explicable.", "mlops_f1": "<strong>Pipeline Post-Entrenamiento de 22 Pasos:</strong> Ejecución de mapas de calor multiescala (Grad-CAM/Eigen-CAM en P3/P4/P5), Deletion/Insertion AUC y ataques adversarios (FGSM/PGD).", "mlops_f2": "<strong>Contenedores Efímeros Aislados:</strong> Invoker con gobernanza de cuotas VRAM/GPU y montajes CIFS de datasets.", "mlops_f3": "<strong>Herramientas FastMCP (wyoloservice-mcp):</strong> Permite a modelos de lenguaje (Claude, Antigravity, Cursor) supervisar y gestionar clusters de cómputo en tiempo real.", "academic_badge": "Registro Académico Verificado", "academic_title": "Investigación Científica & Aspiración Doctoral", "academic_desc": "Mi vocación investigadora integra el rigor matemático formal con el desarrollo de software de misión crítica. Con un Máster en Inteligencia Artificial (VIU, España) y título de Ingeniero Electrónico (UDI, Colombia), presento una agenda doctoral estructurada en tres frentes:", "academic_f1_title": "Causal Saliency Regularization (CSR):", "academic_f1_desc": "Mitigación analítica de correlaciones espurias mediante penalización del Jacobiano truncado en la pirámide PAFPN multiescala.", "academic_f2_title": "Conformal Prediction & Cuantificación de Incertidumbre:", "academic_f2_desc": "Garantías de cobertura con distribución libre en muestras finitas acopladas a descomposición variacional con MC Dropout (T=30).", "academic_f3_title": "Verificación Formal de Protocolos Agénticos:", "academic_f3_desc": "Model checking y síntesis de monitores LTL (Lógica Temporal Lineal) para validación matemática de servidores FastMCP.", "academic_btn_orcid": "Consultar Artículos en ORCID", "academic_card_title": "Cartera de Preprints (CERN/Zenodo)", "academic_stat1_num": "26", "academic_stat1_desc": "Preprints Científicos", "academic_stat2_num": "100%", "academic_stat2_desc": "DOIs Registrados", "academic_stat3_num": "IEEE", "academic_stat3_desc": "Formato Canónico", "academic_card_desc": "Los manuscritos abordan de forma experimental la escalabilidad MLOps, cuantificación de domain shift por distancia FID, auditorías forenses con Grad-CAM multiescala y verificación formal en clusters heterogéneos.", "academic_affiliation": "ORCID ID: 0009-0005-0710-1861<br>Filiación: wisrovi-suit AI Research Initiative, Badajoz, Spain", "catalog_title": "Catálogo Oficial de la Suite (23 Paquetes PyPI)", "catalog_desc": "Las 23 librerías públicas en PyPI soportadas e instalables de forma automatizada a través de <code>w-cli</code>.", "tab_all": "Todos (23)", "tab_core": "Pipeline & Core (4)", "tab_mcp": "FastMCP Servers (6)", "tab_db": "Bases de Datos & Caché (5)", "tab_msg": "Mensajería & Streaming (1)", "tab_sec": "Seguridad Zero Trust (2)", "tab_mlops": "MLOps, Audio & Tools (5)", "metrics_title": "Impacto Técnico & Producción Científica", "metric1_label": "Librerías Oficiales en PyPI", "metric2_label": "Preprints con DOI Zenodo", "metric3_label": "Servidores FastMCP", "metric4_label": "Open Source (MIT)", "cta_title": "Instalación de la Suite con w-cli", "cta_desc": "Instala y gestiona cualquiera de las 23 librerías oficiales de la suite con una única interfaz de terminal interactiva:", "cta_btn": "Ver Repositorio w-cli en GitHub", "footer_role": "Principal Software Engineer & AI Solutions Architect | Ph.D. Fellowship Candidate", "footer_sub": "Badajoz, España • wisrovi-suit AI Research Initiative • Todos los paquetes bajo licencia MIT.", "footer_orcid": "ORCID Oficial", "footer_pypi": "Perfil PyPI", "footer_github": "GitHub", "footer_linkedin": "LinkedIn"}};
+        const i18nData = {"en": {"page_title": "William Rodriguez (Wisrovi) | Principal AI Engineer & Suite Creator", "meta_desc": "William Steve Rodriguez Villamizar (Wisrovi) - Principal Software Engineer, AI Solutions Architect & Ph.D. Candidate. Python libraries ecosystem, distributed MLOps systems, and scientific research in Causal AI & Formal Verification.", "nav_solar": "Dual Solar System", "nav_mlops": "wyoloservice (MLOps)", "nav_academic": "Research & ORCID", "nav_libraries": "23 PyPI Packages", "doctoral_badge": "Ph.D. Fellowship Candidate in AI & Formal Verification", "hero_title": "William Rodriguez", "hero_subtitle": "Principal Software Engineer | AI Solutions Architect | Suite Creator", "hero_desc": "Distributed systems architect and creator of the <strong>Wisrovi Suite</strong> (23 official PyPI packages). Scientific researcher with 26 preprints indexed with CERN/Zenodo DOIs in Forensic Explainable AI (XAI), Conformal Prediction, and Agentic Formal Verification with LTL.", "hero_pillar1_title": "1. Production Engineering", "hero_pillar1_desc": "Scalable enterprise MLOps platforms (<strong>wyoloservice / NeuralForgeAI</strong>), GPU Celery queues, and reactive microservices.", "hero_pillar2_title": "2. Wisrovi Suite (PyPI)", "hero_pillar2_desc": "23 independent, modular libraries centered around the <code>wpipe</code> gravitational core and official FastMCP servers.", "hero_pillar3_title": "3. Scientific Research", "hero_pillar3_desc": "26 preprints with official CERN/Zenodo DOIs & verified ORCID. Mathematical rigor in causality, bootstrap bounds, and LTL.", "hero_btn_solar": "Explore Solar System", "hero_btn_orcid": "Official ORCID Profile", "hero_btn_github": "GitHub Suite", "solar_header_title": "The Binary Universe of the Wisrovi Suite", "solar_header_desc": "Visual architecture spanning two synchronized gravitational systems: the <strong>Main Universe</strong> with <code>wpipe</code> as the central Sun coordinating persistence, messaging, and distributed MLOps; and the <strong>Agentic Constellation</strong> where the <strong>AI Agent Hub</strong> orbits with 6 official <strong>FastMCP</strong> servers for seamless LLM interactions.", "universe_main_badge": "MAIN UNIVERSE", "universe_main_title": "Python Core Ecosystem & MLOps", "universe_main_desc": "<code>wpipe</code> as the central Sun coordinating streaming, transactional persistence, Zero Trust security, and distributed cluster training.", "sun_wpipe_title": "wpipe", "sun_wpipe_sub": "CENTRAL SUN", "universe_mcp_badge": "AGENTIC CONSTELLATION", "universe_mcp_title": "FastMCP Hub for LLM Agents", "universe_mcp_desc": "Autonomous agentic core powered by the <strong>6 official FastMCP Servers</strong> for Claude, Cursor, and Antigravity.", "sun_agent_title": "AI AGENT", "sun_agent_sub": "MCP HUB", "mlops_pill": "DISTRIBUTED PLATFORM (train_service_2)", "mlops_title": "wyoloservice: Distributed Training Platform", "mlops_desc": "Enterprise-grade distributed MLOps platform for Computer Vision architectures (YOLOv8, YOLOv11, YOLO26) featuring evolutionary optimization via <strong>Optuna TPESampler</strong> and forensic Explainable AI audits.", "mlops_f1": "<strong>22-Step Post-Training Lifecycle:</strong> Execution of multi-scale heatmaps (Grad-CAM/Eigen-CAM on P3/P4/P5), Deletion/Insertion AUC fidelity, and adversarial attacks (FGSM/PGD).", "mlops_f2": "<strong>Isolated Ephemeral Containers:</strong> Worker node daemon with dynamic GPU/VRAM quota governors and Samba CIFS dataset mounting.", "mlops_f3": "<strong>FastMCP Agentic Tools (wyoloservice-mcp):</strong> Enables autonomous LLMs (Claude, Antigravity, Cursor) to manage, validate, and dispatch distributed cluster sweeps in real time.", "academic_badge": "Verified Academic Record", "academic_title": "Scientific Research & Doctoral Aspirations", "academic_desc": "My research agenda combines formal mathematical rigor with mission-critical software engineering. Holding a Master's degree in Artificial Intelligence (VIU, Spain) and a Bachelor's in Electronic Engineering (UDI, Colombia), I pursue doctoral research across three primary frontiers:", "academic_f1_title": "Causal Saliency Regularization (CSR):", "academic_f1_desc": "Analytical mitigation of spurious correlations via truncated Jacobian penalty across the multi-scale PAFPN pyramid.", "academic_f2_title": "Conformal Prediction & Uncertainty Quantification:", "academic_f2_desc": "Finite-sample distribution-free coverage guarantees coupled with variational uncertainty decomposition via MC Dropout (T=30).", "academic_f3_title": "Formal Verification of Agentic Protocols:", "academic_f3_desc": "Model checking and LTL (Linear Temporal Logic) monitor synthesis for mathematical safety validation of FastMCP servers.", "academic_btn_orcid": "View Publications on ORCID", "academic_card_title": "Preprint Portfolio (CERN/Zenodo)", "academic_stat1_num": "26", "academic_stat1_desc": "Scientific Preprints", "academic_stat2_num": "100%", "academic_stat2_desc": "Registered DOIs", "academic_stat3_num": "IEEE", "academic_stat3_desc": "Canonical Format", "academic_card_desc": "Preprints experimentally investigate MLOps scalability, FID latent domain shift quantification, multi-scale Grad-CAM forensic audits, and formal verification in heterogeneous clusters.", "academic_affiliation": "ORCID ID: 0009-0005-0710-1861<br>Affiliation: wisrovi-suit AI Research Initiative, Badajoz, Spain", "catalog_title": "Official Suite Catalog (23 PyPI Packages)", "catalog_desc": "All 23 public PyPI packages actively maintained and installable via the automated <code>w-cli</code> terminal suite.", "tab_all": "All (23)", "tab_core": "Pipeline & Core (4)", "tab_mcp": "FastMCP Servers (6)", "tab_db": "Databases & Cache (5)", "tab_msg": "Messaging & Streaming (1)", "tab_sec": "Zero Trust Security (2)", "tab_mlops": "MLOps & Tools (5)", "metrics_title": "Technical Impact & Scientific Output", "metric1_label": "Official PyPI Libraries", "metric2_label": "Preprints with Zenodo DOI", "metric3_label": "FastMCP Agent Servers", "metric4_label": "Open Source (MIT)", "cta_title": "Install the Suite with w-cli", "cta_desc": "Install and manage any of the 23 official suite libraries with a single interactive terminal interface:", "cta_btn": "View w-cli Repository on GitHub", "footer_role": "Principal Software Engineer & AI Solutions Architect | Ph.D. Fellowship Candidate", "footer_sub": "Badajoz, Spain • wisrovi-suit AI Research Initiative • All packages licensed under MIT.", "footer_orcid": "Official ORCID", "footer_pypi": "PyPI Profile", "footer_github": "GitHub", "footer_linkedin": "LinkedIn", "solar_pause_btn": "Pause Orbits", "solar_resume_btn": "Resume Orbits", "search_placeholder": "Search 23 libraries by name, technology or keyword (e.g. kafka, wal, mcp, zero trust)...", "search_no_results": "No libraries found matching your query.", "copy_cmd_tooltip": "Copy install command", "copied_feedback": "Copied!", "preprints_toggle_btn": "Browse All 26 Scientific Preprints (CERN/Zenodo)", "preprints_hide_btn": "Collapse Preprints Portfolio", "preprints_search_placeholder": "Filter preprints by title, code or research field...", "preprints_col_code": "Code", "preprints_col_title": "Manuscript Title", "preprints_col_field": "Research Frontier", "preprints_col_doi": "Official DOI Record", "mlops_diagram_title": "NeuralForgeAI Distributed Lifecycle Architecture", "mlops_diag_step1": "REST Gateway (:23442)", "mlops_diag_step2": "Redis Queue (:23438)", "mlops_diag_step3": "Optuna Genetic Sweep", "mlops_diag_step4": "GPU Quota Governor", "mlops_diag_step5": "22-Step Forensic WTrain", "mlops_diag_step6": "S3 & MLflow Telemetry"}, "es": {"page_title": "William Rodriguez (Wisrovi) | Principal AI Engineer & Creador de la Suite", "meta_desc": "William Steve Rodriguez Villamizar (Wisrovi) - Principal Software Engineer, AI Solutions Architect y Candidato Doctoral. Ecosistema de librerías Python, sistemas distribuidos MLOps e investigación científica en IA Causal y Verificación Formal.", "nav_solar": "Sistema Solar", "nav_mlops": "wyoloservice (MLOps)", "nav_academic": "Investigación & ORCID", "nav_libraries": "23 Paquetes PyPI", "doctoral_badge": "Candidato a Beca Doctoral en IA & Verificación Formal", "hero_title": "William Rodriguez", "hero_subtitle": "Principal Software Engineer | AI Solutions Architect | Suite Creator", "hero_desc": "Arquitecto de sistemas distribuidos y creador de la <strong>Suite Wisrovi</strong> (23 librerías oficiales en PyPI). Investigador científico con 26 preprints indexados con DOI de CERN/Zenodo en IA Explicable Forense (XAI), Conformal Prediction y Verificación Formal de Agentes con LTL.", "hero_pillar1_title": "1. Ingeniería de Producción", "hero_pillar1_desc": "Plataformas MLOps escalables (<strong>wyoloservice / NeuralForgeAI</strong>), colas Celery GPU y microservicios reactivos.", "hero_pillar2_title": "2. Suite Wisrovi (PyPI)", "hero_pillar2_desc": "23 librerías independientes y modulares estructuradas alrededor del núcleo gravitacional <code>wpipe</code> y servidores FastMCP.", "hero_pillar3_title": "3. Investigación Científica", "hero_pillar3_desc": "26 preprints con DOIs oficiales en Zenodo/CERN y ORCID. Rigor matemático en causalidad, cotas bootstrap y LTL.", "hero_btn_solar": "Explorar Sistema Solar", "hero_btn_orcid": "Perfil Oficial ORCID", "hero_btn_github": "GitHub Suite", "solar_header_title": "El Universo Binario de la Suite Wisrovi", "solar_header_desc": "Arquitectura visual en dos sistemas gravitacionales sincronizados: el <strong>Universo Principal</strong> con <code>wpipe</code> como Sol central coordinando persistencia, mensajería y MLOps distribuido; y la <strong>Constelación Agéntica</strong> donde el <strong>AI Agent Hub</strong> orbita con los 6 servidores <strong>FastMCP</strong> oficiales para la interacción con LLMs.", "universe_main_badge": "UNIVERSO PRINCIPAL", "universe_main_title": "Ecosistema Base Python & MLOps", "universe_main_desc": "<code>wpipe</code> como Sol central coordinando streaming, persistencia transaccional, seguridad Zero Trust y entrenamiento distribuido.", "sun_wpipe_title": "wpipe", "sun_wpipe_sub": "SOL CENTRAL", "universe_mcp_badge": "CONSTELACIÓN AGÉNTICA", "universe_mcp_title": "FastMCP Hub para Agentes LLM", "universe_mcp_desc": "El núcleo agéntico autónomo alimentado por los <strong>6 Servidores FastMCP</strong> oficiales para Claude, Cursor y Antigravity.", "sun_agent_title": "AI AGENT", "sun_agent_sub": "MCP HUB", "mlops_pill": "PLATAFORMA DISTRIBUIDA (train_service_2)", "mlops_title": "wyoloservice: Distributed Training Platform", "mlops_desc": "Plataforma MLOps de grado empresarial para entrenamiento distribuido de modelos de visión artificial (YOLOv8, YOLOv11, YOLO26) con optimización evolutiva mediante <strong>Optuna TPESampler</strong> y auditoría forense explicable.", "mlops_f1": "<strong>Pipeline Post-Entrenamiento de 22 Pasos:</strong> Ejecución de mapas de calor multiescala (Grad-CAM/Eigen-CAM en P3/P4/P5), Deletion/Insertion AUC y ataques adversarios (FGSM/PGD).", "mlops_f2": "<strong>Contenedores Efímeros Aislados:</strong> Invoker con gobernanza de cuotas VRAM/GPU y montajes CIFS de datasets.", "mlops_f3": "<strong>Herramientas FastMCP (wyoloservice-mcp):</strong> Permite a modelos de lenguaje (Claude, Antigravity, Cursor) supervisar y gestionar clusters de cómputo en tiempo real.", "academic_badge": "Registro Académico Verificado", "academic_title": "Investigación Científica & Aspiración Doctoral", "academic_desc": "Mi vocación investigadora integra el rigor matemático formal con el desarrollo de software de misión crítica. Con un Máster en Inteligencia Artificial (VIU, España) y título de Ingeniero Electrónico (UDI, Colombia), presento una agenda doctoral estructurada en tres frentes:", "academic_f1_title": "Causal Saliency Regularization (CSR):", "academic_f1_desc": "Mitigación analítica de correlaciones espurias mediante penalización del Jacobiano truncado en la pirámide PAFPN multiescala.", "academic_f2_title": "Conformal Prediction & Cuantificación de Incertidumbre:", "academic_f2_desc": "Garantías de cobertura con distribución libre en muestras finitas acopladas a descomposición variacional con MC Dropout (T=30).", "academic_f3_title": "Verificación Formal de Protocolos Agénticos:", "academic_f3_desc": "Model checking y síntesis de monitores LTL (Lógica Temporal Lineal) para validación matemática de servidores FastMCP.", "academic_btn_orcid": "Consultar Artículos en ORCID", "academic_card_title": "Cartera de Preprints (CERN/Zenodo)", "academic_stat1_num": "26", "academic_stat1_desc": "Preprints Científicos", "academic_stat2_num": "100%", "academic_stat2_desc": "DOIs Registrados", "academic_stat3_num": "IEEE", "academic_stat3_desc": "Formato Canónico", "academic_card_desc": "Los manuscritos abordan de forma experimental la escalabilidad MLOps, cuantificación de domain shift por distancia FID, auditorías forenses con Grad-CAM multiescala y verificación formal en clusters heterogéneos.", "academic_affiliation": "ORCID ID: 0009-0005-0710-1861<br>Filiación: wisrovi-suit AI Research Initiative, Badajoz, Spain", "catalog_title": "Catálogo Oficial de la Suite (23 Paquetes PyPI)", "catalog_desc": "Las 23 librerías públicas en PyPI soportadas e instalables de forma automatizada a través de <code>w-cli</code>.", "tab_all": "Todos (23)", "tab_core": "Pipeline & Core (4)", "tab_mcp": "FastMCP Servers (6)", "tab_db": "Bases de Datos & Caché (5)", "tab_msg": "Mensajería & Streaming (1)", "tab_sec": "Seguridad Zero Trust (2)", "tab_mlops": "MLOps, Audio & Tools (5)", "metrics_title": "Impacto Técnico & Producción Científica", "metric1_label": "Librerías Oficiales en PyPI", "metric2_label": "Preprints con DOI Zenodo", "metric3_label": "Servidores FastMCP", "metric4_label": "Open Source (MIT)", "cta_title": "Instalación de la Suite con w-cli", "cta_desc": "Instala y gestiona cualquiera de las 23 librerías oficiales de la suite con una única interfaz de terminal interactiva:", "cta_btn": "Ver Repositorio w-cli en GitHub", "footer_role": "Principal Software Engineer & AI Solutions Architect | Ph.D. Fellowship Candidate", "footer_sub": "Badajoz, España • wisrovi-suit AI Research Initiative • Todos los paquetes bajo licencia MIT.", "footer_orcid": "ORCID Oficial", "footer_pypi": "Perfil PyPI", "footer_github": "GitHub", "footer_linkedin": "LinkedIn", "solar_pause_btn": "Pausar Órbitas", "solar_resume_btn": "Reanudar Órbitas", "search_placeholder": "Buscar en las 23 librerías por nombre, tecnología o palabra clave (ej. kafka, wal, mcp, zero trust)...", "search_no_results": "No se encontraron librerías que coincidan con tu búsqueda.", "copy_cmd_tooltip": "Copiar comando de instalación", "copied_feedback": "¡Copiado!", "preprints_toggle_btn": "Explorar los 26 Preprints Científicos (CERN/Zenodo)", "preprints_hide_btn": "Ocultar Portafolio de Preprints", "preprints_search_placeholder": "Filtrar preprints por título, código o área de investigación...", "preprints_col_code": "Código", "preprints_col_title": "Título del Manuscrito", "preprints_col_field": "Frente de Investigación", "preprints_col_doi": "Registro DOI Oficial", "mlops_diagram_title": "Arquitectura del Ciclo de Vida Distribuido NeuralForgeAI", "mlops_diag_step1": "REST Gateway (:23442)", "mlops_diag_step2": "Cola Redis (:23438)", "mlops_diag_step3": "Sweep Genético Optuna", "mlops_diag_step4": "Gobernador Cuotas GPU", "mlops_diag_step5": "WTrain Forense (22 Pasos)", "mlops_diag_step6": "Telemetría S3 & MLflow"}};
         const libCatalog = [{"id": "wpipe", "cat": "core", "icon": "fa-sun", "icon_color": "#fbbf24", "tag": {"en": "CORE SUN", "es": "CORE SOL"}, "desc": {"en": "High-performance Python pipeline orchestrator (Sync/Async). Declarative DAG core engine with real GIL-bypass parallelism, SQLite WAL checkpoints, and contextual dependency injection.", "es": "Motor de pipelines desacoplado de alto rendimiento (Sync/Async). Motor central declarativo con paralelismo real e inyección contextual de dependencias."}, "stats": [{"k": "Core", "v": "Engine"}, {"k": "Sync/Async", "v": "Dual Mode"}], "pypi": "https://pypi.org/project/wpipe/", "github": "https://github.com/wisrovi/wpipe"}, {"id": "wkafka", "cat": "messaging", "icon": "fa-stream", "icon_color": "#f59e0b", "tag": {"en": "Streaming", "es": "Streaming"}, "desc": {"en": "Decorator-based high-throughput wrapper for Apache Kafka. Non-blocking consumers/producers with automated reconnection, thread pools, and backpressure handling.", "es": "Abstracción declarativa para Apache Kafka con decoradores de suscripción/publicación, procesamiento multihilo y reconexión automática."}, "stats": [{"k": "Decorators", "v": "API"}, {"k": "Auto-Reconnect", "v": "Built-in"}], "pypi": "https://pypi.org/project/wkafka/", "github": "https://github.com/wisrovi/wkafka"}, {"id": "wredis", "cat": "database", "icon": "fa-bolt", "icon_color": "#ef4444", "tag": {"en": "Cache & Locks", "es": "Caché & Locks"}, "desc": {"en": "Ultra-fast Redis sync/async integration & caching suite. Connection pooling, token-bucket distributed rate limiters, pub/sub streams, and atomic distributed locks.", "es": "Suite de caché y mensajería Redis de alto rendimiento con pooling optimizado, limitadores de tasa token-bucket y distributed locks atómicos."}, "stats": [{"k": "<1ms", "v": "Latency"}, {"k": "PubSub", "v": "Distributed"}], "pypi": "https://pypi.org/project/wredis/", "github": "https://github.com/wisrovi/wredis"}, {"id": "wdecorators", "cat": "core", "icon": "fa-wand-magic-sparkles", "icon_color": "#ec4899", "tag": {"en": "Resilience", "es": "Resiliencia"}, "desc": {"en": "Reusable high-level decorator suite. Implements exponential backoff with full jitter, runtime latency profiling, memory tracing, and structured Loguru logging.", "es": "Colección de decoradores avanzados para reintentos exponenciales con jitter, perfilado de latencia en microsegundos y telemetría estructurada."}, "stats": [{"k": "Retry Jitter", "v": "Resilience"}, {"k": "Latency Profiler", "v": "Built-in"}], "pypi": "https://pypi.org/project/wdecorators/", "github": "https://github.com/wisrovi/wdecorators"}, {"id": "wpipe-mcp", "cat": "mcp", "icon": "fa-robot", "icon_color": "#06b6d4", "tag": {"en": "FastMCP", "es": "FastMCP"}, "desc": {"en": "Official FastMCP Server for wpipe pipeline architecture. Enables LLM agents (Claude, Cursor, Antigravity) to design, inspect, formally verify, and dry-run DAG execution flows.", "es": "Servidor FastMCP oficial para wpipe. Permite a modelos de lenguaje (Claude, Antigravity, Cursor) inspeccionar, verificar formalmente y ejecutar pipelines wpipe."}, "stats": [{"k": "FastMCP", "v": "Protocol"}, {"k": "Agentic", "v": "Tools"}], "pypi": "https://pypi.org/project/wpipe-mcp/", "github": "https://github.com/wisrovi/wpipe-mcp"}, {"id": "wpostgresql", "cat": "database", "icon": "fa-server", "icon_color": "#3b82f6", "tag": {"en": "Relational", "es": "Relacional"}, "desc": {"en": "High-concurrency PostgreSQL connection pooler and enterprise ORM mapper. Thread-safe connection pools, ACID transaction decorators, and Pydantic model synchronization.", "es": "Pooler de conexiones empresarial y mapeador ORM para PostgreSQL con actualización dinámica de esquemas, soporte ACID y modelos Pydantic."}, "stats": [{"k": "ACID", "v": "Pool Ready"}, {"k": "ORM", "v": "Mapper"}], "pypi": "https://pypi.org/project/wpostgresql/", "github": "https://github.com/wisrovi/wpostgresql"}, {"id": "wpipe-steps", "cat": "core", "icon": "fa-layer-group", "icon_color": "#eab308", "tag": {"en": "Modular Steps", "es": "Pasos Modulares"}, "desc": {"en": "Official catalog of production-ready modular steps for wpipe. Pre-built, strongly typed steps for data ingestion, ETL, computer vision, and ML transformations.", "es": "Catálogo oficial de pasos modulares listos para producción para el orquestador wpipe en ingesta de datos, ETL, visión y ML."}, "stats": [{"k": "Steps", "v": "Library"}, {"k": "Modular", "v": "Architecture"}], "pypi": "https://pypi.org/project/wpipe-steps/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wsqlite", "cat": "database", "icon": "fa-database", "icon_color": "#10b981", "tag": {"en": "Embedded DB", "es": "DB Embebida"}, "desc": {"en": "High-performance SQLite ORM wrapper featuring reactive TableSync. Optimized multi-thread Write-Ahead Logging (WAL) mode, connection pooling, and automated schema migration.", "es": "ORM de alto rendimiento para SQLite con TableSync reactivo, serialización Pydantic v2 y soporte nativo para modo WAL concurrente multihilo."}, "stats": [{"k": "WAL Mode", "v": "Thread-Safe"}, {"k": "TableSync", "v": "Auto"}], "pypi": "https://pypi.org/project/wsqlite/", "github": "https://github.com/wisrovi/wsqlite"}, {"id": "wyolo", "cat": "mlops", "icon": "fa-crosshairs", "icon_color": "#10b981", "tag": {"en": "Computer Vision", "es": "Visión Artificial"}, "desc": {"en": "Complete lifecycle training wrapper for YOLO (v8, v11, YOLO26) and RT-DETR. Seamless synchronization of weights to MinIO S3 and real-time metric logging to MLflow.", "es": "Wrapper de ciclo de vida completo para modelos YOLO (v8, v11, YOLO26) y RT-DETR con telemetría integrada a MLflow y almacenamiento en MinIO S3."}, "stats": [{"k": "YOLO", "v": "MLOps"}, {"k": "MLflow & S3", "v": "Sync"}], "pypi": "https://pypi.org/project/wyolo/", "github": "https://github.com/wisrovi/wyolo"}, {"id": "wyoloservice-mcp", "cat": "mcp", "icon": "fa-brain", "icon_color": "#ec4899", "tag": {"en": "FastMCP Cluster", "es": "FastMCP Cluster"}, "desc": {"en": "FastMCP Server for NeuralForgeAI YOLO cluster orchestration. Enables LLMs to validate datasets, generate Sweeper v2 configurations, inspect GPU queues, and dispatch Optuna sweeps.", "es": "Servidor FastMCP para orquestación agéntica de clusters NeuralForgeAI: validación de datasets, generación de configs Sweeper v2 y despacho de estudios Optuna."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "Cluster", "v": "Orchestrator"}], "pypi": "https://pypi.org/project/wyoloservice-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wauth", "cat": "security", "icon": "fa-key", "icon_color": "#d946ef", "tag": {"en": "Credentials Vault", "es": "Bóveda Claves"}, "desc": {"en": "Cryptographic secrets encryption vault locked to host hardware fingerprints (machine-salted). AES-256 Fernet symmetric encryption protecting sensitive cluster configurations.", "es": "Bóveda criptográfica de credenciales vinculada a huellas de hardware del host (machine-salted) con cifrado simétrico Fernet AES-256."}, "stats": [{"k": "AES-256", "v": "Fernet"}, {"k": "Hardware-Locked", "v": "Vault"}], "pypi": "https://pypi.org/project/wauth/", "github": "https://github.com/wisrovi/wauth"}, {"id": "wFabricSecurity", "cat": "security", "icon": "fa-shield-halved", "icon_color": "#64748b", "tag": {"en": "Zero Trust", "es": "Zero Trust"}, "desc": {"en": "Industrial Zero Trust security architecture for Hyperledger Fabric networks. ECDSA P-256 digital signature validation, SHA-256 code integrity hashing, and cryptographic audits.", "es": "Arquitectura de seguridad Zero Trust para Hyperledger Fabric con verificación criptográfica ECDSA P-256 e integridad forense de código por SHA-256."}, "stats": [{"k": "Zero Trust", "v": "Model"}, {"k": "Hyperledger", "v": "Fabric"}], "pypi": "https://pypi.org/project/wFabricSecurity/", "github": "https://github.com/wisrovi/wFabricSecurity"}, {"id": "ProcessAudio", "cat": "mlops", "icon": "fa-wave-square", "icon_color": "#8b5cf6", "tag": {"en": "Audio ML / DSP", "es": "Audio ML / DSP"}, "desc": {"en": "Scikit-learn compatible transformers for audio feature extraction (Mel spectrograms, MFCC, FFT spectral centroid) and real-time acoustic data augmentation pipelines.", "es": "Transformadores Scikit-learn para espectrogramas Mel, extracción de características acústicas MFCC, análisis espectral FFT y aumentación de audio."}, "stats": [{"k": "DSP/FFT", "v": "Features"}, {"k": "Scikit-learn", "v": "Pipes"}], "pypi": "https://pypi.org/project/ProcessAudio/", "github": "https://github.com/wisrovi/ProcessAudio"}, {"id": "wclickhouse", "cat": "database", "icon": "fa-chart-line", "icon_color": "#f97316", "tag": {"en": "OLAP Analytics", "es": "Analítica OLAP"}, "desc": {"en": "High-throughput ClickHouse ORM mapping using clickhouse-connect. Optimized for bulk batch insertions, columnar time-series aggregation, and deep learning inference telemetry.", "es": "Mapeador ORM para ClickHouse orientado a analítica OLAP masiva por lotes (bulk inserts) y telemetría columnar de modelos de deep learning."}, "stats": [{"k": "OLAP", "v": "Batch Insert"}, {"k": "Time-Series", "v": "Fast"}], "pypi": "https://pypi.org/project/wclickhouse/", "github": "https://github.com/wisrovi/wclickhouse"}, {"id": "wcontainer", "cat": "mlops", "icon": "fa-docker", "icon_color": "#0284c7", "tag": {"en": "Docker SDK", "es": "Docker SDK"}, "desc": {"en": "Docker SDK automation engine: ephemeral container spawner, GPU VRAM & CPU quota enforcement governors, and embedded Trivy vulnerability scanning.", "es": "Automatización de Docker SDK: gobernador de cuotas VRAM/CPU, escaneo de vulnerabilidades Trivy y gestión de contenedores efímeros aislados."}, "stats": [{"k": "Docker SDK", "v": "Automation"}, {"k": "GPU Isolation", "v": "Governor"}], "pypi": "https://pypi.org/project/wcontainer/", "github": "https://github.com/wisrovi/wcontainer"}, {"id": "wmongo", "cat": "database", "icon": "fa-leaf", "icon_color": "#10b981", "tag": {"en": "Document NoSQL", "es": "NoSQL Documental"}, "desc": {"en": "Reactive MongoDB document mapper utilizing Pydantic models. Features automatic query caching on wredis, safe aggregation pipelines, and lifecycle event listeners.", "es": "Mapeador documental para MongoDB con modelos Pydantic, caché reactiva de consultas en Redis y listeners de eventos de ciclo de vida."}, "stats": [{"k": "Pydantic", "v": "Models"}, {"k": "Aggregation", "v": "Pipelines"}], "pypi": "https://pypi.org/project/wmongo/", "github": "https://github.com/wisrovi/wmongo"}, {"id": "wkafka-mcp", "cat": "mcp", "icon": "fa-plug", "icon_color": "#f59e0b", "tag": {"en": "FastMCP Kafka", "es": "FastMCP Kafka"}, "desc": {"en": "FastMCP Server for Kafka event streaming and topic inspection. Exposes tools for LLM agents to monitor topic partitions, consumer group lag, and inject telemetry payloads.", "es": "Servidor FastMCP para streaming de eventos y supervisión de tópicos Kafka. Herramientas MCP para monitorización de lag de particiones e inyección de eventos."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "Kafka", "v": "Stream Ops"}], "pypi": "https://pypi.org/project/wkafka-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wredis-mcp", "cat": "mcp", "icon": "fa-plug", "icon_color": "#ef4444", "tag": {"en": "FastMCP Redis", "es": "FastMCP Redis"}, "desc": {"en": "FastMCP Server for Redis cache management and memory profiling. Enables AI agents to safely query keys, inspect data structures, and monitor memory fragmentation.", "es": "Servidor FastMCP para inspección, profiling de memoria y administración de instancias Redis por agentes LLM sin comandos destructivos."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "Redis", "v": "Ops"}], "pypi": "https://pypi.org/project/wredis-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wpostgresql-mcp", "cat": "mcp", "icon": "fa-plug", "icon_color": "#3b82f6", "tag": {"en": "FastMCP Postgres", "es": "FastMCP Postgres"}, "desc": {"en": "FastMCP Server for PostgreSQL enterprise databases. Gives LLM agents safe, parameterized query tools, schema inspection capabilities, and role permission validation.", "es": "Servidor FastMCP para integración de agentes de IA con bases de datos PostgreSQL: inspección de esquemas, consultas con timeout y control de accesos."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "PostgreSQL", "v": "Ops"}], "pypi": "https://pypi.org/project/wpostgresql-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wsqlite-mcp", "cat": "mcp", "icon": "fa-plug", "icon_color": "#10b981", "tag": {"en": "FastMCP SQLite", "es": "FastMCP SQLite"}, "desc": {"en": "FastMCP Server for SQLite database inspection and queries. Parametric safe queries, index statistics analysis, and audit state extraction for wpipe pipelines.", "es": "Servidor FastMCP para análisis semántico e inspección de bases de datos SQLite por modelos de IA con consultas parametrizadas seguras y estadísticas de índices."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "SQLite", "v": "Queries"}], "pypi": "https://pypi.org/project/wsqlite-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wpipe-plugins", "cat": "core", "icon": "fa-puzzle-piece", "icon_color": "#8b5cf6", "tag": {"en": "Plugins Framework", "es": "Plugins Framework"}, "desc": {"en": "Community-driven plugin repository and hot-reloadable extension framework for wpipe. Dynamic dependency isolation for custom enterprise pipelines.", "es": "Repositorio de plugins comunitarios y extensiones especializadas para el ecosistema wpipe con carga dinámica y aislamiento de dependencias."}, "stats": [{"k": "Plugins", "v": "Framework"}, {"k": "Extensible", "v": "Architecture"}], "pypi": "https://pypi.org/project/wpipe-plugins/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wutils", "cat": "mlops", "icon": "fa-toolbox", "icon_color": "#f97316", "tag": {"en": "Utilities & Cron", "es": "Utilidades & Cron"}, "desc": {"en": "Essential script scheduling and validation helpers. Robust cron expression parser, dataset format verification, and algorithmic data normalization.", "es": "Utilidades esenciales de script scheduling, validación de formatos de datasets, parseo de expresiones cron y normalización algorítmica."}, "stats": [{"k": "Task Scheduler", "v": "Cron"}, {"k": "Format Validator", "v": "Fast"}], "pypi": "https://pypi.org/project/wutils/", "github": "https://github.com/wisrovi/wutils"}, {"id": "wisrovi-python", "cat": "mlops", "icon": "fa-python", "icon_color": "#38bdf8", "tag": {"en": "Core Foundational", "es": "Core Fundacional"}, "desc": {"en": "Core foundational Python types, algorithms, and mathematical structures shared across all packages in the wisrovi ecosystem. Optimized for inference efficiency.", "es": "Librería fundacional con utilidades matemáticas, estructuras algorítmicas base y tipos compartidos entre todos los paquetes de la suite wisrovi."}, "stats": [{"k": "Core Types", "v": "Shared"}, {"k": "Math Helpers", "v": "Optimized"}], "pypi": "https://pypi.org/project/wisrovi-python/", "github": "https://github.com/wisrovi/wisrovi-python"}];
+        const preprintsList = [{"code": "RND-01", "title": "Predicting Downstream Performance Degradation in Computer Vision Models Under Representation-Level Domain Shift", "area": "Domain Shift & Latent Features", "area_es": "Domain Shift & Espacio Latente", "badge_color": "#8b5cf6", "target_venue": "CVPR / ICLR", "doi": "10.5281/zenodo.22716928", "url": "https://zenodo.org/records/22716928"}, {"code": "RND-02", "title": "An Autonomous Evaluation Framework for Quantitative Robustness, Faithful Explainability, and Failure-Mode Auditing in Vision Models", "area": "Explainable AI (XAI) & Saliency", "area_es": "IA Explicable (XAI) & Saliency", "badge_color": "#f59e0b", "target_venue": "ECCV / NeurIPS", "doi": "10.5281/zenodo.22716935", "url": "https://zenodo.org/records/22716935"}, {"code": "RND-03", "title": "Agentic MLOps: LLM-Driven Orchestration of Distributed Vision Training Clusters via Model Context Protocol", "area": "Agentic MLOps & FastMCP", "area_es": "MLOps Agéntico & FastMCP", "badge_color": "#06b6d4", "target_venue": "AAAI / NeurIPS", "doi": "10.5281/zenodo.22715752", "url": "https://zenodo.org/records/22715752"}, {"code": "RND-04", "title": "Automated Dataset Profiling and Exploratory Validation in the wyoloservice2 Stack", "area": "Explainable AI (XAI) & Saliency", "area_es": "IA Explicable (XAI) & Saliency", "badge_color": "#f59e0b", "target_venue": "EMNLP / CVPR", "doi": "10.5281/zenodo.22715756", "url": "https://zenodo.org/records/22715756"}, {"code": "RND-05", "title": "Quantifying YOLO Model Robustness — Adversarial Attacks, Noise Resilience, and Uncertainty Estimation", "area": "Adversarial Robustness & Noise", "area_es": "Robustez Adversarial & Ruido", "badge_color": "#ef4444", "target_venue": "NeurIPS / ICML / AISTATS", "doi": "10.5281/zenodo.22715764", "url": "https://zenodo.org/records/22715764"}, {"code": "RND-06", "title": "Automated Cross-Domain Generalization Assessment for YOLO Object Detection: FID-Based Domain Shift Quantification and Hardware Profiling", "area": "Domain Shift & Latent Features", "area_es": "Domain Shift & Espacio Latente", "badge_color": "#8b5cf6", "target_venue": "CVPR / ICLR", "doi": "10.5281/zenodo.22715775", "url": "https://zenodo.org/records/22715775"}, {"code": "RND-07", "title": "LLM-Powered Automated Research Reporting for Computer Vision Pipelines: From Training Metrics to Scientific Narratives", "area": "Agentic MLOps & FastMCP", "area_es": "MLOps Agéntico & FastMCP", "badge_color": "#06b6d4", "target_venue": "EMNLP / AAAI", "doi": "10.5281/zenodo.22715785", "url": "https://zenodo.org/records/22715785"}, {"code": "RND-08", "title": "Decentralized MLOps Architecture for Autonomous Training and Integrated Explainability", "area": "Explainable AI (XAI) & Saliency", "area_es": "IA Explicable (XAI) & Saliency", "badge_color": "#f59e0b", "target_venue": "IEEE TPDS / EuroSys", "doi": "10.5281/zenodo.22715789", "url": "https://zenodo.org/records/22715789"}, {"code": "RND-09", "title": "Beyond Metrics: Autonomous Evaluation of Neural Networks via Grad-CAM and Local LLMs", "area": "Explainable AI (XAI) & Saliency", "area_es": "IA Explicable (XAI) & Saliency", "badge_color": "#f59e0b", "target_venue": "ECCV / NeurIPS", "doi": "10.5281/zenodo.22715803", "url": "https://zenodo.org/records/22715803"}, {"code": "NP-01", "title": "NeuralForge: A Distributed MLOps Framework for Automated YOLO Hyperparameter Optimization", "area": "Distributed MLOps Architecture", "area_es": "Arquitectura MLOps Distribuida", "badge_color": "#3b82f6", "target_venue": "MLSys", "doi": "10.5281/zenodo.22715816", "url": "https://zenodo.org/records/22715816"}, {"code": "NP-02", "title": "Industrial Experience Report: The Invoker-Executor Pattern for Fault Isolation in Distributed YOLO Training", "area": "Distributed MLOps Architecture", "area_es": "Arquitectura MLOps Distribuida", "badge_color": "#3b82f6", "target_venue": "EuroSys / IEEE TPDS", "doi": "10.5281/zenodo.22715827", "url": "https://zenodo.org/records/22715827"}, {"code": "NP-03", "title": "WPipe: A Declarative Pipeline Framework with Forensic Tracking for ML Workflows", "area": "Distributed MLOps Architecture", "area_es": "Arquitectura MLOps Distribuida", "badge_color": "#3b82f6", "target_venue": "OSDI / IEEE TPDS", "doi": "10.5281/zenodo.22715839", "url": "https://zenodo.org/records/22715839"}, {"code": "NP-04", "title": "Outlier Failure Analysis: A Data-Centric Approach to Hard-Negative Mining in YOLO", "area": "Distributed MLOps Architecture", "area_es": "Arquitectura MLOps Distribuida", "badge_color": "#3b82f6", "target_venue": "ECCV / CVPR", "doi": "10.5281/zenodo.22715846", "url": "https://zenodo.org/records/22715846"}, {"code": "NP-05", "title": "Automated Hardware Complexity Profiling for Edge-Deployed YOLO Models", "area": "Distributed MLOps Architecture", "area_es": "Arquitectura MLOps Distribuida", "badge_color": "#3b82f6", "target_venue": "ACM SoCC / IEEE IPDPS", "doi": "10.5281/zenodo.22715852", "url": "https://zenodo.org/records/22715852"}, {"code": "NP-06", "title": "Automated Explainable AI Pipeline for YOLO Models: From Grad-CAM to Quantitative Fidelity Validation", "area": "Explainable AI (XAI) & Saliency", "area_es": "IA Explicable (XAI) & Saliency", "badge_color": "#f59e0b", "target_venue": "NeurIPS (XAI Track)", "doi": "10.5281/zenodo.22715858", "url": "https://zenodo.org/records/22715858"}, {"code": "NP-07", "title": "Quantifying YOLO Model Robustness: Adversarial Attacks, Noise Resilience, and Uncertainty Estimation in Real-World Deployment", "area": "Adversarial Robustness & Noise", "area_es": "Robustez Adversarial & Ruido", "badge_color": "#ef4444", "target_venue": "IEEE S&P / ICML", "doi": "10.5281/zenodo.22715864", "url": "https://zenodo.org/records/22715864"}, {"code": "NP-08", "title": "Robustness and Noise Evaluation for Real-World Object Detection: Defending Against Sensor Degradation", "area": "Adversarial Robustness & Noise", "area_es": "Robustez Adversarial & Ruido", "badge_color": "#ef4444", "target_venue": "IEEE IPDPS / CVPR", "doi": "10.5281/zenodo.22715870", "url": "https://zenodo.org/records/22715870"}, {"code": "NP-09", "title": "Statistical Rigor in YOLO Model Evaluation: Bootstrap Confidence Intervals and Failure Mode Analysis", "area": "Statistical Rigor & Bootstrapping", "area_es": "Rigor Estadístico & Bootstrapping", "badge_color": "#10b981", "target_venue": "IEEE Transactions / ICML", "doi": "10.5281/zenodo.22715887", "url": "https://zenodo.org/records/22715887"}, {"code": "NP-10", "title": "Cross-Domain Generalization Assessment for Object Detection Models: FID-Based Domain Shift Detection", "area": "Domain Shift & Latent Features", "area_es": "Domain Shift & Espacio Latente", "badge_color": "#8b5cf6", "target_venue": "CVPR / ECCV", "doi": "10.5281/zenodo.22715899", "url": "https://zenodo.org/records/22715899"}, {"code": "NP-11", "title": "LLM-Assisted Training Report Generation in a Distributed MLOps Pipeline: Architecture, Deterministic Fallback, and Empirical Evaluation", "area": "Agentic MLOps & FastMCP", "area_es": "MLOps Agéntico & FastMCP", "badge_color": "#06b6d4", "target_venue": "EMNLP / ACL", "doi": "10.5281/zenodo.22715914", "url": "https://zenodo.org/records/22715914"}, {"code": "PHD-01", "title": "Self-Healing Distributed MLOps: Autonomous Fault Detection Node Eviction and Resilient State Reconciliation", "area": "Doctoral Frontiers & Formal Verification", "area_es": "Fronteras Doctorales & Verificación Formal", "badge_color": "#bef264", "target_venue": "NeurIPS / MLSys", "doi": "10.5281/zenodo.22716656", "url": "https://zenodo.org/records/22716656"}, {"code": "PHD-02", "title": "Formal Verification of Agentic MLOps Protocols: Model Checking and Liveness Guarantees in Distributed Model Context Protocol Workflows", "area": "Doctoral Frontiers & Formal Verification", "area_es": "Fronteras Doctorales & Verificación Formal", "badge_color": "#bef264", "target_venue": "ACM OSDI / EuroSys", "doi": "10.5281/zenodo.22716667", "url": "https://zenodo.org/records/22716667"}, {"code": "PHD-03", "title": "Causal Saliency Regularization: Mitigating Clever Hans Artifacts in Deep Object Detectors via In-Training Explainability Penalties", "area": "Doctoral Frontiers & Formal Verification", "area_es": "Fronteras Doctorales & Verificación Formal", "badge_color": "#bef264", "target_venue": "CVPR / IEEE TPAMI", "doi": "10.5281/zenodo.22716676", "url": "https://zenodo.org/records/22716676"}, {"code": "PHD-04", "title": "Conformal Prediction and Epistemic Uncertainty Decomposition for Safety-Critical Edge Vision under Dynamic Domain Shift", "area": "Doctoral Frontiers & Formal Verification", "area_es": "Fronteras Doctorales & Verificación Formal", "badge_color": "#bef264", "target_venue": "ICML / IEEE TPAMI", "doi": "10.5281/zenodo.22716681", "url": "https://zenodo.org/records/22716681"}, {"code": "PHD-05", "title": "Carbon-Aware Edge Shrinkage: Dynamic Head Pruning and Adaptive Voltage-Frequency Scaling for Green Object Detection", "area": "Doctoral Frontiers & Formal Verification", "area_es": "Fronteras Doctorales & Verificación Formal", "badge_color": "#bef264", "target_venue": "ACM SenSys / IEEE TSUSC", "doi": "10.5281/zenodo.22716692", "url": "https://zenodo.org/records/22716692"}, {"code": "PHD-06", "title": "Zero-Shot Diffusion Purification: Stochastic Denoising Defense for YOLO Detectors against Transferable Adversarial Attacks", "area": "Doctoral Frontiers & Formal Verification", "area_es": "Fronteras Doctorales & Verificación Formal", "badge_color": "#bef264", "target_venue": "ICCV / ICLR / IEEE TNNLS", "doi": "10.5281/zenodo.22716695", "url": "https://zenodo.org/records/22716695"}];
 
         let currentLang = 'en';
+        let activeCategory = 'all';
+        let isOrbitsPaused = false;
+        let isPreprintsOpen = false;
 
-        // Detect initial language: localStorage -> URL Param (?lang=) -> Browser Language -> Default 'en'
+        // 1. Initial Language Detection
         function detectInitialLanguage() {
             const urlParams = new URLSearchParams(window.location.search);
             const paramLang = urlParams.get('lang');
@@ -1932,7 +2654,7 @@
                 return 'es';
             }
 
-            return 'en'; // Default to English as requested
+            return 'en'; // Default to English
         }
 
         function setLanguage(lang) {
@@ -1958,6 +2680,16 @@
                 }
             });
 
+            // Update placeholders
+            const searchInput = document.getElementById('libSearchInput');
+            if (searchInput) {
+                searchInput.setAttribute('placeholder', i18nData[lang]['search_placeholder']);
+            }
+            const prepSearch = document.getElementById('preprintsSearchInput');
+            if (prepSearch) {
+                prepSearch.setAttribute('placeholder', i18nData[lang]['preprints_search_placeholder']);
+            }
+
             // Update library cards text & tags
             libCatalog.forEach(lib => {
                 const tagEl = document.getElementById('libtag-' + lib.id);
@@ -1969,6 +2701,24 @@
                     descEl.innerText = lib.desc[lang];
                 }
             });
+
+            // Update Preprints area titles
+            document.querySelectorAll('.preprint-area-text').forEach(el => {
+                const areaKey = lang === 'es' ? el.getAttribute('data-area-es') : el.getAttribute('data-area-en');
+                if (areaKey) el.innerText = areaKey;
+            });
+
+            // Update Preprints Toggle Button Text
+            const prepBtnText = document.getElementById('preprintsBtnText');
+            if (prepBtnText) {
+                prepBtnText.innerText = isPreprintsOpen ? i18nData[lang]['preprints_hide_btn'] : i18nData[lang]['preprints_toggle_btn'];
+            }
+
+            // Update Orbit Toggle Button Text
+            const orbitBtnText = document.getElementById('orbitBtnText');
+            if (orbitBtnText) {
+                orbitBtnText.innerText = isOrbitsPaused ? i18nData[lang]['solar_resume_btn'] : i18nData[lang]['solar_pause_btn'];
+            }
 
             // Update Switcher Active State
             const btnEn = document.getElementById('btnLangEn');
@@ -1982,24 +2732,117 @@
             }
         }
 
+        // 2. Play / Pause Solar Animation
+        function toggleSolarAnimation() {
+            isOrbitsPaused = !isOrbitsPaused;
+            const orbits = document.querySelectorAll('.orbit');
+            const orbitIcon = document.getElementById('orbitIcon');
+            const orbitBtnText = document.getElementById('orbitBtnText');
+
+            orbits.forEach(o => {
+                if (isOrbitsPaused) {
+                    o.classList.add('paused');
+                } else {
+                    o.classList.remove('paused');
+                }
+            });
+
+            if (isOrbitsPaused) {
+                orbitIcon.className = 'fas fa-play';
+                orbitBtnText.innerText = i18nData[currentLang]['solar_resume_btn'];
+            } else {
+                orbitIcon.className = 'fas fa-pause';
+                orbitBtnText.innerText = i18nData[currentLang]['solar_pause_btn'];
+            }
+        }
+
+        // 3. 1-Click Clipboard Copy with Animated Toast
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast((currentLang === 'es' ? 'Copiado al portapapeles: ' : 'Copied to clipboard: ') + text);
+            }).catch(() => {
+                showToast(text);
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const toastText = document.getElementById('toastText');
+            toastText.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2600);
+        }
+
+        // 4. Live Instant Search and Filter for 23 Libraries
+        function handleLibrarySearch() {
+            const query = (document.getElementById('libSearchInput').value || '').toLowerCase().trim();
+            const cards = document.querySelectorAll('.lib-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const searchData = card.getAttribute('data-search') || '';
+                const cardCat = card.getAttribute('data-cat');
+                const matchesCat = (activeCategory === 'all' || cardCat === activeCategory);
+                const matchesQuery = query === '' || searchData.includes(query);
+
+                if (matchesCat && matchesQuery) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const noResults = document.getElementById('noResultsNotice');
+            if (noResults) {
+                noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            }
+        }
+
         function filterLibs(category) {
+            activeCategory = category;
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             if (event && event.target) {
                 event.target.classList.add('active');
             }
+            handleLibrarySearch();
+        }
 
-            const cards = document.querySelectorAll('.lib-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-cat') === category) {
-                    card.style.display = 'flex';
+        // 5. Toggle and Filter Preprints Explorer
+        function togglePreprintsView() {
+            isPreprintsOpen = !isPreprintsOpen;
+            const container = document.getElementById('preprintsTableContainer');
+            const searchBox = document.getElementById('preprintsSearchBox');
+            const prepBtnText = document.getElementById('preprintsBtnText');
+
+            if (isPreprintsOpen) {
+                container.style.display = 'block';
+                searchBox.style.display = 'block';
+                prepBtnText.innerText = i18nData[currentLang]['preprints_hide_btn'];
+            } else {
+                container.style.display = 'none';
+                searchBox.style.display = 'none';
+                prepBtnText.innerText = i18nData[currentLang]['preprints_toggle_btn'];
+            }
+        }
+
+        function filterPreprints() {
+            const query = (document.getElementById('preprintsSearchInput').value || '').toLowerCase().trim();
+            const rows = document.querySelectorAll('.preprint-row');
+            rows.forEach(r => {
+                const searchData = r.getAttribute('data-search') || '';
+                if (query === '' || searchData.includes(query)) {
+                    r.style.display = '';
                 } else {
-                    card.style.display = 'none';
+                    r.style.display = 'none';
                 }
             });
         }
 
-        // Initialize immediately on DOM ready
+        // Initialize on DOM ready
         document.addEventListener('DOMContentLoaded', () => {
             const initialLang = detectInitialLanguage();
             setLanguage(initialLang);

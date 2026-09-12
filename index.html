@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="William Steve Rodriguez Villamizar (Wisrovi) - Principal Software Engineer, AI Solutions Architect & Ph.D. Candidate. Ecosistema de librerías Python, sistemas distribuidos MLOps e investigación científica en IA Causal y Verificación Formal.">
+    <meta name="description" id="metaDescription" content="William Steve Rodriguez Villamizar (Wisrovi) - Principal Software Engineer, AI Solutions Architect & Ph.D. Candidate. Python libraries ecosystem, distributed MLOps systems, and scientific research in Causal AI & Formal Verification.">
     <meta name="author" content="William Steve Rodriguez Villamizar (Wisrovi)">
-    <title>William Rodriguez (Wisrovi) | Principal AI Engineer & Suite Creator</title>
+    <title id="pageTitle">William Rodriguez (Wisrovi) | Principal AI Engineer & Suite Creator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+
         :root {
             --primary: #00f2fe;
             --secondary: #4facfe;
@@ -36,17 +37,17 @@
             overflow-x: hidden;
         }
 
-        .container { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
 
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.88);
+            background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding: 1rem 0;
+            padding: 0.9rem 0;
             z-index: 1000;
         }
 
@@ -80,17 +81,58 @@
             border-radius: 4px;
         }
 
-        .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
         .nav-links a { color: var(--light); text-decoration: none; transition: 0.3s; font-weight: 500; font-size: 0.92rem; }
         .nav-links a:hover { color: var(--primary); }
+        
         .nav-badge-link {
             background: rgba(0, 242, 254, 0.1);
             border: 1px solid var(--primary);
             color: var(--primary) !important;
-            padding: 0.4rem 1rem;
+            padding: 0.35rem 0.9rem;
             border-radius: 99px;
-            font-size: 0.85rem !important;
+            font-size: 0.82rem !important;
             font-weight: 600 !important;
+        }
+
+        /* Language Toggle Button */
+        .lang-switch-wrapper {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 99px;
+            padding: 3px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            font-weight: 700;
+            font-size: 0.78rem;
+            padding: 4px 10px;
+            border-radius: 99px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #0f172a;
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: #fff;
         }
 
         /* Hero Section */
@@ -103,7 +145,7 @@
             text-align: center;
             background: radial-gradient(circle at center, #1e293b 0%, var(--dark) 100%);
             position: relative;
-            padding-top: 110px;
+            padding-top: 115px;
             padding-bottom: 50px;
         }
 
@@ -148,27 +190,27 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 0.8rem;
-            background: linear-gradient(to right, var(--primary), var(--secondary), #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 4.2rem;
             font-weight: 900;
             letter-spacing: -1.5px;
-            line-height: 1.1;
+            margin-bottom: 0.6rem;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero .subtitle {
-            font-size: 1.6rem;
-            color: var(--light);
-            margin-bottom: 1.3rem;
-            font-weight: 700;
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
         }
 
         .hero p {
-            font-size: 1.12rem;
-            color: #94a3b8;
-            max-width: 860px;
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 850px;
             margin: 0 auto 2.5rem;
             line-height: 1.8;
         }
@@ -182,8 +224,8 @@
         }
 
         .hero-pillar-card {
-            background: rgba(30, 41, 59, 0.75);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(30, 41, 59, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 1rem;
             padding: 1.5rem;
             backdrop-filter: blur(8px);
@@ -191,85 +233,85 @@
         }
 
         .hero-pillar-card:hover {
+            border-color: rgba(0, 242, 254, 0.3);
             transform: translateY(-4px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(0, 242, 254, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .hero-pillar-card i {
-            font-size: 1.7rem;
-            margin-bottom: 0.7rem;
-            display: inline-block;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            display: block;
         }
 
         .hero-pillar-card h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.4rem;
-            color: var(--light);
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .hero-pillar-card p {
-            font-size: 0.84rem;
-            color: #94a3b8;
-            margin: 0;
+            font-size: 0.88rem;
+            color: var(--gray);
             line-height: 1.5;
+            margin: 0;
         }
 
-        .hero-cta {
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .hero-cta { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
 
         .btn {
-            padding: 0.95rem 2.2rem;
-            border-radius: 0.75rem;
+            padding: 0.85rem 1.8rem;
+            border-radius: 0.6rem;
             font-weight: 700;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 0.95rem;
-            border: 2px solid transparent;
-            cursor: pointer;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            font-size: 0.98rem;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: var(--dark);
-            box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 35px rgba(79, 172, 254, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 242, 254, 0.45);
         }
 
         .btn-secondary {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid var(--card-border);
+            color: var(--light);
         }
 
         .btn-secondary:hover {
-            background: rgba(0, 242, 254, 0.1);
-            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .btn-orcid {
-            border: 2px solid #a6ce39;
+            background: rgba(166, 206, 57, 0.12);
+            border: 1px solid rgba(166, 206, 57, 0.4);
             color: #a6ce39;
-            background: rgba(166, 206, 57, 0.08);
         }
 
         .btn-orcid:hover {
-            background: rgba(166, 206, 57, 0.2);
-            transform: translateY(-3px);
+            background: #a6ce39;
+            color: #0f172a;
+            box-shadow: 0 0 20px rgba(166, 206, 57, 0.4);
+            transform: translateY(-2px);
         }
 
-        /* Solar System Section */
+        /* Dual Solar System Section */
         .solar-system-section {
             padding: 6rem 0;
             background: linear-gradient(180deg, var(--dark) 0%, #060b17 100%);
@@ -295,7 +337,7 @@
         .solar-system-header p {
             color: var(--gray);
             font-size: 1.1rem;
-            max-width: 760px;
+            max-width: 820px;
             margin: 0 auto;
         }
 
@@ -586,102 +628,118 @@
         }
 
         .mlops-box {
-            background: #011627;
-            padding: 2.2rem;
-            border-radius: 1.25rem;
+            background: #020617;
             border: 1px solid rgba(0, 242, 254, 0.25);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            position: relative;
         }
 
-        /* Doctoral & Academic Hub */
+        .mlops-box::before {
+            content: "cluster-worker: wtrain / wpipe";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--dark);
+            padding: 2px 10px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.7rem;
+            color: var(--primary);
+        }
+
+        /* Academic Research Section */
         .academic-section {
             padding: 6rem 0;
-            background: linear-gradient(135deg, rgba(166, 206, 57, 0.04) 0%, rgba(59, 130, 246, 0.04) 100%);
+            background: #0b1120;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .academic-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
             align-items: center;
         }
 
         .academic-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background: rgba(166, 206, 57, 0.15);
-            border: 1px solid #a6ce39;
-            color: #bef264;
-            padding: 0.4rem 1.2rem;
+            border: 1px solid rgba(166, 206, 57, 0.4);
+            color: #a6ce39;
+            padding: 0.35rem 1rem;
             border-radius: 99px;
             font-size: 0.85rem;
             font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .academic-content h2 {
+            font-size: 2.6rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .academic-content p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .academic-features {
-            list-style: none;
-            margin: 1.5rem 0 2rem;
-        }
-
+        .academic-features { list-style: none; margin-bottom: 2rem; }
         .academic-features li {
             display: flex;
             align-items: flex-start;
             gap: 0.8rem;
-            margin-bottom: 1.1rem;
+            margin-bottom: 1rem;
             color: #cbd5e1;
             font-size: 0.95rem;
         }
-
-        .academic-features i {
+        .academic-features li i {
             color: #a6ce39;
-            margin-top: 0.25rem;
+            margin-top: 0.2rem;
             font-size: 1.1rem;
         }
 
         .academic-card {
-            background: var(--card-bg);
+            background: rgba(15, 23, 42, 0.7);
             border: 1px solid rgba(166, 206, 57, 0.3);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            position: relative;
+            border-radius: 1.2rem;
+            padding: 2.2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
         }
 
         .preprint-stat-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 1.5rem;
         }
 
-        .preprint-stat {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 1rem;
-            border-radius: 0.8rem;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
+        .preprint-stat { text-align: center; }
         .preprint-stat .num {
             font-size: 2.2rem;
             font-weight: 900;
             color: #a6ce39;
+            font-family: 'Fira Code', monospace;
         }
-
         .preprint-stat .desc {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--gray);
             text-transform: uppercase;
-            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
-        /* Complete 23 Libraries PyPI Catalog */
-        .libraries {
-            padding: 7rem 0;
-        }
+        /* 23 Libraries Section */
+        .libraries { padding: 6rem 0; }
 
         .section-title {
             text-align: center;
@@ -732,91 +790,95 @@
 
         .libraries-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
         }
 
         .lib-card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 1.25rem;
             border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1.8rem;
             transition: all 0.3s;
-            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
         }
 
         .lib-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 12px 35px rgba(0, 242, 254, 0.15);
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .lib-header {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: flex-start;
             margin-bottom: 1rem;
         }
 
         .lib-icon {
-            font-size: 2.2rem;
-            display: inline-block;
+            width: 44px;
+            height: 44px;
+            border-radius: 0.6rem;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
         }
 
         .lib-type-tag {
             font-size: 0.72rem;
             font-weight: 700;
-            padding: 0.3rem 0.8rem;
-            border-radius: 99px;
+            padding: 3px 8px;
+            border-radius: 4px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .tag-core { background: rgba(0, 242, 254, 0.1); color: var(--primary); border: 1px solid rgba(0, 242, 254, 0.3); }
-        .tag-mcp { background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); border: 1px solid rgba(139, 92, 246, 0.3); }
-        .tag-db { background: rgba(16, 185, 129, 0.1); color: var(--accent-2); border: 1px solid rgba(16, 185, 129, 0.3); }
-        .tag-msg { background: rgba(245, 158, 11, 0.1); color: var(--accent-1); border: 1px solid rgba(245, 158, 11, 0.3); }
-        .tag-sec { background: rgba(239, 68, 68, 0.1); color: var(--accent-3); border: 1px solid rgba(239, 68, 68, 0.3); }
-        .tag-dev { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag-core { background: rgba(245, 158, 11, 0.15); color: var(--accent-1); }
+        .tag-mcp { background: rgba(6, 182, 212, 0.15); color: #06b6d4; }
+        .tag-db { background: rgba(16, 185, 129, 0.15); color: var(--accent-2); }
+        .tag-msg { background: rgba(239, 68, 68, 0.15); color: var(--accent-3); }
+        .tag-sec { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
+        .tag-dev { background: rgba(139, 92, 246, 0.15); color: var(--accent-purple); }
 
         .lib-card h3 {
-            font-size: 1.45rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
             color: var(--light);
+            margin-bottom: 0.6rem;
             font-family: 'Fira Code', monospace;
         }
 
         .lib-card p {
             color: var(--gray);
-            margin-bottom: 1.5rem;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             line-height: 1.6;
+            margin-bottom: 1.5rem;
+            min-height: 4.8em;
         }
 
         .lib-stats {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            align-items: center;
+            gap: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .lib-stat {
-            background: rgba(255, 255, 255, 0.04);
-            padding: 0.25rem 0.65rem;
-            border-radius: 6px;
-            font-size: 0.74rem;
-            font-weight: 600;
-            color: #cbd5e1;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.8rem;
+            color: var(--gray);
         }
 
-        .lib-stat span { color: var(--primary); margin-right: 4px; }
+        .lib-stat span {
+            display: block;
+            color: var(--light);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
 
         .lib-links {
             display: flex;
@@ -956,6 +1018,7 @@
             .solar-universe { height: 380px; transform: scale(0.58); }
             .mcp-universe { height: 340px; transform: scale(0.68); }
         }
+
     </style>
 </head>
 <body>
@@ -967,14 +1030,22 @@
                 <a href="#" class="nav-logo">
                     wisrovi <span>suit</span>
                 </a>
-                <ul class="nav-links">
-                    <li><a href="#solar">Sistema Solar</a></li>
-                    <li><a href="#mlops">wyoloservice (MLOps)</a></li>
-                    <li><a href="#academic">Investigación & ORCID</a></li>
-                    <li><a href="#libraries">23 Paquetes PyPI</a></li>
-                    <li><a href="https://orcid.org/0009-0005-0710-1861" target="_blank" class="nav-badge-link"><i class="fab fa-orcid"></i> ORCID</a></li>
-                    <li><a href="https://github.com/wisrovi" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-                </ul>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li><a href="#solar" data-i18n="nav_solar">Dual Solar System</a></li>
+                        <li><a href="#mlops" data-i18n="nav_mlops">wyoloservice (MLOps)</a></li>
+                        <li><a href="#academic" data-i18n="nav_academic">Research & ORCID</a></li>
+                        <li><a href="#libraries" data-i18n="nav_libraries">23 PyPI Packages</a></li>
+                        <li><a href="https://orcid.org/0009-0005-0710-1861" target="_blank" class="nav-badge-link"><i class="fab fa-orcid"></i> ORCID</a></li>
+                        <li><a href="https://github.com/wisrovi" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    </ul>
+
+                    <!-- Language Switcher -->
+                    <div class="lang-switch-wrapper" role="group" aria-label="Language Switcher">
+                        <button type="button" class="lang-btn active" id="btnLangEn" onclick="setLanguage('en')">EN</button>
+                        <button type="button" class="lang-btn" id="btnLangEs" onclick="setLanguage('es')">ES</button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -985,55 +1056,55 @@
             <div class="hero-content">
                 <div class="doctoral-pill">
                     <span class="pulse-dot"></span>
-                    <span>Candidato a Beca Doctoral en IA & Verificación Formal</span>
+                    <span data-i18n="doctoral_badge">Ph.D. Fellowship Candidate in AI & Formal Verification</span>
                 </div>
-                <h1>William Rodriguez</h1>
-                <div class="subtitle">Principal Software Engineer | AI Solutions Architect | Suite Creator</div>
-                <p>
-                    Arquitecto de sistemas distribuidos y creador de la <strong>Suite Wisrovi</strong> (23 librerías oficiales en PyPI). Investigador científico con 26 preprints indexados con DOI de CERN/Zenodo en IA Explicable Forense (XAI), Conformal Prediction y Verificación Formal de Agentes con LTL.
+                <h1 data-i18n="hero_title">William Rodriguez</h1>
+                <div class="subtitle" data-i18n="hero_subtitle">Principal Software Engineer | AI Solutions Architect | Suite Creator</div>
+                <p data-i18n="hero_desc">
+                    Distributed systems architect and creator of the <strong>Wisrovi Suite</strong> (23 official PyPI packages). Scientific researcher with 26 preprints indexed with CERN/Zenodo DOIs in Forensic Explainable AI (XAI), Conformal Prediction, and Agentic Formal Verification with LTL.
                 </p>
 
                 <!-- The 3 Pillars -->
                 <div class="hero-pillars-grid">
                     <div class="hero-pillar-card">
                         <i class="fas fa-server" style="color: #00f2fe;"></i>
-                        <h4>1. Ingeniería de Producción</h4>
-                        <p>Plataformas MLOps escalables (<strong>wyoloservice / NeuralForgeAI</strong>), colas Celery GPU y microservicios reactivos.</p>
+                        <h4 data-i18n="hero_pillar1_title">1. Production Engineering</h4>
+                        <p data-i18n="hero_pillar1_desc">Scalable enterprise MLOps platforms (<strong>wyoloservice / NeuralForgeAI</strong>), GPU Celery queues, and reactive microservices.</p>
                     </div>
                     <div class="hero-pillar-card">
                         <i class="fas fa-sun" style="color: #f59e0b;"></i>
-                        <h4>2. Suite Wisrovi (PyPI)</h4>
-                        <p>23 librerías independientes y modulares estructuradas alrededor del núcleo gravitacional <code>wpipe</code> y servidores FastMCP.</p>
+                        <h4 data-i18n="hero_pillar2_title">2. Wisrovi Suite (PyPI)</h4>
+                        <p data-i18n="hero_pillar2_desc">23 independent, modular libraries centered around the <code>wpipe</code> gravitational core and official FastMCP servers.</p>
                     </div>
                     <div class="hero-pillar-card">
                         <i class="fas fa-graduation-cap" style="color: #a6ce39;"></i>
-                        <h4>3. Investigación Científica</h4>
-                        <p>26 preprints con DOIs oficiales en Zenodo/CERN y ORCID. Rigor matemático en causalidad, cotas bootstrap y LTL.</p>
+                        <h4 data-i18n="hero_pillar3_title">3. Scientific Research</h4>
+                        <p data-i18n="hero_pillar3_desc">26 preprints with official CERN/Zenodo DOIs & verified ORCID. Mathematical rigor in causality, bootstrap bounds, and LTL.</p>
                     </div>
                 </div>
 
                 <div class="hero-cta">
                     <a href="#solar" class="btn btn-primary">
-                        <i class="fas fa-solar-system"></i> Explorar Sistema Solar
+                        <i class="fas fa-solar-system"></i> <span data-i18n="hero_btn_solar">Explore Solar System</span>
                     </a>
                     <a href="https://orcid.org/0009-0005-0710-1861" target="_blank" class="btn btn-orcid">
-                        <i class="fab fa-orcid"></i> Perfil Oficial ORCID
+                        <i class="fab fa-orcid"></i> <span data-i18n="hero_btn_orcid">Official ORCID Profile</span>
                     </a>
                     <a href="https://github.com/wisrovi" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-github"></i> GitHub Suite
+                        <i class="fab fa-github"></i> <span data-i18n="hero_btn_github">GitHub Suite</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solar System Section (wpipe as the Sun) -->
+    <!-- Dual Solar System Section -->
     <section class="solar-system-section" id="solar">
         <div class="container">
             <div class="solar-system-header">
-                <h2>El Universo Binario de la Suite Wisrovi</h2>
-                <p>
-                    Arquitectura visual en dos sistemas gravitacionales sincronizados: el <strong>Universo Principal</strong> con <code>wpipe</code> como Sol central coordinando persistencia, mensajería y MLOps distribuido; y la <strong>Constelación Agéntica</strong> donde el <strong>AI Agent Hub</strong> orbita con los 6 servidores <strong>FastMCP</strong> oficiales para la interacción con LLMs.
+                <h2 data-i18n="solar_header_title">The Binary Universe of the Wisrovi Suite</h2>
+                <p data-i18n="solar_header_desc">
+                    Visual architecture spanning two synchronized gravitational systems: the <strong>Main Universe</strong> with <code>wpipe</code> as the central Sun coordinating persistence, messaging, and distributed MLOps; and the <strong>Agentic Constellation</strong> where the <strong>AI Agent Hub</strong> orbits with 6 official <strong>FastMCP</strong> servers for seamless LLM interactions.
                 </p>
             </div>
 
@@ -1041,35 +1112,35 @@
                 <!-- Columna Izquierda: Macro Sistema Solar (Suite Core & Backends) -->
                 <div class="solar-universe-wrapper">
                     <span class="universe-badge badge-core-sol">
-                        <i class="fas fa-sun"></i> UNIVERSO PRINCIPAL
+                        <i class="fas fa-sun"></i> <span data-i18n="universe_main_badge">MAIN UNIVERSE</span>
                     </span>
-                    <h3 class="universe-title">Ecosistema Base Python & MLOps</h3>
-                    <p class="universe-sub">
-                        <code>wpipe</code> como Sol central coordinando streaming, persistencia transaccional, seguridad Zero Trust y entrenamiento distribuido.
+                    <h3 class="universe-title" data-i18n="universe_main_title">Python Core Ecosystem & MLOps</h3>
+                    <p class="universe-sub" data-i18n="universe_main_desc">
+                        <code>wpipe</code> as the central Sun coordinating streaming, transactional persistence, Zero Trust security, and distributed cluster training.
                     </p>
 
                     <div class="solar-universe">
                         <!-- Sun: WPipe -->
-                        <a href="https://pypi.org/project/wpipe/" target="_blank" class="solar-sun" title="WPipe: Sol Central del Ecosistema">
-                            <span class="sun-title">wpipe</span>
-                            <span class="sun-sub">SOL CENTRAL</span>
+                        <a href="https://pypi.org/project/wpipe/" target="_blank" class="solar-sun" title="WPipe: Central Sun of Ecosystem">
+                            <span class="sun-title" data-i18n="sun_wpipe_title">wpipe</span>
+                            <span class="sun-sub" data-i18n="sun_wpipe_sub">CENTRAL SUN</span>
                         </a>
 
                         <!-- Orbit 1: Core Extensions & High Downloads -->
                         <div class="orbit orbit-1">
-                            <a href="https://pypi.org/project/wkafka/" target="_blank" class="planet p-wkafka" title="wkafka: Streaming reactivo para Apache Kafka (~1,558/mes)">
+                            <a href="https://pypi.org/project/wkafka/" target="_blank" class="planet p-wkafka" title="wkafka: Reactive streaming for Apache Kafka (~1,558/mo)">
                                 <i class="fas fa-stream"></i>
                                 <span>wkafka</span>
                             </a>
-                            <a href="https://pypi.org/project/wredis/" target="_blank" class="planet p-wredis" title="wredis: Caché distribuido y distributed locks (~798/mes)">
+                            <a href="https://pypi.org/project/wredis/" target="_blank" class="planet p-wredis" title="wredis: Distributed cache & locks (~798/mo)">
                                 <i class="fas fa-bolt"></i>
                                 <span>wredis</span>
                             </a>
-                            <a href="https://pypi.org/project/wdecorators/" target="_blank" class="planet p-wdecorators" title="wdecorators: Resiliencia y telemetría (~655/mes)">
+                            <a href="https://pypi.org/project/wdecorators/" target="_blank" class="planet p-wdecorators" title="wdecorators: Resilience & telemetry (~655/mo)">
                                 <i class="fas fa-wand-magic-sparkles"></i>
                                 <span>wdecor</span>
                             </a>
-                            <a href="https://pypi.org/project/wpipe-steps/" target="_blank" class="planet p-wsteps" title="wpipe-steps: Pasos modulares para pipelines (~184/mes)">
+                            <a href="https://pypi.org/project/wpipe-steps/" target="_blank" class="planet p-wsteps" title="wpipe-steps: Modular pipeline steps (~184/mo)">
                                 <i class="fas fa-layer-group"></i>
                                 <span>steps</span>
                             </a>
@@ -1077,27 +1148,27 @@
 
                         <!-- Orbit 2: Databases, Security & Utility -->
                         <div class="orbit orbit-2">
-                            <a href="https://pypi.org/project/wsqlite/" target="_blank" class="planet p-wsqlite" title="wsqlite: SQLite empresarial con WAL y TableSync">
+                            <a href="https://pypi.org/project/wsqlite/" target="_blank" class="planet p-wsqlite" title="wsqlite: Enterprise SQLite WAL & TableSync">
                                 <i class="fas fa-database"></i>
                                 <span>wsqlite</span>
                             </a>
-                            <a href="https://pypi.org/project/wpostgresql/" target="_blank" class="planet p-wpostgresql" title="wpostgresql: Conexiones ACID y mapeo ORM (~303/mes)">
+                            <a href="https://pypi.org/project/wpostgresql/" target="_blank" class="planet p-wpostgresql" title="wpostgresql: ACID pooling & ORM (~303/mo)">
                                 <i class="fas fa-server"></i>
                                 <span>wpostgres</span>
                             </a>
-                            <a href="https://pypi.org/project/wFabricSecurity/" target="_blank" class="planet p-wfabric" title="wFabricSecurity: Zero Trust para Hyperledger Fabric">
+                            <a href="https://pypi.org/project/wFabricSecurity/" target="_blank" class="planet p-wfabric" title="wFabricSecurity: Zero Trust for Hyperledger Fabric">
                                 <i class="fas fa-shield-alt"></i>
                                 <span>wfabric</span>
                             </a>
-                            <a href="https://pypi.org/project/wmongo/" target="_blank" class="planet p-wmongo" title="wmongo: ODM reactivo con Pydantic">
+                            <a href="https://pypi.org/project/wmongo/" target="_blank" class="planet p-wmongo" title="wmongo: Reactive ODM with Pydantic">
                                 <i class="fas fa-leaf"></i>
                                 <span>wmongo</span>
                             </a>
-                            <a href="https://pypi.org/project/wpipe-plugins/" target="_blank" class="planet p-wplugins" title="wpipe-plugins: Extensiones y plugins de la comunidad">
+                            <a href="https://pypi.org/project/wpipe-plugins/" target="_blank" class="planet p-wplugins" title="wpipe-plugins: Dynamic community extensions">
                                 <i class="fas fa-puzzle-piece"></i>
                                 <span>plugins</span>
                             </a>
-                            <a href="https://pypi.org/project/wutils/" target="_blank" class="planet p-wutils" title="wutils: Schedulers y validación de formatos">
+                            <a href="https://pypi.org/project/wutils/" target="_blank" class="planet p-wutils" title="wutils: Schedulers & format validation">
                                 <i class="fas fa-toolbox"></i>
                                 <span>wutils</span>
                             </a>
@@ -1105,27 +1176,27 @@
 
                         <!-- Orbit 3: MLOps Distribuido, Big Data & Contenedores -->
                         <div class="orbit orbit-3">
-                            <a href="https://pypi.org/project/wyolo/" target="_blank" class="planet p-wyolo" title="wyolo: Wrapper de entrenamiento YOLO/RT-DETR con MLflow y S3">
+                            <a href="https://pypi.org/project/wyolo/" target="_blank" class="planet p-wyolo" title="wyolo: YOLO/RT-DETR training with MLflow & S3">
                                 <i class="fas fa-crosshairs"></i>
                                 <span>wyolo</span>
                             </a>
-                            <a href="https://pypi.org/project/wcontainer/" target="_blank" class="planet p-wcontainer" title="wcontainer: Contenedores efímeros Docker y cuotas GPU">
+                            <a href="https://pypi.org/project/wcontainer/" target="_blank" class="planet p-wcontainer" title="wcontainer: Docker SDK & GPU quotas governor">
                                 <i class="fab fa-docker"></i>
                                 <span>container</span>
                             </a>
-                            <a href="https://pypi.org/project/wclickhouse/" target="_blank" class="planet p-wclickhouse" title="wclickhouse: ClickHouse ORM para analytics OLAP">
+                            <a href="https://pypi.org/project/wclickhouse/" target="_blank" class="planet p-wclickhouse" title="wclickhouse: ClickHouse ORM for OLAP analytics">
                                 <i class="fas fa-chart-line"></i>
                                 <span>clickhouse</span>
                             </a>
-                            <a href="https://pypi.org/project/wauth/" target="_blank" class="planet p-wauth" title="wauth: Bóveda de secretos AES-256 Fernet locked a hardware">
+                            <a href="https://pypi.org/project/wauth/" target="_blank" class="planet p-wauth" title="wauth: AES-256 Fernet hardware-locked secrets vault">
                                 <i class="fas fa-key"></i>
                                 <span>wauth</span>
                             </a>
-                            <a href="https://pypi.org/project/wisrovi-python/" target="_blank" class="planet p-wisrovi-py" title="wisrovi-python: Tipos fundacionales y algoritmos de la suite">
+                            <a href="https://pypi.org/project/wisrovi-python/" target="_blank" class="planet p-wisrovi-py" title="wisrovi-python: Core shared algorithms & foundational types">
                                 <i class="fab fa-python"></i>
                                 <span>core-py</span>
                             </a>
-                            <a href="https://pypi.org/project/ProcessAudio/" target="_blank" class="planet p-processaudio" title="ProcessAudio: Procesamiento y análisis espectral de audio">
+                            <a href="https://pypi.org/project/ProcessAudio/" target="_blank" class="planet p-processaudio" title="ProcessAudio: Audio spectral DSP & augmentation">
                                 <i class="fas fa-wave-square"></i>
                                 <span>audio</span>
                             </a>
@@ -1136,32 +1207,32 @@
                 <!-- Columna Derecha: Micro Sistema Solar Agéntico (FastMCP Constellation) -->
                 <div class="mcp-universe-wrapper">
                     <span class="universe-badge badge-mcp-sol">
-                        <i class="fas fa-brain"></i> CONSTELACIÓN AGÉNTICA
+                        <i class="fas fa-brain"></i> <span data-i18n="universe_mcp_badge">AGENTIC CONSTELLATION</span>
                     </span>
-                    <h3 class="universe-title">FastMCP Hub para Agentes LLM</h3>
-                    <p class="universe-sub">
-                        El núcleo agéntico autónomo alimentado por los <strong>6 Servidores FastMCP</strong> oficiales para Claude, Cursor y Antigravity.
+                    <h3 class="universe-title" data-i18n="universe_mcp_title">FastMCP Hub for LLM Agents</h3>
+                    <p class="universe-sub" data-i18n="universe_mcp_desc">
+                        Autonomous agentic core powered by the <strong>6 official FastMCP Servers</strong> for Claude, Cursor, and Antigravity.
                     </p>
 
                     <div class="mcp-universe">
                         <!-- Agentic Core: AI LLM Agent Hub -->
-                        <div class="mcp-sun" title="FastMCP Core Hub: Conexión nativa con Agentes Autónomos (Claude, Antigravity, Cursor)">
+                        <div class="mcp-sun" title="FastMCP Core Hub: Native tools for Autonomous LLMs (Claude, Antigravity, Cursor)">
                             <i class="fas fa-robot"></i>
-                            <span class="sun-title">AI AGENT</span>
-                            <span class="sun-sub">MCP HUB</span>
+                            <span class="sun-title" data-i18n="sun_agent_title">AI AGENT</span>
+                            <span class="sun-sub" data-i18n="sun_agent_sub">MCP HUB</span>
                         </div>
 
                         <!-- Inner Orbit: Core Flow & MLOps Tools -->
                         <div class="orbit-mcp-1 orbit">
-                            <a href="https://pypi.org/project/wpipe-mcp/" target="_blank" class="planet p-mcp-pipe" title="wpipe-mcp: Servidor FastMCP para generación, validación y dry-run de pipelines wpipe">
+                            <a href="https://pypi.org/project/wpipe-mcp/" target="_blank" class="planet p-mcp-pipe" title="wpipe-mcp: FastMCP server for wpipe DAG topology, validation & dry-run">
                                 <i class="fas fa-project-diagram"></i>
                                 <span>pipe-mcp</span>
                             </a>
-                            <a href="https://pypi.org/project/wyoloservice-mcp/" target="_blank" class="planet p-mcp-yolo" title="wyoloservice-mcp: Orquestación agéntica de clusters de entrenamiento GPU y HPO Optuna">
+                            <a href="https://pypi.org/project/wyoloservice-mcp/" target="_blank" class="planet p-mcp-yolo" title="wyoloservice-mcp: FastMCP agentic orchestrator for GPU clusters & Optuna sweeps">
                                 <i class="fas fa-brain"></i>
                                 <span>yolo-mcp</span>
                             </a>
-                            <a href="https://pypi.org/project/wredis-mcp/" target="_blank" class="planet p-mcp-redis" title="wredis-mcp: Servidor FastMCP para inspección de caché, claves y distributed locks">
+                            <a href="https://pypi.org/project/wredis-mcp/" target="_blank" class="planet p-mcp-redis" title="wredis-mcp: FastMCP tools for Redis memory profiling, keys & locks">
                                 <i class="fas fa-bolt"></i>
                                 <span>redis-mcp</span>
                             </a>
@@ -1169,15 +1240,15 @@
 
                         <!-- Outer Orbit: Persistence & Streaming Tools -->
                         <div class="orbit-mcp-2 orbit">
-                            <a href="https://pypi.org/project/wsqlite-mcp/" target="_blank" class="planet p-mcp-sqlite" title="wsqlite-mcp: Herramientas MCP para consultas SQL seguras e inspección de esquemas SQLite">
+                            <a href="https://pypi.org/project/wsqlite-mcp/" target="_blank" class="planet p-mcp-sqlite" title="wsqlite-mcp: FastMCP tools for safe parametric SQLite SQL queries & schema inspection">
                                 <i class="fas fa-database"></i>
                                 <span>sqlite-mcp</span>
                             </a>
-                            <a href="https://pypi.org/project/wpostgresql-mcp/" target="_blank" class="planet p-mcp-postgres" title="wpostgresql-mcp: Servidor FastMCP para bases de datos relacionales PostgreSQL empresariales">
+                            <a href="https://pypi.org/project/wpostgresql-mcp/" target="_blank" class="planet p-mcp-postgres" title="wpostgresql-mcp: FastMCP tools for enterprise PostgreSQL database integration">
                                 <i class="fas fa-server"></i>
                                 <span>pgsql-mcp</span>
                             </a>
-                            <a href="https://pypi.org/project/wkafka-mcp/" target="_blank" class="planet p-mcp-kafka" title="wkafka-mcp: Servidor FastMCP para streaming de eventos y supervisión de tópicos Kafka">
+                            <a href="https://pypi.org/project/wkafka-mcp/" target="_blank" class="planet p-mcp-kafka" title="wkafka-mcp: FastMCP tools for Kafka topic telemetry & event streaming">
                                 <i class="fas fa-stream"></i>
                                 <span>kafka-mcp</span>
                             </a>
@@ -1193,20 +1264,29 @@
         <div class="container">
             <div class="mlops-grid">
                 <div>
-                    <span class="step-pill">PLATAFORMA DISTRIBUIDA (train_service_2)</span>
-                    <h2 style="font-size: 2.6rem; margin: 0.5rem 0 1rem; color: #fff;">wyoloservice: Distributed Training Platform</h2>
-                    <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                        Plataforma MLOps de grado empresarial para entrenamiento distribuido de modelos de visión artificial (YOLOv8, YOLOv11, YOLO26) con optimización evolutiva mediante <strong>Optuna TPESampler</strong> y auditoría forense explicable.
+                    <span class="step-pill" data-i18n="mlops_pill">DISTRIBUTED PLATFORM (train_service_2)</span>
+                    <h2 style="font-size: 2.6rem; margin: 0.5rem 0 1rem; color: #fff;" data-i18n="mlops_title">wyoloservice: Distributed Training Platform</h2>
+                    <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;" data-i18n="mlops_desc">
+                        Enterprise-grade distributed MLOps platform for Computer Vision architectures (YOLOv8, YOLOv11, YOLO26) featuring evolutionary optimization via <strong>Optuna TPESampler</strong> and forensic Explainable AI audits.
                     </p>
                     <ul class="feature-list" style="list-style: none;">
-                        <li style="display: flex; gap: 0.8rem; margin-bottom: 0.8rem; color: #cbd5e1;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> <strong>Pipeline Post-Entrenamiento de 22 Pasos:</strong> Ejecución de mapas de calor multiescala (Grad-CAM/Eigen-CAM en P3/P4/P5), Deletion/Insertion AUC y ataques adversarios (FGSM/PGD).</li>
-                        <li style="display: flex; gap: 0.8rem; margin-bottom: 0.8rem; color: #cbd5e1;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> <strong>Contenedores Efímeros Aislados:</strong> Invoker con gobernanza de cuotas VRAM/GPU y montajes CIFS de datasets.</li>
-                        <li style="display: flex; gap: 0.8rem; margin-bottom: 0.8rem; color: #cbd5e1;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> <strong>Herramientas FastMCP (wyoloservice-mcp):</strong> Permite a modelos de lenguaje (Claude, Antigravity, Cursor) supervisar y gestionar clusters de cómputo en tiempo real.</li>
+                        <li style="display: flex; gap: 0.8rem; margin-bottom: 0.8rem; color: #cbd5e1;">
+                            <i class="fas fa-check-circle" style="color: var(--primary);"></i> 
+                            <span data-i18n="mlops_f1"><strong>22-Step Post-Training Lifecycle:</strong> Execution of multi-scale heatmaps (Grad-CAM/Eigen-CAM on P3/P4/P5), Deletion/Insertion AUC fidelity, and adversarial attacks (FGSM/PGD).</span>
+                        </li>
+                        <li style="display: flex; gap: 0.8rem; margin-bottom: 0.8rem; color: #cbd5e1;">
+                            <i class="fas fa-check-circle" style="color: var(--primary);"></i> 
+                            <span data-i18n="mlops_f2"><strong>Isolated Ephemeral Containers:</strong> Worker node daemon with dynamic GPU/VRAM quota governors and Samba CIFS dataset mounting.</span>
+                        </li>
+                        <li style="display: flex; gap: 0.8rem; margin-bottom: 0.8rem; color: #cbd5e1;">
+                            <i class="fas fa-check-circle" style="color: var(--primary);"></i> 
+                            <span data-i18n="mlops_f3"><strong>FastMCP Agentic Tools (wyoloservice-mcp):</strong> Enables autonomous LLMs (Claude, Antigravity, Cursor) to manage, validate, and dispatch distributed cluster sweeps in real time.</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="mlops-box">
                     <div style="font-family: 'Fira Code', monospace; font-size: 0.84rem; color: #94a3b8; line-height: 1.7;">
-                        <span style="color: #ff7b72;"># Ciclo de Vida wyoloservice (wpipe execution)</span><br>
+                        <span style="color: #ff7b72;"># wyoloservice Lifecycle (wpipe execution)</span><br>
                         <span style="color: #79c0ff;">STEP 01:</span> Dataset Health Audit & Polygon Verification<br>
                         <span style="color: #79c0ff;">STEP 02:</span> Celery GPU Queue Dispatch (gpus_high/med/low)<br>
                         <span style="color: #79c0ff;">STEP 03:</span> Optuna TPESampler Genetic Hyperparameter Sweep<br>
@@ -1228,55 +1308,54 @@
             <div class="academic-grid">
                 <div class="academic-content">
                     <div class="academic-badge">
-                        <i class="fab fa-orcid"></i> Registro Académico Verificado
+                        <i class="fab fa-orcid"></i> <span data-i18n="academic_badge">Verified Academic Record</span>
                     </div>
-                    <h2>Investigación Científica & Aspiración Doctoral</h2>
-                    <p>
-                        Mi vocación investigadora integra el rigor matemático formal con el desarrollo de software de misión crítica. Con un Máster en Inteligencia Artificial (VIU, España) y título de Ingeniero Electrónico (UDI, Colombia), presento una agenda doctoral estructurada en tres frentes:
+                    <h2 data-i18n="academic_title">Scientific Research & Doctoral Aspirations</h2>
+                    <p data-i18n="academic_desc">
+                        My research agenda combines formal mathematical rigor with mission-critical software engineering. Holding a Master's degree in Artificial Intelligence (VIU, Spain) and a Bachelor's in Electronic Engineering (UDI, Colombia), I pursue doctoral research across three primary frontiers:
                     </p>
                     <ul class="academic-features">
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <div><strong>Causal Saliency Regularization (CSR):</strong> Mitigación analítica de correlaciones espurias mediante penalización del Jacobiano truncado en la pirámide PAFPN multiescala.</div>
+                            <div><strong data-i18n="academic_f1_title">Causal Saliency Regularization (CSR):</strong> <span data-i18n="academic_f1_desc">Analytical mitigation of spurious correlations via truncated Jacobian penalty across the multi-scale PAFPN pyramid.</span></div>
                         </li>
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <div><strong>Conformal Prediction & Cuantificación de Incertidumbre:</strong> Garantías de cobertura con distribución libre en muestras finitas acopladas a descomposición variacional con MC Dropout (T=30).</div>
+                            <div><strong data-i18n="academic_f2_title">Conformal Prediction & Uncertainty Quantification:</strong> <span data-i18n="academic_f2_desc">Finite-sample distribution-free coverage guarantees coupled with variational uncertainty decomposition via MC Dropout (T=30).</span></div>
                         </li>
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <div><strong>Verificación Formal de Protocolos Agénticos:</strong> Model checking y síntesis de monitores LTL (Lógica Temporal Lineal) para validación matemática de servidores FastMCP.</div>
+                            <div><strong data-i18n="academic_f3_title">Formal Verification of Agentic Protocols:</strong> <span data-i18n="academic_f3_desc">Model checking and LTL (Linear Temporal Logic) monitor synthesis for mathematical safety validation of FastMCP servers.</span></div>
                         </li>
                     </ul>
                     <a href="https://orcid.org/0009-0005-0710-1861" target="_blank" class="btn btn-orcid">
-                        <i class="fab fa-orcid"></i> Consultar Artículos en ORCID
+                        <i class="fab fa-orcid"></i> <span data-i18n="academic_btn_orcid">View Publications on ORCID</span>
                     </a>
                 </div>
 
                 <div class="academic-card">
                     <h3 style="color: #bef264; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;">
-                        <i class="fas fa-book-journal-whills"></i> Cartera de Preprints (CERN/Zenodo)
+                        <i class="fas fa-book-journal-whills"></i> <span data-i18n="academic_card_title">Preprint Portfolio (CERN/Zenodo)</span>
                     </h3>
                     <div class="preprint-stat-row">
                         <div class="preprint-stat">
-                            <div class="num">26</div>
-                            <div class="desc">Preprints Científicos</div>
+                            <div class="num" data-i18n="academic_stat1_num">26</div>
+                            <div class="desc" data-i18n="academic_stat1_desc">Scientific Preprints</div>
                         </div>
                         <div class="preprint-stat">
-                            <div class="num">100%</div>
-                            <div class="desc">DOIs Registrados</div>
+                            <div class="num" data-i18n="academic_stat2_num">100%</div>
+                            <div class="desc" data-i18n="academic_stat2_desc">Registered DOIs</div>
                         </div>
                         <div class="preprint-stat">
-                            <div class="num">IEEE</div>
-                            <div class="desc">Formato Canónico</div>
+                            <div class="num" data-i18n="academic_stat3_num">IEEE</div>
+                            <div class="desc" data-i18n="academic_stat3_desc">Canonical Format</div>
                         </div>
                     </div>
-                    <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1.5rem;">
-                        Los manuscritos abordan de forma experimental la escalabilidad MLOps, cuantificación de domain shift por distancia FID, auditorías forenses con Grad-CAM multiescala y verificación formal en clusters heterogéneos.
+                    <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="academic_card_desc">
+                        Preprints experimentally investigate MLOps scalability, FID latent domain shift quantification, multi-scale Grad-CAM forensic audits, and formal verification in heterogeneous clusters.
                     </p>
-                    <div style="background: rgba(15, 23, 42, 0.7); padding: 1rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', monospace; font-size: 0.8rem; color: #a6ce39;">
-                        ORCID ID: 0009-0005-0710-1861<br>
-                        Filiación: wisrovi-suit AI Research Initiative, Badajoz, Spain
+                    <div style="background: rgba(15, 23, 42, 0.7); padding: 1rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', monospace; font-size: 0.8rem; color: #a6ce39;" data-i18n="academic_affiliation">
+                        ORCID ID: 0009-0005-0710-1861<br>Affiliation: wisrovi-suit AI Research Initiative, Badajoz, Spain
                     </div>
                 </div>
             </div>
@@ -1287,36 +1366,35 @@
     <section class="libraries" id="libraries">
         <div class="container">
             <div class="section-title">
-                <h2>Catálogo Oficial de la Suite (23 Paquetes PyPI)</h2>
-                <p>Las 23 librerías públicas en PyPI soportadas e instalables de forma automatizada a través de <code>w-cli</code>.</p>
+                <h2 data-i18n="catalog_title">Official Suite Catalog (23 PyPI Packages)</h2>
+                <p data-i18n="catalog_desc">All 23 public PyPI packages actively maintained and installable via the automated <code>w-cli</code> terminal suite.</p>
             </div>
 
             <!-- Categories Tabs -->
             <div class="filter-tabs">
-                <button class="filter-btn active" onclick="filterLibs('all')">Todos (23)</button>
-                <button class="filter-btn" onclick="filterLibs('core')">Pipeline & Core (4)</button>
-                <button class="filter-btn" onclick="filterLibs('mcp')">FastMCP Servers (6)</button>
-                <button class="filter-btn" onclick="filterLibs('database')">Bases de Datos & Caché (5)</button>
-                <button class="filter-btn" onclick="filterLibs('messaging')">Mensajería & Streaming (1)</button>
-                <button class="filter-btn" onclick="filterLibs('security')">Seguridad Zero Trust (2)</button>
-                <button class="filter-btn" onclick="filterLibs('mlops')">MLOps, Audio & Tools (5)</button>
+                <button class="filter-btn active" onclick="filterLibs('all')" data-i18n="tab_all">All (23)</button>
+                <button class="filter-btn" onclick="filterLibs('core')" data-i18n="tab_core">Pipeline & Core (4)</button>
+                <button class="filter-btn" onclick="filterLibs('mcp')" data-i18n="tab_mcp">FastMCP Servers (6)</button>
+                <button class="filter-btn" onclick="filterLibs('database')" data-i18n="tab_db">Databases & Cache (5)</button>
+                <button class="filter-btn" onclick="filterLibs('messaging')" data-i18n="tab_msg">Messaging & Streaming (1)</button>
+                <button class="filter-btn" onclick="filterLibs('security')" data-i18n="tab_sec">Zero Trust Security (2)</button>
+                <button class="filter-btn" onclick="filterLibs('mlops')" data-i18n="tab_mlops">MLOps & Tools (5)</button>
             </div>
 
             <div class="libraries-grid" id="libGrid">
-                <!-- 1. wpipe -->
-                <div class="lib-card" data-cat="core">
+
+                <div class="lib-card" data-cat="core" id="card-wpipe">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-sun" style="color: #fbbf24;"></i></div>
-                            <span class="lib-type-tag tag-core">CORE SOL</span>
+                            <span class="lib-type-tag tag-core" id="libtag-wpipe">CORE SUN</span>
                         </div>
                         <h3>wpipe</h3>
-                        <p>High-performance Python pipeline orchestrator (Sync/Async). Motor central declarativo con paralelismo real e inyección contextual de dependencias.</p>
+                        <p id="libdesc-wpipe">High-performance Python pipeline orchestrator (Sync/Async). Declarative DAG core engine with real GIL-bypass parallelism, SQLite WAL checkpoints, and contextual dependency injection.</p>
                     </div>
                     <div>
                         <div class="lib-stats">
-                            <div class="lib-stat"><span>Core</span>Engine</div>
-                            <div class="lib-stat"><span>Sync/Async</span>Dual Mode</div>
+                            <div class="lib-stat"><span>Core</span>Engine</div><div class="lib-stat"><span>Sync/Async</span>Dual Mode</div>
                         </div>
                         <div class="lib-links">
                             <a href="https://pypi.org/project/wpipe/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
@@ -1325,262 +1403,18 @@
                     </div>
                 </div>
 
-                <!-- 2. wpipe-steps -->
-                <div class="lib-card" data-cat="core">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-layer-group" style="color: #eab308;"></i></div>
-                            <span class="lib-type-tag tag-core">Pipeline</span>
-                        </div>
-                        <h3>wpipe-steps</h3>
-                        <p>Official production-ready modular steps for wpipe. Catálogo de pasos modulares listos para producción para el orquestador wpipe.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>Steps</span>Library</div>
-                            <div class="lib-stat"><span>Modular</span>Architecture</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wpipe-steps/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. wpipe-plugins -->
-                <div class="lib-card" data-cat="core">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-puzzle-piece" style="color: #8b5cf6;"></i></div>
-                            <span class="lib-type-tag tag-core">Plugins</span>
-                        </div>
-                        <h3>wpipe-plugins</h3>
-                        <p>Community-driven plugin repository for custom steps. Repositorio de extensiones y plugins personalizados para flujos complejos de ejecución.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>Plugins</span>Framework</div>
-                            <div class="lib-stat"><span>Extensible</span>Architecture</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wpipe-plugins/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. wpipe-mcp -->
-                <div class="lib-card" data-cat="mcp">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-robot" style="color: #06b6d4;"></i></div>
-                            <span class="lib-type-tag tag-mcp">FastMCP</span>
-                        </div>
-                        <h3>wpipe-mcp</h3>
-                        <p>FastMCP Server for wpipe pipeline architecture and verification. Servidor FastMCP para generación asistida, validación contextual y dry-run de pipelines.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>FastMCP</span>Protocol</div>
-                            <div class="lib-stat"><span>Agentic</span>Tools</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wpipe-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wpipe-mcp" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. wredis -->
-                <div class="lib-card" data-cat="database">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-bolt" style="color: #ef4444;"></i></div>
-                            <span class="lib-type-tag tag-db">Caché</span>
-                        </div>
-                        <h3>wredis</h3>
-                        <p>Redis sync/async integration & caching suite. Cliente Redis simplificado de alto rendimiento con pooling, pub/sub y bloqueos distribuidos.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>&lt;1ms</span>Latency</div>
-                            <div class="lib-stat"><span>PubSub</span>Distributed</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wredis/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wredis" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. wredis-mcp -->
-                <div class="lib-card" data-cat="mcp">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-plug" style="color: #ef4444;"></i></div>
-                            <span class="lib-type-tag tag-mcp">FastMCP</span>
-                        </div>
-                        <h3>wredis-mcp</h3>
-                        <p>FastMCP Server for Redis cache management and inspection. Servidor de herramientas para que agentes LLM inspeccionen claves y estructuras en Redis.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>FastMCP</span>Server</div>
-                            <div class="lib-stat"><span>Redis</span>Ops</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wredis-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. wsqlite -->
-                <div class="lib-card" data-cat="database">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-database" style="color: #10b981;"></i></div>
-                            <span class="lib-type-tag tag-db">Embebida</span>
-                        </div>
-                        <h3>wsqlite</h3>
-                        <p>High-performance SQLite ORM wrapper with TableSync. SQLite empresarial optimizado con modo WAL, pooling thread-safe y autolimpieza.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>WAL Mode</span>Thread-Safe</div>
-                            <div class="lib-stat"><span>TableSync</span>Auto</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wsqlite/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wsqlite" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. wsqlite-mcp -->
-                <div class="lib-card" data-cat="mcp">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-plug" style="color: #10b981;"></i></div>
-                            <span class="lib-type-tag tag-mcp">FastMCP</span>
-                        </div>
-                        <h3>wsqlite-mcp</h3>
-                        <p>FastMCP Server for SQLite database inspection and queries. Herramientas MCP para ejecución de consultas seguras y auditoría de esquemas SQLite.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>FastMCP</span>Server</div>
-                            <div class="lib-stat"><span>SQLite</span>Queries</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wsqlite-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 9. wpostgresql -->
-                <div class="lib-card" data-cat="database">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-database" style="color: #3b82f6;"></i></div>
-                            <span class="lib-type-tag tag-db">Relacional</span>
-                        </div>
-                        <h3>wpostgresql</h3>
-                        <p>PostgreSQL connection pooler and enterprise ORM mapper. Conexión de alto rendimiento para PostgreSQL con soporte de transacciones ACID y mapeo ORM.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>ACID</span>Pool Ready</div>
-                            <div class="lib-stat"><span>ORM</span>Mapper</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wpostgresql/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wpostgresql" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10. wpostgresql-mcp -->
-                <div class="lib-card" data-cat="mcp">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-plug" style="color: #3b82f6;"></i></div>
-                            <span class="lib-type-tag tag-mcp">FastMCP</span>
-                        </div>
-                        <h3>wpostgresql-mcp</h3>
-                        <p>FastMCP Server for PostgreSQL AI agent integration. Servidor MCP para integración de agentes de IA con bases de datos PostgreSQL en producción.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>FastMCP</span>Server</div>
-                            <div class="lib-stat"><span>PostgreSQL</span>Ops</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wpostgresql-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 11. wclickhouse -->
-                <div class="lib-card" data-cat="database">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-chart-line" style="color: #f97316;"></i></div>
-                            <span class="lib-type-tag tag-db">Analytics</span>
-                        </div>
-                        <h3>wclickhouse</h3>
-                        <p>ClickHouse ORM mapping using clickhouse-connect. Inserción masiva optimizada por lotes, consultas OLAP en columnas y soporte de time-series.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>OLAP</span>Batch Insert</div>
-                            <div class="lib-stat"><span>Time-Series</span>Fast</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wclickhouse/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wclickhouse" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 12. wmongo -->
-                <div class="lib-card" data-cat="database">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-leaf" style="color: #10b981;"></i></div>
-                            <span class="lib-type-tag tag-db">NoSQL</span>
-                        </div>
-                        <h3>wmongo</h3>
-                        <p>MongoDB document mapper utilizing Pydantic. Adaptador de base de datos documental con esquemas validados con Pydantic y pipelines de agregación.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>Pydantic</span>Models</div>
-                            <div class="lib-stat"><span>Aggregation</span>Pipelines</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wmongo/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wmongo" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 13. wkafka -->
-                <div class="lib-card" data-cat="messaging">
+                <div class="lib-card" data-cat="messaging" id="card-wkafka">
                     <div>
                         <div class="lib-header">
                             <div class="lib-icon"><i class="fas fa-stream" style="color: #f59e0b;"></i></div>
-                            <span class="lib-type-tag tag-msg">Streaming</span>
+                            <span class="lib-type-tag tag-msg" id="libtag-wkafka">Streaming</span>
                         </div>
                         <h3>wkafka</h3>
-                        <p>Decorator-based wrapper for Apache Kafka. Abstracción declarativa para Kafka con decoradores de suscripción/publicación y reconexión automática.</p>
+                        <p id="libdesc-wkafka">Decorator-based high-throughput wrapper for Apache Kafka. Non-blocking consumers/producers with automated reconnection, thread pools, and backpressure handling.</p>
                     </div>
                     <div>
                         <div class="lib-stats">
-                            <div class="lib-stat"><span>Decorators</span>API</div>
-                            <div class="lib-stat"><span>Auto-Reconnect</span>Built-in</div>
+                            <div class="lib-stat"><span>Decorators</span>API</div><div class="lib-stat"><span>Auto-Reconnect</span>Built-in</div>
                         </div>
                         <div class="lib-links">
                             <a href="https://pypi.org/project/wkafka/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
@@ -1589,174 +1423,38 @@
                     </div>
                 </div>
 
-                <!-- 14. wkafka-mcp -->
-                <div class="lib-card" data-cat="mcp">
+                <div class="lib-card" data-cat="database" id="card-wredis">
                     <div>
                         <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-plug" style="color: #f59e0b;"></i></div>
-                            <span class="lib-type-tag tag-mcp">FastMCP</span>
+                            <div class="lib-icon"><i class="fas fa-bolt" style="color: #ef4444;"></i></div>
+                            <span class="lib-type-tag tag-db" id="libtag-wredis">Cache & Locks</span>
                         </div>
-                        <h3>wkafka-mcp</h3>
-                        <p>FastMCP Server for Kafka event streaming and topic inspection. Servidor MCP para monitorización de tópicos, inyección de eventos y telemetría de lag.</p>
+                        <h3>wredis</h3>
+                        <p id="libdesc-wredis">Ultra-fast Redis sync/async integration & caching suite. Connection pooling, token-bucket distributed rate limiters, pub/sub streams, and atomic distributed locks.</p>
                     </div>
                     <div>
                         <div class="lib-stats">
-                            <div class="lib-stat"><span>FastMCP</span>Server</div>
-                            <div class="lib-stat"><span>Kafka</span>Stream Ops</div>
+                            <div class="lib-stat"><span><1ms</span>Latency</div><div class="lib-stat"><span>PubSub</span>Distributed</div>
                         </div>
                         <div class="lib-links">
-                            <a href="https://pypi.org/project/wkafka-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://pypi.org/project/wredis/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wredis" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 15. wauth -->
-                <div class="lib-card" data-cat="security">
+                <div class="lib-card" data-cat="core" id="card-wdecorators">
                     <div>
                         <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-key" style="color: #ec4899;"></i></div>
-                            <span class="lib-type-tag tag-sec">Seguridad</span>
-                        </div>
-                        <h3>wauth</h3>
-                        <p>Machine-locked secrets encryption vault (AES-256 Fernet). Bóveda de secretos protegida por firma física de hardware y rotación de credenciales.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>AES-256</span>Fernet</div>
-                            <div class="lib-stat"><span>Hardware-Locked</span>Vault</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wauth/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wauth" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 16. wFabricSecurity -->
-                <div class="lib-card" data-cat="security">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-shield-halved" style="color: #ef4444;"></i></div>
-                            <span class="lib-type-tag tag-sec">Zero Trust</span>
-                        </div>
-                        <h3>wFabricSecurity</h3>
-                        <p>Zero Trust security system for Hyperledger Fabric. Seguridad criptográfica de grado industrial con autenticación, autorización y auditoría estricta.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>Zero Trust</span>Model</div>
-                            <div class="lib-stat"><span>Hyperledger</span>Fabric</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wFabricSecurity/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wFabricSecurity" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 17. wyolo -->
-                <div class="lib-card" data-cat="mlops">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-crosshairs" style="color: #10b981;"></i></div>
-                            <span class="lib-type-tag tag-core">MLOps</span>
-                        </div>
-                        <h3>wyolo</h3>
-                        <p>MLflow and S3 YOLO/RT-DETR training workflow wrapper. Automatización de pipelines de entrenamiento y validación forense para arquitecturas YOLO.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>YOLO</span>MLOps</div>
-                            <div class="lib-stat"><span>MLflow & S3</span>Sync</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wyolo/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wyolo" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 18. wyoloservice-mcp -->
-                <div class="lib-card" data-cat="mcp">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-brain" style="color: #ec4899;"></i></div>
-                            <span class="lib-type-tag tag-mcp">FastMCP</span>
-                        </div>
-                        <h3>wyoloservice-mcp</h3>
-                        <p>FastMCP Server for NeuralForgeAI YOLO cluster orchestration. Servidor de herramientas MCP para control remoto del cluster distribuido de entrenamiento.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>FastMCP</span>Server</div>
-                            <div class="lib-stat"><span>Cluster</span>Orchestrator</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wyoloservice-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 19. ProcessAudio -->
-                <div class="lib-card" data-cat="mlops">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-wave-square" style="color: #8b5cf6;"></i></div>
-                            <span class="lib-type-tag tag-core">Audio ML</span>
-                        </div>
-                        <h3>ProcessAudio</h3>
-                        <p>Audio feature extraction and augmentation utility. Extracción de espectrogramas Mel, MFCC, análisis espectral FFT y aumentación de audio.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>DSP/FFT</span>Features</div>
-                            <div class="lib-stat"><span>Scikit-learn</span>Pipes</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/ProcessAudio/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/ProcessAudio" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 20. wcontainer -->
-                <div class="lib-card" data-cat="mlops">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fab fa-docker" style="color: #0284c7;"></i></div>
-                            <span class="lib-type-tag tag-dev">Docker SDK</span>
-                        </div>
-                        <h3>wcontainer</h3>
-                        <p>Docker SDK automation utility library. Gestión de contenedores efímeros Docker, aislamiento de cuotas GPU y supervisión en tiempo real.</p>
-                    </div>
-                    <div>
-                        <div class="lib-stats">
-                            <div class="lib-stat"><span>Docker SDK</span>Automation</div>
-                            <div class="lib-stat"><span>GPU Isolation</span>Governor</div>
-                        </div>
-                        <div class="lib-links">
-                            <a href="https://pypi.org/project/wcontainer/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
-                            <a href="https://github.com/wisrovi/wcontainer" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 21. wdecorators -->
-                <div class="lib-card" data-cat="core">
-                    <div>
-                        <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-wand-magic-sparkles" style="color: #06b6d4;"></i></div>
-                            <span class="lib-type-tag tag-core">Decorators</span>
+                            <div class="lib-icon"><i class="fas fa-wand-magic-sparkles" style="color: #ec4899;"></i></div>
+                            <span class="lib-type-tag tag-core" id="libtag-wdecorators">Resilience</span>
                         </div>
                         <h3>wdecorators</h3>
-                        <p>Reusable high-level decorator collection. Decoradores avanzados para reintentos exponenciales con jitter, mediciones de tiempo y telemetría.</p>
+                        <p id="libdesc-wdecorators">Reusable high-level decorator suite. Implements exponential backoff with full jitter, runtime latency profiling, memory tracing, and structured Loguru logging.</p>
                     </div>
                     <div>
                         <div class="lib-stats">
-                            <div class="lib-stat"><span>Retry Jitter</span>Resilience</div>
-                            <div class="lib-stat"><span>Latency Profiler</span>Built-in</div>
+                            <div class="lib-stat"><span>Retry Jitter</span>Resilience</div><div class="lib-stat"><span>Latency Profiler</span>Built-in</div>
                         </div>
                         <div class="lib-links">
                             <a href="https://pypi.org/project/wdecorators/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
@@ -1765,20 +1463,358 @@
                     </div>
                 </div>
 
-                <!-- 22. wutils -->
-                <div class="lib-card" data-cat="mlops">
+                <div class="lib-card" data-cat="mcp" id="card-wpipe-mcp">
                     <div>
                         <div class="lib-header">
-                            <div class="lib-icon"><i class="fas fa-toolbox" style="color: #f97316;"></i></div>
-                            <span class="lib-type-tag tag-dev">Utilities</span>
+                            <div class="lib-icon"><i class="fas fa-robot" style="color: #06b6d4;"></i></div>
+                            <span class="lib-type-tag tag-mcp" id="libtag-wpipe-mcp">FastMCP</span>
                         </div>
-                        <h3>wutils</h3>
-                        <p>Common script scheduling and format checkers. Planificación de tareas, parseo de cron, validadores de formatos y normalización de datos.</p>
+                        <h3>wpipe-mcp</h3>
+                        <p id="libdesc-wpipe-mcp">Official FastMCP Server for wpipe pipeline architecture. Enables LLM agents (Claude, Cursor, Antigravity) to design, inspect, formally verify, and dry-run DAG execution flows.</p>
                     </div>
                     <div>
                         <div class="lib-stats">
-                            <div class="lib-stat"><span>Task Scheduler</span>Cron</div>
-                            <div class="lib-stat"><span>Format Validator</span>Fast</div>
+                            <div class="lib-stat"><span>FastMCP</span>Protocol</div><div class="lib-stat"><span>Agentic</span>Tools</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wpipe-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wpipe-mcp" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" id="card-wpostgresql">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-server" style="color: #3b82f6;"></i></div>
+                            <span class="lib-type-tag tag-db" id="libtag-wpostgresql">Relational</span>
+                        </div>
+                        <h3>wpostgresql</h3>
+                        <p id="libdesc-wpostgresql">High-concurrency PostgreSQL connection pooler and enterprise ORM mapper. Thread-safe connection pools, ACID transaction decorators, and Pydantic model synchronization.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>ACID</span>Pool Ready</div><div class="lib-stat"><span>ORM</span>Mapper</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wpostgresql/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wpostgresql" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="core" id="card-wpipe-steps">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-layer-group" style="color: #eab308;"></i></div>
+                            <span class="lib-type-tag tag-core" id="libtag-wpipe-steps">Modular Steps</span>
+                        </div>
+                        <h3>wpipe-steps</h3>
+                        <p id="libdesc-wpipe-steps">Official catalog of production-ready modular steps for wpipe. Pre-built, strongly typed steps for data ingestion, ETL, computer vision, and ML transformations.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Steps</span>Library</div><div class="lib-stat"><span>Modular</span>Architecture</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wpipe-steps/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" id="card-wsqlite">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-database" style="color: #10b981;"></i></div>
+                            <span class="lib-type-tag tag-db" id="libtag-wsqlite">Embedded DB</span>
+                        </div>
+                        <h3>wsqlite</h3>
+                        <p id="libdesc-wsqlite">High-performance SQLite ORM wrapper featuring reactive TableSync. Optimized multi-thread Write-Ahead Logging (WAL) mode, connection pooling, and automated schema migration.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>WAL Mode</span>Thread-Safe</div><div class="lib-stat"><span>TableSync</span>Auto</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wsqlite/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wsqlite" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mlops" id="card-wyolo">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-crosshairs" style="color: #10b981;"></i></div>
+                            <span class="lib-type-tag tag-dev" id="libtag-wyolo">Computer Vision</span>
+                        </div>
+                        <h3>wyolo</h3>
+                        <p id="libdesc-wyolo">Complete lifecycle training wrapper for YOLO (v8, v11, YOLO26) and RT-DETR. Seamless synchronization of weights to MinIO S3 and real-time metric logging to MLflow.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>YOLO</span>MLOps</div><div class="lib-stat"><span>MLflow & S3</span>Sync</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wyolo/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wyolo" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" id="card-wyoloservice-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-brain" style="color: #ec4899;"></i></div>
+                            <span class="lib-type-tag tag-mcp" id="libtag-wyoloservice-mcp">FastMCP Cluster</span>
+                        </div>
+                        <h3>wyoloservice-mcp</h3>
+                        <p id="libdesc-wyoloservice-mcp">FastMCP Server for NeuralForgeAI YOLO cluster orchestration. Enables LLMs to validate datasets, generate Sweeper v2 configurations, inspect GPU queues, and dispatch Optuna sweeps.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>FastMCP</span>Server</div><div class="lib-stat"><span>Cluster</span>Orchestrator</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wyoloservice-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="security" id="card-wauth">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-key" style="color: #d946ef;"></i></div>
+                            <span class="lib-type-tag tag-sec" id="libtag-wauth">Credentials Vault</span>
+                        </div>
+                        <h3>wauth</h3>
+                        <p id="libdesc-wauth">Cryptographic secrets encryption vault locked to host hardware fingerprints (machine-salted). AES-256 Fernet symmetric encryption protecting sensitive cluster configurations.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>AES-256</span>Fernet</div><div class="lib-stat"><span>Hardware-Locked</span>Vault</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wauth/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wauth" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="security" id="card-wFabricSecurity">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-shield-halved" style="color: #64748b;"></i></div>
+                            <span class="lib-type-tag tag-sec" id="libtag-wFabricSecurity">Zero Trust</span>
+                        </div>
+                        <h3>wFabricSecurity</h3>
+                        <p id="libdesc-wFabricSecurity">Industrial Zero Trust security architecture for Hyperledger Fabric networks. ECDSA P-256 digital signature validation, SHA-256 code integrity hashing, and cryptographic audits.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Zero Trust</span>Model</div><div class="lib-stat"><span>Hyperledger</span>Fabric</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wFabricSecurity/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wFabricSecurity" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mlops" id="card-ProcessAudio">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-wave-square" style="color: #8b5cf6;"></i></div>
+                            <span class="lib-type-tag tag-dev" id="libtag-ProcessAudio">Audio ML / DSP</span>
+                        </div>
+                        <h3>ProcessAudio</h3>
+                        <p id="libdesc-ProcessAudio">Scikit-learn compatible transformers for audio feature extraction (Mel spectrograms, MFCC, FFT spectral centroid) and real-time acoustic data augmentation pipelines.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>DSP/FFT</span>Features</div><div class="lib-stat"><span>Scikit-learn</span>Pipes</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/ProcessAudio/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/ProcessAudio" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" id="card-wclickhouse">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-chart-line" style="color: #f97316;"></i></div>
+                            <span class="lib-type-tag tag-db" id="libtag-wclickhouse">OLAP Analytics</span>
+                        </div>
+                        <h3>wclickhouse</h3>
+                        <p id="libdesc-wclickhouse">High-throughput ClickHouse ORM mapping using clickhouse-connect. Optimized for bulk batch insertions, columnar time-series aggregation, and deep learning inference telemetry.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>OLAP</span>Batch Insert</div><div class="lib-stat"><span>Time-Series</span>Fast</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wclickhouse/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wclickhouse" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mlops" id="card-wcontainer">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-docker" style="color: #0284c7;"></i></div>
+                            <span class="lib-type-tag tag-dev" id="libtag-wcontainer">Docker SDK</span>
+                        </div>
+                        <h3>wcontainer</h3>
+                        <p id="libdesc-wcontainer">Docker SDK automation engine: ephemeral container spawner, GPU VRAM & CPU quota enforcement governors, and embedded Trivy vulnerability scanning.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Docker SDK</span>Automation</div><div class="lib-stat"><span>GPU Isolation</span>Governor</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wcontainer/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wcontainer" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" id="card-wmongo">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-leaf" style="color: #10b981;"></i></div>
+                            <span class="lib-type-tag tag-db" id="libtag-wmongo">Document NoSQL</span>
+                        </div>
+                        <h3>wmongo</h3>
+                        <p id="libdesc-wmongo">Reactive MongoDB document mapper utilizing Pydantic models. Features automatic query caching on wredis, safe aggregation pipelines, and lifecycle event listeners.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Pydantic</span>Models</div><div class="lib-stat"><span>Aggregation</span>Pipelines</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wmongo/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/wmongo" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" id="card-wkafka-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-plug" style="color: #f59e0b;"></i></div>
+                            <span class="lib-type-tag tag-mcp" id="libtag-wkafka-mcp">FastMCP Kafka</span>
+                        </div>
+                        <h3>wkafka-mcp</h3>
+                        <p id="libdesc-wkafka-mcp">FastMCP Server for Kafka event streaming and topic inspection. Exposes tools for LLM agents to monitor topic partitions, consumer group lag, and inject telemetry payloads.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>FastMCP</span>Server</div><div class="lib-stat"><span>Kafka</span>Stream Ops</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wkafka-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" id="card-wredis-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-plug" style="color: #ef4444;"></i></div>
+                            <span class="lib-type-tag tag-mcp" id="libtag-wredis-mcp">FastMCP Redis</span>
+                        </div>
+                        <h3>wredis-mcp</h3>
+                        <p id="libdesc-wredis-mcp">FastMCP Server for Redis cache management and memory profiling. Enables AI agents to safely query keys, inspect data structures, and monitor memory fragmentation.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>FastMCP</span>Server</div><div class="lib-stat"><span>Redis</span>Ops</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wredis-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" id="card-wpostgresql-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-plug" style="color: #3b82f6;"></i></div>
+                            <span class="lib-type-tag tag-mcp" id="libtag-wpostgresql-mcp">FastMCP Postgres</span>
+                        </div>
+                        <h3>wpostgresql-mcp</h3>
+                        <p id="libdesc-wpostgresql-mcp">FastMCP Server for PostgreSQL enterprise databases. Gives LLM agents safe, parameterized query tools, schema inspection capabilities, and role permission validation.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>FastMCP</span>Server</div><div class="lib-stat"><span>PostgreSQL</span>Ops</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wpostgresql-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" id="card-wsqlite-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-plug" style="color: #10b981;"></i></div>
+                            <span class="lib-type-tag tag-mcp" id="libtag-wsqlite-mcp">FastMCP SQLite</span>
+                        </div>
+                        <h3>wsqlite-mcp</h3>
+                        <p id="libdesc-wsqlite-mcp">FastMCP Server for SQLite database inspection and queries. Parametric safe queries, index statistics analysis, and audit state extraction for wpipe pipelines.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>FastMCP</span>Server</div><div class="lib-stat"><span>SQLite</span>Queries</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wsqlite-mcp/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="core" id="card-wpipe-plugins">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-puzzle-piece" style="color: #8b5cf6;"></i></div>
+                            <span class="lib-type-tag tag-core" id="libtag-wpipe-plugins">Plugins Framework</span>
+                        </div>
+                        <h3>wpipe-plugins</h3>
+                        <p id="libdesc-wpipe-plugins">Community-driven plugin repository and hot-reloadable extension framework for wpipe. Dynamic dependency isolation for custom enterprise pipelines.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Plugins</span>Framework</div><div class="lib-stat"><span>Extensible</span>Architecture</div>
+                        </div>
+                        <div class="lib-links">
+                            <a href="https://pypi.org/project/wpipe-plugins/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
+                            <a href="https://github.com/wisrovi/w-cli" class="lib-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mlops" id="card-wutils">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-toolbox" style="color: #f97316;"></i></div>
+                            <span class="lib-type-tag tag-dev" id="libtag-wutils">Utilities & Cron</span>
+                        </div>
+                        <h3>wutils</h3>
+                        <p id="libdesc-wutils">Essential script scheduling and validation helpers. Robust cron expression parser, dataset format verification, and algorithmic data normalization.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Task Scheduler</span>Cron</div><div class="lib-stat"><span>Format Validator</span>Fast</div>
                         </div>
                         <div class="lib-links">
                             <a href="https://pypi.org/project/wutils/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
@@ -1787,20 +1823,18 @@
                     </div>
                 </div>
 
-                <!-- 23. wisrovi-python -->
-                <div class="lib-card" data-cat="mlops">
+                <div class="lib-card" data-cat="mlops" id="card-wisrovi-python">
                     <div>
                         <div class="lib-header">
-                            <div class="lib-icon"><i class="fab fa-python" style="color: #38bdf8;"></i></div>
-                            <span class="lib-type-tag tag-core">Foundational</span>
+                            <div class="lib-icon"><i class="fas fa-python" style="color: #38bdf8;"></i></div>
+                            <span class="lib-type-tag tag-dev" id="libtag-wisrovi-python">Core Foundational</span>
                         </div>
                         <h3>wisrovi-python</h3>
-                        <p>Core foundational Python utilities and algorithmic helpers. Estructuras de datos optimizadas para inferencia y tipos base de toda la suite.</p>
+                        <p id="libdesc-wisrovi-python">Core foundational Python types, algorithms, and mathematical structures shared across all packages in the wisrovi ecosystem. Optimized for inference efficiency.</p>
                     </div>
                     <div>
                         <div class="lib-stats">
-                            <div class="lib-stat"><span>Core Types</span>Shared</div>
-                            <div class="lib-stat"><span>Math Helpers</span>Optimized</div>
+                            <div class="lib-stat"><span>Core Types</span>Shared</div><div class="lib-stat"><span>Math Helpers</span>Optimized</div>
                         </div>
                         <div class="lib-links">
                             <a href="https://pypi.org/project/wisrovi-python/" class="lib-link" target="_blank"><i class="fas fa-box"></i> PyPI</a>
@@ -1816,24 +1850,24 @@
     <section class="metrics" id="stats">
         <div class="container">
             <div class="section-title" style="margin-bottom: 3rem;">
-                <h2>Impacto Técnico & Producción Científica</h2>
+                <h2 data-i18n="metrics_title">Technical Impact & Scientific Output</h2>
             </div>
             <div class="metrics-grid">
                 <div>
                     <div class="metric-number">23</div>
-                    <div class="metric-label">Librerías Oficiales en PyPI</div>
+                    <div class="metric-label" data-i18n="metric1_label">Official PyPI Libraries</div>
                 </div>
                 <div>
                     <div class="metric-number">26</div>
-                    <div class="metric-label">Preprints con DOI Zenodo</div>
+                    <div class="metric-label" data-i18n="metric2_label">Preprints with Zenodo DOI</div>
                 </div>
                 <div>
                     <div class="metric-number">6</div>
-                    <div class="metric-label">Servidores FastMCP</div>
+                    <div class="metric-label" data-i18n="metric3_label">FastMCP Agent Servers</div>
                 </div>
                 <div>
                     <div class="metric-number">100%</div>
-                    <div class="metric-label">Open Source (MIT)</div>
+                    <div class="metric-label" data-i18n="metric4_label">Open Source (MIT)</div>
                 </div>
             </div>
         </div>
@@ -1842,14 +1876,14 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Instalación de la Suite con w-cli</h2>
-            <p>Instala y gestiona cualquiera de las 23 librerías oficiales de la suite con una única interfaz de terminal interactiva:</p>
+            <h2 data-i18n="cta_title">Install the Suite with w-cli</h2>
+            <p data-i18n="cta_desc">Install and manage any of the 23 official suite libraries with a single interactive terminal interface:</p>
             <div class="code-box">
                 pip install w-cli &amp;&amp; w install pipe
             </div>
             <br>
             <a href="https://github.com/wisrovi/w-cli" class="btn btn-primary" target="_blank" style="background: var(--dark); color: var(--primary); box-shadow: 0 0 25px rgba(15, 23, 42, 0.6);">
-                <i class="fab fa-github"></i> Ver Repositorio w-cli en GitHub
+                <i class="fab fa-github"></i> <span data-i18n="cta_btn">View w-cli Repository on GitHub</span>
             </a>
         </div>
     </section>
@@ -1859,25 +1893,101 @@
         <div class="container">
             <div class="footer-content">
                 <p style="font-size: 1.3rem; font-weight: 800; color: var(--primary);">William Steve Rodriguez Villamizar (wisrovi)</p>
-                <p>Principal Software Engineer & AI Solutions Architect | Ph.D. Fellowship Candidate</p>
-                <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.8rem;">
-                    Badajoz, España • wisrovi-suit AI Research Initiative • Todos los paquetes bajo licencia MIT.
+                <p data-i18n="footer_role">Principal Software Engineer & AI Solutions Architect | Ph.D. Fellowship Candidate</p>
+                <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.8rem;" data-i18n="footer_sub">
+                    Badajoz, Spain • wisrovi-suit AI Research Initiative • All packages licensed under MIT.
                 </p>
             </div>
             <div class="footer-links">
-                <a href="https://orcid.org/0009-0005-0710-1861" target="_blank"><i class="fab fa-orcid"></i> ORCID Oficial</a>
-                <a href="https://pypi.org/user/wisrovi/" target="_blank"><i class="fas fa-box"></i> Perfil PyPI</a>
-                <a href="https://github.com/wisrovi" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/wisrovi-rodriguez/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://orcid.org/0009-0005-0710-1861" target="_blank"><i class="fab fa-orcid"></i> <span data-i18n="footer_orcid">Official ORCID</span></a>
+                <a href="https://pypi.org/user/wisrovi/" target="_blank"><i class="fas fa-box"></i> <span data-i18n="footer_pypi">PyPI Profile</span></a>
+                <a href="https://github.com/wisrovi" target="_blank"><i class="fab fa-github"></i> <span data-i18n="footer_github">GitHub</span></a>
+                <a href="https://www.linkedin.com/in/wisrovi-rodriguez/" target="_blank"><i class="fab fa-linkedin"></i> <span data-i18n="footer_linkedin">LinkedIn</span></a>
             </div>
         </div>
     </footer>
 
+    <!-- Core i18n and Filter JavaScript Engine -->
     <script>
+        const i18nData = {"en": {"page_title": "William Rodriguez (Wisrovi) | Principal AI Engineer & Suite Creator", "meta_desc": "William Steve Rodriguez Villamizar (Wisrovi) - Principal Software Engineer, AI Solutions Architect & Ph.D. Candidate. Python libraries ecosystem, distributed MLOps systems, and scientific research in Causal AI & Formal Verification.", "nav_solar": "Dual Solar System", "nav_mlops": "wyoloservice (MLOps)", "nav_academic": "Research & ORCID", "nav_libraries": "23 PyPI Packages", "doctoral_badge": "Ph.D. Fellowship Candidate in AI & Formal Verification", "hero_title": "William Rodriguez", "hero_subtitle": "Principal Software Engineer | AI Solutions Architect | Suite Creator", "hero_desc": "Distributed systems architect and creator of the <strong>Wisrovi Suite</strong> (23 official PyPI packages). Scientific researcher with 26 preprints indexed with CERN/Zenodo DOIs in Forensic Explainable AI (XAI), Conformal Prediction, and Agentic Formal Verification with LTL.", "hero_pillar1_title": "1. Production Engineering", "hero_pillar1_desc": "Scalable enterprise MLOps platforms (<strong>wyoloservice / NeuralForgeAI</strong>), GPU Celery queues, and reactive microservices.", "hero_pillar2_title": "2. Wisrovi Suite (PyPI)", "hero_pillar2_desc": "23 independent, modular libraries centered around the <code>wpipe</code> gravitational core and official FastMCP servers.", "hero_pillar3_title": "3. Scientific Research", "hero_pillar3_desc": "26 preprints with official CERN/Zenodo DOIs & verified ORCID. Mathematical rigor in causality, bootstrap bounds, and LTL.", "hero_btn_solar": "Explore Solar System", "hero_btn_orcid": "Official ORCID Profile", "hero_btn_github": "GitHub Suite", "solar_header_title": "The Binary Universe of the Wisrovi Suite", "solar_header_desc": "Visual architecture spanning two synchronized gravitational systems: the <strong>Main Universe</strong> with <code>wpipe</code> as the central Sun coordinating persistence, messaging, and distributed MLOps; and the <strong>Agentic Constellation</strong> where the <strong>AI Agent Hub</strong> orbits with 6 official <strong>FastMCP</strong> servers for seamless LLM interactions.", "universe_main_badge": "MAIN UNIVERSE", "universe_main_title": "Python Core Ecosystem & MLOps", "universe_main_desc": "<code>wpipe</code> as the central Sun coordinating streaming, transactional persistence, Zero Trust security, and distributed cluster training.", "sun_wpipe_title": "wpipe", "sun_wpipe_sub": "CENTRAL SUN", "universe_mcp_badge": "AGENTIC CONSTELLATION", "universe_mcp_title": "FastMCP Hub for LLM Agents", "universe_mcp_desc": "Autonomous agentic core powered by the <strong>6 official FastMCP Servers</strong> for Claude, Cursor, and Antigravity.", "sun_agent_title": "AI AGENT", "sun_agent_sub": "MCP HUB", "mlops_pill": "DISTRIBUTED PLATFORM (train_service_2)", "mlops_title": "wyoloservice: Distributed Training Platform", "mlops_desc": "Enterprise-grade distributed MLOps platform for Computer Vision architectures (YOLOv8, YOLOv11, YOLO26) featuring evolutionary optimization via <strong>Optuna TPESampler</strong> and forensic Explainable AI audits.", "mlops_f1": "<strong>22-Step Post-Training Lifecycle:</strong> Execution of multi-scale heatmaps (Grad-CAM/Eigen-CAM on P3/P4/P5), Deletion/Insertion AUC fidelity, and adversarial attacks (FGSM/PGD).", "mlops_f2": "<strong>Isolated Ephemeral Containers:</strong> Worker node daemon with dynamic GPU/VRAM quota governors and Samba CIFS dataset mounting.", "mlops_f3": "<strong>FastMCP Agentic Tools (wyoloservice-mcp):</strong> Enables autonomous LLMs (Claude, Antigravity, Cursor) to manage, validate, and dispatch distributed cluster sweeps in real time.", "academic_badge": "Verified Academic Record", "academic_title": "Scientific Research & Doctoral Aspirations", "academic_desc": "My research agenda combines formal mathematical rigor with mission-critical software engineering. Holding a Master's degree in Artificial Intelligence (VIU, Spain) and a Bachelor's in Electronic Engineering (UDI, Colombia), I pursue doctoral research across three primary frontiers:", "academic_f1_title": "Causal Saliency Regularization (CSR):", "academic_f1_desc": "Analytical mitigation of spurious correlations via truncated Jacobian penalty across the multi-scale PAFPN pyramid.", "academic_f2_title": "Conformal Prediction & Uncertainty Quantification:", "academic_f2_desc": "Finite-sample distribution-free coverage guarantees coupled with variational uncertainty decomposition via MC Dropout (T=30).", "academic_f3_title": "Formal Verification of Agentic Protocols:", "academic_f3_desc": "Model checking and LTL (Linear Temporal Logic) monitor synthesis for mathematical safety validation of FastMCP servers.", "academic_btn_orcid": "View Publications on ORCID", "academic_card_title": "Preprint Portfolio (CERN/Zenodo)", "academic_stat1_num": "26", "academic_stat1_desc": "Scientific Preprints", "academic_stat2_num": "100%", "academic_stat2_desc": "Registered DOIs", "academic_stat3_num": "IEEE", "academic_stat3_desc": "Canonical Format", "academic_card_desc": "Preprints experimentally investigate MLOps scalability, FID latent domain shift quantification, multi-scale Grad-CAM forensic audits, and formal verification in heterogeneous clusters.", "academic_affiliation": "ORCID ID: 0009-0005-0710-1861<br>Affiliation: wisrovi-suit AI Research Initiative, Badajoz, Spain", "catalog_title": "Official Suite Catalog (23 PyPI Packages)", "catalog_desc": "All 23 public PyPI packages actively maintained and installable via the automated <code>w-cli</code> terminal suite.", "tab_all": "All (23)", "tab_core": "Pipeline & Core (4)", "tab_mcp": "FastMCP Servers (6)", "tab_db": "Databases & Cache (5)", "tab_msg": "Messaging & Streaming (1)", "tab_sec": "Zero Trust Security (2)", "tab_mlops": "MLOps & Tools (5)", "metrics_title": "Technical Impact & Scientific Output", "metric1_label": "Official PyPI Libraries", "metric2_label": "Preprints with Zenodo DOI", "metric3_label": "FastMCP Agent Servers", "metric4_label": "Open Source (MIT)", "cta_title": "Install the Suite with w-cli", "cta_desc": "Install and manage any of the 23 official suite libraries with a single interactive terminal interface:", "cta_btn": "View w-cli Repository on GitHub", "footer_role": "Principal Software Engineer & AI Solutions Architect | Ph.D. Fellowship Candidate", "footer_sub": "Badajoz, Spain • wisrovi-suit AI Research Initiative • All packages licensed under MIT.", "footer_orcid": "Official ORCID", "footer_pypi": "PyPI Profile", "footer_github": "GitHub", "footer_linkedin": "LinkedIn"}, "es": {"page_title": "William Rodriguez (Wisrovi) | Principal AI Engineer & Creador de la Suite", "meta_desc": "William Steve Rodriguez Villamizar (Wisrovi) - Principal Software Engineer, AI Solutions Architect y Candidato Doctoral. Ecosistema de librerías Python, sistemas distribuidos MLOps e investigación científica en IA Causal y Verificación Formal.", "nav_solar": "Sistema Solar", "nav_mlops": "wyoloservice (MLOps)", "nav_academic": "Investigación & ORCID", "nav_libraries": "23 Paquetes PyPI", "doctoral_badge": "Candidato a Beca Doctoral en IA & Verificación Formal", "hero_title": "William Rodriguez", "hero_subtitle": "Principal Software Engineer | AI Solutions Architect | Suite Creator", "hero_desc": "Arquitecto de sistemas distribuidos y creador de la <strong>Suite Wisrovi</strong> (23 librerías oficiales en PyPI). Investigador científico con 26 preprints indexados con DOI de CERN/Zenodo en IA Explicable Forense (XAI), Conformal Prediction y Verificación Formal de Agentes con LTL.", "hero_pillar1_title": "1. Ingeniería de Producción", "hero_pillar1_desc": "Plataformas MLOps escalables (<strong>wyoloservice / NeuralForgeAI</strong>), colas Celery GPU y microservicios reactivos.", "hero_pillar2_title": "2. Suite Wisrovi (PyPI)", "hero_pillar2_desc": "23 librerías independientes y modulares estructuradas alrededor del núcleo gravitacional <code>wpipe</code> y servidores FastMCP.", "hero_pillar3_title": "3. Investigación Científica", "hero_pillar3_desc": "26 preprints con DOIs oficiales en Zenodo/CERN y ORCID. Rigor matemático en causalidad, cotas bootstrap y LTL.", "hero_btn_solar": "Explorar Sistema Solar", "hero_btn_orcid": "Perfil Oficial ORCID", "hero_btn_github": "GitHub Suite", "solar_header_title": "El Universo Binario de la Suite Wisrovi", "solar_header_desc": "Arquitectura visual en dos sistemas gravitacionales sincronizados: el <strong>Universo Principal</strong> con <code>wpipe</code> como Sol central coordinando persistencia, mensajería y MLOps distribuido; y la <strong>Constelación Agéntica</strong> donde el <strong>AI Agent Hub</strong> orbita con los 6 servidores <strong>FastMCP</strong> oficiales para la interacción con LLMs.", "universe_main_badge": "UNIVERSO PRINCIPAL", "universe_main_title": "Ecosistema Base Python & MLOps", "universe_main_desc": "<code>wpipe</code> como Sol central coordinando streaming, persistencia transaccional, seguridad Zero Trust y entrenamiento distribuido.", "sun_wpipe_title": "wpipe", "sun_wpipe_sub": "SOL CENTRAL", "universe_mcp_badge": "CONSTELACIÓN AGÉNTICA", "universe_mcp_title": "FastMCP Hub para Agentes LLM", "universe_mcp_desc": "El núcleo agéntico autónomo alimentado por los <strong>6 Servidores FastMCP</strong> oficiales para Claude, Cursor y Antigravity.", "sun_agent_title": "AI AGENT", "sun_agent_sub": "MCP HUB", "mlops_pill": "PLATAFORMA DISTRIBUIDA (train_service_2)", "mlops_title": "wyoloservice: Distributed Training Platform", "mlops_desc": "Plataforma MLOps de grado empresarial para entrenamiento distribuido de modelos de visión artificial (YOLOv8, YOLOv11, YOLO26) con optimización evolutiva mediante <strong>Optuna TPESampler</strong> y auditoría forense explicable.", "mlops_f1": "<strong>Pipeline Post-Entrenamiento de 22 Pasos:</strong> Ejecución de mapas de calor multiescala (Grad-CAM/Eigen-CAM en P3/P4/P5), Deletion/Insertion AUC y ataques adversarios (FGSM/PGD).", "mlops_f2": "<strong>Contenedores Efímeros Aislados:</strong> Invoker con gobernanza de cuotas VRAM/GPU y montajes CIFS de datasets.", "mlops_f3": "<strong>Herramientas FastMCP (wyoloservice-mcp):</strong> Permite a modelos de lenguaje (Claude, Antigravity, Cursor) supervisar y gestionar clusters de cómputo en tiempo real.", "academic_badge": "Registro Académico Verificado", "academic_title": "Investigación Científica & Aspiración Doctoral", "academic_desc": "Mi vocación investigadora integra el rigor matemático formal con el desarrollo de software de misión crítica. Con un Máster en Inteligencia Artificial (VIU, España) y título de Ingeniero Electrónico (UDI, Colombia), presento una agenda doctoral estructurada en tres frentes:", "academic_f1_title": "Causal Saliency Regularization (CSR):", "academic_f1_desc": "Mitigación analítica de correlaciones espurias mediante penalización del Jacobiano truncado en la pirámide PAFPN multiescala.", "academic_f2_title": "Conformal Prediction & Cuantificación de Incertidumbre:", "academic_f2_desc": "Garantías de cobertura con distribución libre en muestras finitas acopladas a descomposición variacional con MC Dropout (T=30).", "academic_f3_title": "Verificación Formal de Protocolos Agénticos:", "academic_f3_desc": "Model checking y síntesis de monitores LTL (Lógica Temporal Lineal) para validación matemática de servidores FastMCP.", "academic_btn_orcid": "Consultar Artículos en ORCID", "academic_card_title": "Cartera de Preprints (CERN/Zenodo)", "academic_stat1_num": "26", "academic_stat1_desc": "Preprints Científicos", "academic_stat2_num": "100%", "academic_stat2_desc": "DOIs Registrados", "academic_stat3_num": "IEEE", "academic_stat3_desc": "Formato Canónico", "academic_card_desc": "Los manuscritos abordan de forma experimental la escalabilidad MLOps, cuantificación de domain shift por distancia FID, auditorías forenses con Grad-CAM multiescala y verificación formal en clusters heterogéneos.", "academic_affiliation": "ORCID ID: 0009-0005-0710-1861<br>Filiación: wisrovi-suit AI Research Initiative, Badajoz, Spain", "catalog_title": "Catálogo Oficial de la Suite (23 Paquetes PyPI)", "catalog_desc": "Las 23 librerías públicas en PyPI soportadas e instalables de forma automatizada a través de <code>w-cli</code>.", "tab_all": "Todos (23)", "tab_core": "Pipeline & Core (4)", "tab_mcp": "FastMCP Servers (6)", "tab_db": "Bases de Datos & Caché (5)", "tab_msg": "Mensajería & Streaming (1)", "tab_sec": "Seguridad Zero Trust (2)", "tab_mlops": "MLOps, Audio & Tools (5)", "metrics_title": "Impacto Técnico & Producción Científica", "metric1_label": "Librerías Oficiales en PyPI", "metric2_label": "Preprints con DOI Zenodo", "metric3_label": "Servidores FastMCP", "metric4_label": "Open Source (MIT)", "cta_title": "Instalación de la Suite con w-cli", "cta_desc": "Instala y gestiona cualquiera de las 23 librerías oficiales de la suite con una única interfaz de terminal interactiva:", "cta_btn": "Ver Repositorio w-cli en GitHub", "footer_role": "Principal Software Engineer & AI Solutions Architect | Ph.D. Fellowship Candidate", "footer_sub": "Badajoz, España • wisrovi-suit AI Research Initiative • Todos los paquetes bajo licencia MIT.", "footer_orcid": "ORCID Oficial", "footer_pypi": "Perfil PyPI", "footer_github": "GitHub", "footer_linkedin": "LinkedIn"}};
+        const libCatalog = [{"id": "wpipe", "cat": "core", "icon": "fa-sun", "icon_color": "#fbbf24", "tag": {"en": "CORE SUN", "es": "CORE SOL"}, "desc": {"en": "High-performance Python pipeline orchestrator (Sync/Async). Declarative DAG core engine with real GIL-bypass parallelism, SQLite WAL checkpoints, and contextual dependency injection.", "es": "Motor de pipelines desacoplado de alto rendimiento (Sync/Async). Motor central declarativo con paralelismo real e inyección contextual de dependencias."}, "stats": [{"k": "Core", "v": "Engine"}, {"k": "Sync/Async", "v": "Dual Mode"}], "pypi": "https://pypi.org/project/wpipe/", "github": "https://github.com/wisrovi/wpipe"}, {"id": "wkafka", "cat": "messaging", "icon": "fa-stream", "icon_color": "#f59e0b", "tag": {"en": "Streaming", "es": "Streaming"}, "desc": {"en": "Decorator-based high-throughput wrapper for Apache Kafka. Non-blocking consumers/producers with automated reconnection, thread pools, and backpressure handling.", "es": "Abstracción declarativa para Apache Kafka con decoradores de suscripción/publicación, procesamiento multihilo y reconexión automática."}, "stats": [{"k": "Decorators", "v": "API"}, {"k": "Auto-Reconnect", "v": "Built-in"}], "pypi": "https://pypi.org/project/wkafka/", "github": "https://github.com/wisrovi/wkafka"}, {"id": "wredis", "cat": "database", "icon": "fa-bolt", "icon_color": "#ef4444", "tag": {"en": "Cache & Locks", "es": "Caché & Locks"}, "desc": {"en": "Ultra-fast Redis sync/async integration & caching suite. Connection pooling, token-bucket distributed rate limiters, pub/sub streams, and atomic distributed locks.", "es": "Suite de caché y mensajería Redis de alto rendimiento con pooling optimizado, limitadores de tasa token-bucket y distributed locks atómicos."}, "stats": [{"k": "<1ms", "v": "Latency"}, {"k": "PubSub", "v": "Distributed"}], "pypi": "https://pypi.org/project/wredis/", "github": "https://github.com/wisrovi/wredis"}, {"id": "wdecorators", "cat": "core", "icon": "fa-wand-magic-sparkles", "icon_color": "#ec4899", "tag": {"en": "Resilience", "es": "Resiliencia"}, "desc": {"en": "Reusable high-level decorator suite. Implements exponential backoff with full jitter, runtime latency profiling, memory tracing, and structured Loguru logging.", "es": "Colección de decoradores avanzados para reintentos exponenciales con jitter, perfilado de latencia en microsegundos y telemetría estructurada."}, "stats": [{"k": "Retry Jitter", "v": "Resilience"}, {"k": "Latency Profiler", "v": "Built-in"}], "pypi": "https://pypi.org/project/wdecorators/", "github": "https://github.com/wisrovi/wdecorators"}, {"id": "wpipe-mcp", "cat": "mcp", "icon": "fa-robot", "icon_color": "#06b6d4", "tag": {"en": "FastMCP", "es": "FastMCP"}, "desc": {"en": "Official FastMCP Server for wpipe pipeline architecture. Enables LLM agents (Claude, Cursor, Antigravity) to design, inspect, formally verify, and dry-run DAG execution flows.", "es": "Servidor FastMCP oficial para wpipe. Permite a modelos de lenguaje (Claude, Antigravity, Cursor) inspeccionar, verificar formalmente y ejecutar pipelines wpipe."}, "stats": [{"k": "FastMCP", "v": "Protocol"}, {"k": "Agentic", "v": "Tools"}], "pypi": "https://pypi.org/project/wpipe-mcp/", "github": "https://github.com/wisrovi/wpipe-mcp"}, {"id": "wpostgresql", "cat": "database", "icon": "fa-server", "icon_color": "#3b82f6", "tag": {"en": "Relational", "es": "Relacional"}, "desc": {"en": "High-concurrency PostgreSQL connection pooler and enterprise ORM mapper. Thread-safe connection pools, ACID transaction decorators, and Pydantic model synchronization.", "es": "Pooler de conexiones empresarial y mapeador ORM para PostgreSQL con actualización dinámica de esquemas, soporte ACID y modelos Pydantic."}, "stats": [{"k": "ACID", "v": "Pool Ready"}, {"k": "ORM", "v": "Mapper"}], "pypi": "https://pypi.org/project/wpostgresql/", "github": "https://github.com/wisrovi/wpostgresql"}, {"id": "wpipe-steps", "cat": "core", "icon": "fa-layer-group", "icon_color": "#eab308", "tag": {"en": "Modular Steps", "es": "Pasos Modulares"}, "desc": {"en": "Official catalog of production-ready modular steps for wpipe. Pre-built, strongly typed steps for data ingestion, ETL, computer vision, and ML transformations.", "es": "Catálogo oficial de pasos modulares listos para producción para el orquestador wpipe en ingesta de datos, ETL, visión y ML."}, "stats": [{"k": "Steps", "v": "Library"}, {"k": "Modular", "v": "Architecture"}], "pypi": "https://pypi.org/project/wpipe-steps/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wsqlite", "cat": "database", "icon": "fa-database", "icon_color": "#10b981", "tag": {"en": "Embedded DB", "es": "DB Embebida"}, "desc": {"en": "High-performance SQLite ORM wrapper featuring reactive TableSync. Optimized multi-thread Write-Ahead Logging (WAL) mode, connection pooling, and automated schema migration.", "es": "ORM de alto rendimiento para SQLite con TableSync reactivo, serialización Pydantic v2 y soporte nativo para modo WAL concurrente multihilo."}, "stats": [{"k": "WAL Mode", "v": "Thread-Safe"}, {"k": "TableSync", "v": "Auto"}], "pypi": "https://pypi.org/project/wsqlite/", "github": "https://github.com/wisrovi/wsqlite"}, {"id": "wyolo", "cat": "mlops", "icon": "fa-crosshairs", "icon_color": "#10b981", "tag": {"en": "Computer Vision", "es": "Visión Artificial"}, "desc": {"en": "Complete lifecycle training wrapper for YOLO (v8, v11, YOLO26) and RT-DETR. Seamless synchronization of weights to MinIO S3 and real-time metric logging to MLflow.", "es": "Wrapper de ciclo de vida completo para modelos YOLO (v8, v11, YOLO26) y RT-DETR con telemetría integrada a MLflow y almacenamiento en MinIO S3."}, "stats": [{"k": "YOLO", "v": "MLOps"}, {"k": "MLflow & S3", "v": "Sync"}], "pypi": "https://pypi.org/project/wyolo/", "github": "https://github.com/wisrovi/wyolo"}, {"id": "wyoloservice-mcp", "cat": "mcp", "icon": "fa-brain", "icon_color": "#ec4899", "tag": {"en": "FastMCP Cluster", "es": "FastMCP Cluster"}, "desc": {"en": "FastMCP Server for NeuralForgeAI YOLO cluster orchestration. Enables LLMs to validate datasets, generate Sweeper v2 configurations, inspect GPU queues, and dispatch Optuna sweeps.", "es": "Servidor FastMCP para orquestación agéntica de clusters NeuralForgeAI: validación de datasets, generación de configs Sweeper v2 y despacho de estudios Optuna."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "Cluster", "v": "Orchestrator"}], "pypi": "https://pypi.org/project/wyoloservice-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wauth", "cat": "security", "icon": "fa-key", "icon_color": "#d946ef", "tag": {"en": "Credentials Vault", "es": "Bóveda Claves"}, "desc": {"en": "Cryptographic secrets encryption vault locked to host hardware fingerprints (machine-salted). AES-256 Fernet symmetric encryption protecting sensitive cluster configurations.", "es": "Bóveda criptográfica de credenciales vinculada a huellas de hardware del host (machine-salted) con cifrado simétrico Fernet AES-256."}, "stats": [{"k": "AES-256", "v": "Fernet"}, {"k": "Hardware-Locked", "v": "Vault"}], "pypi": "https://pypi.org/project/wauth/", "github": "https://github.com/wisrovi/wauth"}, {"id": "wFabricSecurity", "cat": "security", "icon": "fa-shield-halved", "icon_color": "#64748b", "tag": {"en": "Zero Trust", "es": "Zero Trust"}, "desc": {"en": "Industrial Zero Trust security architecture for Hyperledger Fabric networks. ECDSA P-256 digital signature validation, SHA-256 code integrity hashing, and cryptographic audits.", "es": "Arquitectura de seguridad Zero Trust para Hyperledger Fabric con verificación criptográfica ECDSA P-256 e integridad forense de código por SHA-256."}, "stats": [{"k": "Zero Trust", "v": "Model"}, {"k": "Hyperledger", "v": "Fabric"}], "pypi": "https://pypi.org/project/wFabricSecurity/", "github": "https://github.com/wisrovi/wFabricSecurity"}, {"id": "ProcessAudio", "cat": "mlops", "icon": "fa-wave-square", "icon_color": "#8b5cf6", "tag": {"en": "Audio ML / DSP", "es": "Audio ML / DSP"}, "desc": {"en": "Scikit-learn compatible transformers for audio feature extraction (Mel spectrograms, MFCC, FFT spectral centroid) and real-time acoustic data augmentation pipelines.", "es": "Transformadores Scikit-learn para espectrogramas Mel, extracción de características acústicas MFCC, análisis espectral FFT y aumentación de audio."}, "stats": [{"k": "DSP/FFT", "v": "Features"}, {"k": "Scikit-learn", "v": "Pipes"}], "pypi": "https://pypi.org/project/ProcessAudio/", "github": "https://github.com/wisrovi/ProcessAudio"}, {"id": "wclickhouse", "cat": "database", "icon": "fa-chart-line", "icon_color": "#f97316", "tag": {"en": "OLAP Analytics", "es": "Analítica OLAP"}, "desc": {"en": "High-throughput ClickHouse ORM mapping using clickhouse-connect. Optimized for bulk batch insertions, columnar time-series aggregation, and deep learning inference telemetry.", "es": "Mapeador ORM para ClickHouse orientado a analítica OLAP masiva por lotes (bulk inserts) y telemetría columnar de modelos de deep learning."}, "stats": [{"k": "OLAP", "v": "Batch Insert"}, {"k": "Time-Series", "v": "Fast"}], "pypi": "https://pypi.org/project/wclickhouse/", "github": "https://github.com/wisrovi/wclickhouse"}, {"id": "wcontainer", "cat": "mlops", "icon": "fa-docker", "icon_color": "#0284c7", "tag": {"en": "Docker SDK", "es": "Docker SDK"}, "desc": {"en": "Docker SDK automation engine: ephemeral container spawner, GPU VRAM & CPU quota enforcement governors, and embedded Trivy vulnerability scanning.", "es": "Automatización de Docker SDK: gobernador de cuotas VRAM/CPU, escaneo de vulnerabilidades Trivy y gestión de contenedores efímeros aislados."}, "stats": [{"k": "Docker SDK", "v": "Automation"}, {"k": "GPU Isolation", "v": "Governor"}], "pypi": "https://pypi.org/project/wcontainer/", "github": "https://github.com/wisrovi/wcontainer"}, {"id": "wmongo", "cat": "database", "icon": "fa-leaf", "icon_color": "#10b981", "tag": {"en": "Document NoSQL", "es": "NoSQL Documental"}, "desc": {"en": "Reactive MongoDB document mapper utilizing Pydantic models. Features automatic query caching on wredis, safe aggregation pipelines, and lifecycle event listeners.", "es": "Mapeador documental para MongoDB con modelos Pydantic, caché reactiva de consultas en Redis y listeners de eventos de ciclo de vida."}, "stats": [{"k": "Pydantic", "v": "Models"}, {"k": "Aggregation", "v": "Pipelines"}], "pypi": "https://pypi.org/project/wmongo/", "github": "https://github.com/wisrovi/wmongo"}, {"id": "wkafka-mcp", "cat": "mcp", "icon": "fa-plug", "icon_color": "#f59e0b", "tag": {"en": "FastMCP Kafka", "es": "FastMCP Kafka"}, "desc": {"en": "FastMCP Server for Kafka event streaming and topic inspection. Exposes tools for LLM agents to monitor topic partitions, consumer group lag, and inject telemetry payloads.", "es": "Servidor FastMCP para streaming de eventos y supervisión de tópicos Kafka. Herramientas MCP para monitorización de lag de particiones e inyección de eventos."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "Kafka", "v": "Stream Ops"}], "pypi": "https://pypi.org/project/wkafka-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wredis-mcp", "cat": "mcp", "icon": "fa-plug", "icon_color": "#ef4444", "tag": {"en": "FastMCP Redis", "es": "FastMCP Redis"}, "desc": {"en": "FastMCP Server for Redis cache management and memory profiling. Enables AI agents to safely query keys, inspect data structures, and monitor memory fragmentation.", "es": "Servidor FastMCP para inspección, profiling de memoria y administración de instancias Redis por agentes LLM sin comandos destructivos."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "Redis", "v": "Ops"}], "pypi": "https://pypi.org/project/wredis-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wpostgresql-mcp", "cat": "mcp", "icon": "fa-plug", "icon_color": "#3b82f6", "tag": {"en": "FastMCP Postgres", "es": "FastMCP Postgres"}, "desc": {"en": "FastMCP Server for PostgreSQL enterprise databases. Gives LLM agents safe, parameterized query tools, schema inspection capabilities, and role permission validation.", "es": "Servidor FastMCP para integración de agentes de IA con bases de datos PostgreSQL: inspección de esquemas, consultas con timeout y control de accesos."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "PostgreSQL", "v": "Ops"}], "pypi": "https://pypi.org/project/wpostgresql-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wsqlite-mcp", "cat": "mcp", "icon": "fa-plug", "icon_color": "#10b981", "tag": {"en": "FastMCP SQLite", "es": "FastMCP SQLite"}, "desc": {"en": "FastMCP Server for SQLite database inspection and queries. Parametric safe queries, index statistics analysis, and audit state extraction for wpipe pipelines.", "es": "Servidor FastMCP para análisis semántico e inspección de bases de datos SQLite por modelos de IA con consultas parametrizadas seguras y estadísticas de índices."}, "stats": [{"k": "FastMCP", "v": "Server"}, {"k": "SQLite", "v": "Queries"}], "pypi": "https://pypi.org/project/wsqlite-mcp/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wpipe-plugins", "cat": "core", "icon": "fa-puzzle-piece", "icon_color": "#8b5cf6", "tag": {"en": "Plugins Framework", "es": "Plugins Framework"}, "desc": {"en": "Community-driven plugin repository and hot-reloadable extension framework for wpipe. Dynamic dependency isolation for custom enterprise pipelines.", "es": "Repositorio de plugins comunitarios y extensiones especializadas para el ecosistema wpipe con carga dinámica y aislamiento de dependencias."}, "stats": [{"k": "Plugins", "v": "Framework"}, {"k": "Extensible", "v": "Architecture"}], "pypi": "https://pypi.org/project/wpipe-plugins/", "github": "https://github.com/wisrovi/w-cli"}, {"id": "wutils", "cat": "mlops", "icon": "fa-toolbox", "icon_color": "#f97316", "tag": {"en": "Utilities & Cron", "es": "Utilidades & Cron"}, "desc": {"en": "Essential script scheduling and validation helpers. Robust cron expression parser, dataset format verification, and algorithmic data normalization.", "es": "Utilidades esenciales de script scheduling, validación de formatos de datasets, parseo de expresiones cron y normalización algorítmica."}, "stats": [{"k": "Task Scheduler", "v": "Cron"}, {"k": "Format Validator", "v": "Fast"}], "pypi": "https://pypi.org/project/wutils/", "github": "https://github.com/wisrovi/wutils"}, {"id": "wisrovi-python", "cat": "mlops", "icon": "fa-python", "icon_color": "#38bdf8", "tag": {"en": "Core Foundational", "es": "Core Fundacional"}, "desc": {"en": "Core foundational Python types, algorithms, and mathematical structures shared across all packages in the wisrovi ecosystem. Optimized for inference efficiency.", "es": "Librería fundacional con utilidades matemáticas, estructuras algorítmicas base y tipos compartidos entre todos los paquetes de la suite wisrovi."}, "stats": [{"k": "Core Types", "v": "Shared"}, {"k": "Math Helpers", "v": "Optimized"}], "pypi": "https://pypi.org/project/wisrovi-python/", "github": "https://github.com/wisrovi/wisrovi-python"}];
+
+        let currentLang = 'en';
+
+        // Detect initial language: localStorage -> URL Param (?lang=) -> Browser Language -> Default 'en'
+        function detectInitialLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paramLang = urlParams.get('lang');
+            if (paramLang && (paramLang === 'en' || paramLang === 'es')) {
+                return paramLang;
+            }
+
+            const saved = localStorage.getItem('wisrovi_lang');
+            if (saved && (saved === 'en' || saved === 'es')) {
+                return saved;
+            }
+
+            const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (browserLang.startsWith('es')) {
+                return 'es';
+            }
+
+            return 'en'; // Default to English as requested
+        }
+
+        function setLanguage(lang) {
+            if (!i18nData[lang]) return;
+            currentLang = lang;
+            localStorage.setItem('wisrovi_lang', lang);
+            document.documentElement.lang = lang;
+
+            // Update Meta & Title
+            if (document.getElementById('pageTitle')) {
+                document.getElementById('pageTitle').innerText = i18nData[lang]['page_title'];
+            }
+            if (document.getElementById('metaDescription')) {
+                document.getElementById('metaDescription').setAttribute('content', i18nData[lang]['meta_desc']);
+            }
+
+            // Update text nodes with data-i18n
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18nData[lang][key]) {
+                    el.innerHTML = i18nData[lang][key];
+                }
+            });
+
+            // Update library cards text & tags
+            libCatalog.forEach(lib => {
+                const tagEl = document.getElementById('libtag-' + lib.id);
+                if (tagEl && lib.tag && lib.tag[lang]) {
+                    tagEl.innerText = lib.tag[lang];
+                }
+                const descEl = document.getElementById('libdesc-' + lib.id);
+                if (descEl && lib.desc && lib.desc[lang]) {
+                    descEl.innerText = lib.desc[lang];
+                }
+            });
+
+            // Update Switcher Active State
+            const btnEn = document.getElementById('btnLangEn');
+            const btnEs = document.getElementById('btnLangEs');
+            if (lang === 'en') {
+                btnEn.classList.add('active');
+                btnEs.classList.remove('active');
+            } else {
+                btnEs.classList.add('active');
+                btnEn.classList.remove('active');
+            }
+        }
+
         function filterLibs(category) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
 
             const cards = document.querySelectorAll('.lib-card');
             cards.forEach(card => {
@@ -1888,6 +1998,12 @@
                 }
             });
         }
+
+        // Initialize immediately on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialLang = detectInitialLanguage();
+            setLanguage(initialLang);
+        });
     </script>
 </body>
 </html>

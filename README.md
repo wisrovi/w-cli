@@ -78,6 +78,7 @@ The suite is partitioned into two clear tiers: **Live Published PyPI Packages** 
 
 | Short Name | Official Package | PyPI Version | Registry Endpoint | Technical Focus |
 | :--- | :--- | :--- | :--- | :--- |
+<<<<<<< HEAD
 | **`pipe`** / **`pipeline`** | `wpipe` | [![PyPI](https://img.shields.io/pypi/v/wpipe?color=blue)](https://pypi.org/project/wpipe/) | [PyPI](https://pypi.org/project/wpipe/) | High-performance Python pipeline orchestrator (Sync/Async). |
 | **`pipe-steps`** | `wpipe-steps` | [![PyPI](https://img.shields.io/pypi/v/wpipe-steps?color=blue)](https://pypi.org/project/wpipe-steps/) | [PyPI](https://pypi.org/project/wpipe-steps/) | Production-ready modular execution steps for `wpipe`. |
 | **`pipe-plugins`** | `wpipe-plugins` | [![PyPI](https://img.shields.io/pypi/v/wpipe-plugins?color=blue)](https://pypi.org/project/wpipe-plugins/) | [PyPI](https://pypi.org/project/wpipe-plugins/) | Plugin architecture for dynamic pipeline step registration. |
@@ -95,6 +96,8 @@ The suite is partitioned into two clear tiers: **Live Published PyPI Packages** 
 | **`mongo`** | `wmongo` | [![PyPI](https://img.shields.io/pypi/v/wmongo?color=blue)](https://pypi.org/project/wmongo/) | [PyPI](https://pypi.org/project/wmongo/) | MongoDB document mapper utilizing Pydantic models. |
 | **`kafka`** | `wkafka` | [![PyPI](https://img.shields.io/pypi/v/wkafka?color=blue)](https://pypi.org/project/wkafka/) | [PyPI](https://pypi.org/project/wkafka/) | Decorator-based streaming wrapper for Apache Kafka producers/consumers. |
 | **`kafka-mcp`** | `wkafka-mcp` | [![PyPI](https://img.shields.io/pypi/v/wkafka-mcp?color=blue)](https://pypi.org/project/wkafka-mcp/) | [PyPI](https://pypi.org/project/wkafka-mcp/) | FastMCP Server for Kafka event streaming and topic inspection. |
+| **`wtinydb`** | `wtinydb` | [![PyPI](https://img.shields.io/pypi/v/wtinydb?color=blue)](https://pypi.org/project/wtinydb/) | [PyPI](https://pypi.org/project/wtinydb/) | TinyDB Pydantic document mapper and query suite. |
+| **`wtinydb-mcp`** | `wtinydb-mcp` | [![PyPI](https://img.shields.io/pypi/v/wtinydb-mcp?color=blue)](https://pypi.org/project/wtinydb-mcp/) | [PyPI](https://pypi.org/project/wtinydb-mcp/) | FastMCP Server for WTinyDB AI agent integration. |
 | **`auth`** | `wauth` | [![PyPI](https://img.shields.io/pypi/v/wauth?color=blue)](https://pypi.org/project/wauth/) | [PyPI](https://pypi.org/project/wauth/) | Machine-salted hardware fingerprint encryption vault (AES-256 Fernet). |
 | **`fabric`** | `wFabricSecurity` | [![PyPI](https://img.shields.io/pypi/v/wfabricsecurity?color=blue)](https://pypi.org/project/wfabricsecurity/) | [PyPI](https://pypi.org/project/wfabricsecurity/) | Zero Trust security system for Hyperledger Fabric (ECDSA P-256). |
 | **`container`** | `wcontainer` | [![PyPI](https://img.shields.io/pypi/v/wcontainer?color=blue)](https://pypi.org/project/wcontainer/) | [PyPI](https://pypi.org/project/wcontainer/) | Docker SDK automation utility for container lifecycle orchestration. |
@@ -120,6 +123,16 @@ The suite is partitioned into two clear tiers: **Live Published PyPI Packages** 
 | **`ticket`** | `wticket` | Enterprise App | Active Dev | Dynamic SLA ticketing engine. Live demo: [wticket.wisrovi.dev](https://wticket.wisrovi.dev/). |
 | **`image`** | `wimage` | Computer Vision | Active Dev | High-performance image transform, crop, and augment utility. |
 | **`wonka`** | `wWonka` | Helper Library | Internal | Monorepo internal utilities and experimental prototypes. |
+
+---
+| **`wtinydb`** | `wtinydb` | Database ORM | [![PyPI](https://img.shields.io/pypi/dm/wtinydb?color=green)](https://pepy.tech/projects/wtinydb) | TinyDB Pydantic document mapper and query suite. |
+| **`wtinydb-mcp`** | `wtinydb-mcp` | MCP Server | [![PyPI](https://img.shields.io/pypi/dm/wtinydb-mcp?color=green)](https://pepy.tech/projects/wtinydb-mcp) | Model Context Protocol server for WTinyDB integration and code generation. |
+| **`wutils`** | `wutils` | Code Utility | `Development` | Common script scheduling and format checkers. |
+| **`wyolo`** | `wyolo` | MLOps / Vision | [![PyPI](https://img.shields.io/pypi/dm/wyolo?color=green)](https://pepy.tech/projects/wyolo) | MLflow and S3 YOLO/RT-DETR training workflow. |
+| **`wyoloservice-mcp`** | `wyoloservice-mcp` | MCP Server | [![PyPI](https://img.shields.io/pypi/v/wyoloservice-mcp.svg)](https://pypi.org/project/wyoloservice-mcp/) | MCP server for NeuralForgeAI YOLO training cluster, remote datasets and worker nodes. |
+| **`wzeroMQ`** | `wzeroMQ` | Messaging | `Development` | IPC/TCP network sockets wrapper using ZeroMQ. |
+
+**Total: 39 libraries**
 
 ---
 

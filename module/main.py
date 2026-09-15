@@ -41,6 +41,12 @@ LIBRARY_MAPPING = {
     "snowflake": ("wSnowflake", "Dynamic Snowflake SQL client ORM", "https://github.com/wisrovi/w-cli"),
     "databricks": ("wdatabricks", "Databricks SQL ORM framework", "https://github.com/wisrovi/w-cli"),
 
+    "tinydb": ("wtinydb", "TinyDB Pydantic document mapper and query suite", "https://pypi.org/project/wtinydb/"),
+    "wtinydb": ("wtinydb", "TinyDB Pydantic document mapper and query suite", "https://pypi.org/project/wtinydb/"),
+    "tinydb-mcp": ("wtinydb-mcp", "FastMCP Server for WTinyDB AI agent integration", "https://pypi.org/project/wtinydb-mcp/"),
+    "wtinydb-mcp": ("wtinydb-mcp", "FastMCP Server for WTinyDB AI agent integration", "https://pypi.org/project/wtinydb-mcp/"),
+    "wtinydb_mcp": ("wtinydb-mcp", "FastMCP Server for WTinyDB AI agent integration", "https://pypi.org/project/wtinydb-mcp/"),
+
     # Messaging & Event Streaming
     "kafka": ("wkafka", "Decorator-based wrapper for Apache Kafka", "https://pypi.org/project/wkafka/"),
     "kafka-mcp": ("wkafka-mcp", "FastMCP Server for Kafka event streaming and topic inspection", "https://pypi.org/project/wkafka-mcp/"),
@@ -68,7 +74,7 @@ LIBRARY_MAPPING = {
     "ticket": ("wticket", "Dynamic SLA helpdesk engine & remote license validator", "https://github.com/wisrovi/w-cli"),
     "wonka": ("wWonka", "Internal utilities helper library", "https://github.com/wisrovi/w-cli"),
     "haproxy": ("whaproxy", "HAProxy configuration compiler and controller", "https://github.com/wisrovi/w-cli"),
-    "cli": ("w-cli", "Central CLI manager and package installer for the suite", "https://github.com/wisrovi/w-cli"),
+    "cli": ("w-cli", "Central CLI manager and package installer for the suite", "https://github.com/wisrovi/w-cli")
 }
 
 

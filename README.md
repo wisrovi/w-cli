@@ -2,6 +2,7 @@
 
 <p align="center">
   <a href="https://pypi.org/user/wisrovi/"><img src="https://img.shields.io/badge/PyPI-23_Published_Packages-3775A9?style=for-the-badge&logo=pypi&logoColor=white" alt="PyPI Suite" /></a>
+  <a href="https://linkedin.com/in/wisrovi-rodriguez"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="https://orcid.org/0009-0005-0710-1861"><img src="https://img.shields.io/badge/ORCID-0009--0005--0710--1861-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID" /></a>
   <a href="https://wisrovi.dev"><img src="https://img.shields.io/badge/Portfolio-wisrovi.dev-111827?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" /></a>
   <a href="https://github.com/wisrovi/w-cli"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License" /></a>
@@ -78,7 +79,6 @@ The suite is partitioned into two clear tiers: **Live Published PyPI Packages** 
 
 | Short Name | Official Package | PyPI Version | Registry Endpoint | Technical Focus |
 | :--- | :--- | :--- | :--- | :--- |
-<<<<<<< HEAD
 | **`pipe`** / **`pipeline`** | `wpipe` | [![PyPI](https://img.shields.io/pypi/v/wpipe?color=blue)](https://pypi.org/project/wpipe/) | [PyPI](https://pypi.org/project/wpipe/) | High-performance Python pipeline orchestrator (Sync/Async). |
 | **`pipe-steps`** | `wpipe-steps` | [![PyPI](https://img.shields.io/pypi/v/wpipe-steps?color=blue)](https://pypi.org/project/wpipe-steps/) | [PyPI](https://pypi.org/project/wpipe-steps/) | Production-ready modular execution steps for `wpipe`. |
 | **`pipe-plugins`** | `wpipe-plugins` | [![PyPI](https://img.shields.io/pypi/v/wpipe-plugins?color=blue)](https://pypi.org/project/wpipe-plugins/) | [PyPI](https://pypi.org/project/wpipe-plugins/) | Plugin architecture for dynamic pipeline step registration. |
@@ -124,15 +124,7 @@ The suite is partitioned into two clear tiers: **Live Published PyPI Packages** 
 | **`image`** | `wimage` | Computer Vision | Active Dev | High-performance image transform, crop, and augment utility. |
 | **`wonka`** | `wWonka` | Helper Library | Internal | Monorepo internal utilities and experimental prototypes. |
 
----
-| **`wtinydb`** | `wtinydb` | Database ORM | [![PyPI](https://img.shields.io/pypi/dm/wtinydb?color=green)](https://pepy.tech/projects/wtinydb) | TinyDB Pydantic document mapper and query suite. |
-| **`wtinydb-mcp`** | `wtinydb-mcp` | MCP Server | [![PyPI](https://img.shields.io/pypi/dm/wtinydb-mcp?color=green)](https://pepy.tech/projects/wtinydb-mcp) | Model Context Protocol server for WTinyDB integration and code generation. |
-| **`wutils`** | `wutils` | Code Utility | `Development` | Common script scheduling and format checkers. |
-| **`wyolo`** | `wyolo` | MLOps / Vision | [![PyPI](https://img.shields.io/pypi/dm/wyolo?color=green)](https://pepy.tech/projects/wyolo) | MLflow and S3 YOLO/RT-DETR training workflow. |
-| **`wyoloservice-mcp`** | `wyoloservice-mcp` | MCP Server | [![PyPI](https://img.shields.io/pypi/v/wyoloservice-mcp.svg)](https://pypi.org/project/wyoloservice-mcp/) | MCP server for NeuralForgeAI YOLO training cluster, remote datasets and worker nodes. |
-| **`wzeroMQ`** | `wzeroMQ` | Messaging | `Development` | IPC/TCP network sockets wrapper using ZeroMQ. |
-
-**Total: 39 libraries**
+**Total: 37 ecosystem components**
 
 ---
 

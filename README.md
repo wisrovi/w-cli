@@ -28,12 +28,31 @@ Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear solucio
 | **AudioProcessingWisrovi** | Procesamiento avanzado de audio | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/audioProcessingWisrovi?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/audioProcessingWisrovi) | [📦](https://pypi.org/project/audioProcessingWisrovi/) | - |
 | **AudioAugmentation** | Aumentación de datos de audio | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/AudioAugmentation?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/AudioAugmentation) | [📦](https://pypi.org/project/AudioAugmentation/) | - |
 | **WTicket** | Gestor de helpdesk integral | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wticket?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wticket) | [📦](https://pypi.org/project/wticket/) | [wticket.wisrovi.dev](https://wticket.wisrovi.dev/) |
+| **WTinyDB** | Document store ligero & Pydantic mapper | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wtinydb?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wtinydb) | [📦](https://pypi.org/project/wtinydb/) | - |
+| **WMilvus** | Base de datos vectorial & búsqueda semántica | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wmilvus?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wmilvus) | [📦](https://pypi.org/project/wmilvus/) | - |
+| **WMySQL** | Cliente MySQL con pool & Pydantic ORM | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wmysql?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wmysql) | [📦](https://pypi.org/project/wmysql/) | - |
+| **WMariaDB** | MariaDB enterprise connection pooling | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wmariadb?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wmariadb) | [📦](https://pypi.org/project/wmariadb/) | - |
+| **WSnowflake** | Cloud Data Warehouse client & mapper | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wsnowflake?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wsnowflake) | [📦](https://pypi.org/project/wsnowflake/) | - |
+| **WPipe Studio** | IDE visual y diagramador reactivo de pipelines | - | - | [wisrovi.dev#studio](https://wisrovi.dev/#studio) |
+
+---
+
+## 🛠️ Tecnologías y Librerías Relevantes
+
+El portal web y el ecosistema de herramientas de **wisrovi.dev** se apoyan en un conjunto selecto de tecnologías y librerías clave:
+
+- **WPipe & WPipe Studio**: Motor de ejecución reactiva y orquestación distribuida en Python, junto con su IDE visual para pipelines de datos y flujos de IA.
+- **FastMCP Constellation**: Servidores de protocolo MCP (`wtinydb-mcp`, `wmilvus-mcp`, `wclickhouse-mcp`, `wmariadb-mcp`, `wpipe-mcp`, `wyolo-mcp`, `wredis-mcp`, `wsqlite-mcp`, `wpostgresql-mcp`, `wkafka-mcp`) para conectar herramientas de datos directamente con Claude, Cursor y agentes autónomos.
+- **Motores de Persistencia y Vector Stores**: `WSQLite`, `WPostgreSQL`, `WMilvus`, `WTinyDB`, `WClickHouse`, `WRedis`, `WMySQL`, `WMariaDB`, `WSnowflake`.
+- **Visión y Audio**: `WYOLO`, `ProcessAudio`, `AudioProcessingWisrovi`, `AudioAugmentation`.
+- **Frontend Interactivo**: HTML5, Vanilla ES6+ sin frameworks pesados, FontAwesome 6, CSS Solar Orbits y Bento Grid responsive.
+- **CI/CD y Despliegue Continuo**: GitHub Actions (`actions/deploy-pages@v4`, `actions/upload-pages-artifact@v3`), GitHub Pages con dominio propio (`wisrovi.dev`) y `.nojekyll`.
 
 ---
 
 ## 🌟 Características Clave
 
-✅ **15+ Librerías Profesionales** - Arquitectura modular y totalmente integrable  
+✅ **20+ Librerías Profesionales** - Arquitectura modular y totalmente integrable  
 ✅ **10M+ Descargas** - Confiables y probadas en producción  
 ✅ **Open Source MIT** - Código abierto y libre para usar  
 ✅ **Performance** - Optimizadas para máxima velocidad y eficiencia  

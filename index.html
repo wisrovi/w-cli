@@ -695,6 +695,8 @@
         .orbit-2 .p-wmongo { right: -29px; background: linear-gradient(135deg, #22c55e, #15803d); }
         .orbit-2 .p-wplugins { top: 40px; right: 20px; background: linear-gradient(135deg, #ec4899, #be185d); }
         .orbit-2 .p-wutils { bottom: 40px; left: 20px; background: linear-gradient(135deg, #64748b, #475569); }
+        .orbit-2 .p-wtinydb { top: 40px; left: 20px; background: linear-gradient(135deg, #10b981, #059669); }
+        .orbit-2 .p-wmilvus { bottom: 40px; right: 20px; background: linear-gradient(135deg, #0ea5e9, #0284c7); }
 
         .orbit-3 .p-wyolo { top: -29px; background: linear-gradient(135deg, #f59e0b, #d97706); }
         .orbit-3 .p-wcontainer { bottom: -29px; background: linear-gradient(135deg, #0ea5e9, #0284c7); }
@@ -702,15 +704,22 @@
         .orbit-3 .p-wauth { right: -29px; background: linear-gradient(135deg, #6366f1, #4338ca); }
         .orbit-3 .p-wisrovi-py { top: 90px; left: 20px; background: linear-gradient(135deg, #38bdf8, #0284c7); }
         .orbit-3 .p-processaudio { bottom: 90px; right: 20px; background: linear-gradient(135deg, #14b8a6, #0f766e); }
+        .orbit-3 .p-wmysql { top: 90px; right: 20px; background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .orbit-3 .p-wmariadb { bottom: 90px; left: 20px; background: linear-gradient(135deg, #c026d3, #9333ea); }
+        .orbit-3 .p-wsnowflake { top: 245px; left: -29px; background: linear-gradient(135deg, #38bdf8, #0284c7); }
 
         /* Positioning Planets on Micro Orbits (FastMCP) */
         .orbit-mcp-1 .p-mcp-wpipe { top: -29px; background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
         .orbit-mcp-1 .p-mcp-wyolo { bottom: -29px; background: linear-gradient(135deg, #ec4899, #db2777); }
         .orbit-mcp-1 .p-mcp-redis { left: -29px; background: linear-gradient(135deg, #f43f5e, #e11d48); }
+        .orbit-mcp-1 .p-mcp-tinydb { right: -29px; background: linear-gradient(135deg, #10b981, #047857); }
 
         .orbit-mcp-2 .p-mcp-sqlite { top: -29px; background: linear-gradient(135deg, #06b6d4, #0891b2); }
         .orbit-mcp-2 .p-mcp-postgres { bottom: -29px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
         .orbit-mcp-2 .p-mcp-kafka { right: -29px; background: linear-gradient(135deg, #f97316, #ea580c); }
+        .orbit-mcp-2 .p-mcp-milvus { left: -29px; background: linear-gradient(135deg, #0ea5e9, #0369a1); }
+        .orbit-mcp-2 .p-mcp-clickhouse { top: 40px; left: 20px; background: linear-gradient(135deg, #eab308, #ca8a04); }
+        .orbit-mcp-2 .p-mcp-mariadb { bottom: 40px; right: 20px; background: linear-gradient(135deg, #c026d3, #9333ea); }
 
         /* MLOps Platform Section */
         .mlops-section {
@@ -1841,6 +1850,14 @@
                                 <i class="fas fa-toolbox"></i>
                                 <span>wutils</span>
                             </a>
+                            <a href="https://pypi.org/project/wtinydb/" target="_blank" class="planet p-wtinydb" title="wtinydb: TinyDB Pydantic document mapper & query suite">
+                                <i class="fas fa-file-code"></i>
+                                <span>wtinydb</span>
+                            </a>
+                            <a href="https://pypi.org/project/wmilvus/" target="_blank" class="planet p-wmilvus" title="wmilvus: Vector database client & semantic search suite">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>wmilvus</span>
+                            </a>
                         </div>
 
                         <!-- Orbit 3: MLOps Distribuido, Big Data & Contenedores -->
@@ -1869,6 +1886,18 @@
                                 <i class="fas fa-wave-square"></i>
                                 <span>audio</span>
                             </a>
+                            <a href="https://pypi.org/project/wmysql/" target="_blank" class="planet p-wmysql" title="wmysql: High-throughput MySQL Pydantic ORM wrapper">
+                                <i class="fas fa-database"></i>
+                                <span>wmysql</span>
+                            </a>
+                            <a href="https://pypi.org/project/wmariadb/" target="_blank" class="planet p-wmariadb" title="wmariadb: MariaDB connection pooling & query builder">
+                                <i class="fas fa-server"></i>
+                                <span>wmariadb</span>
+                            </a>
+                            <a href="https://pypi.org/project/wsnowflake/" target="_blank" class="planet p-wsnowflake" title="wsnowflake: Cloud datastore SQL client & schema mapper">
+                                <i class="fas fa-snowflake"></i>
+                                <span>wsnowflake</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1880,7 +1909,7 @@
                     </span>
                     <h3 class="universe-title" data-i18n="universe_mcp_title">FastMCP Hub for LLM Agents</h3>
                     <p class="universe-sub" data-i18n="universe_mcp_desc">
-                        Autonomous agentic core powered by the <strong>6 official FastMCP Servers</strong> for Claude, Cursor, and Antigravity.
+                        Autonomous agentic core powered by the <strong>official FastMCP Servers</strong> for Claude, Cursor, and Antigravity.
                     </p>
 
                     <div class="mcp-universe" id="microMcpSystem">
@@ -1905,6 +1934,10 @@
                                 <i class="fas fa-bolt"></i>
                                 <span>redis-mcp</span>
                             </a>
+                            <a href="https://pypi.org/project/wtinydb-mcp/" target="_blank" class="planet p-mcp-tinydb" title="wtinydb-mcp: FastMCP Server for WTinyDB AI agent integration">
+                                <i class="fas fa-file-code"></i>
+                                <span>tinydb-mcp</span>
+                            </a>
                         </div>
 
                         <!-- Orbit MCP 2: Relational Datastores & Event Streams -->
@@ -1920,6 +1953,18 @@
                             <a href="https://pypi.org/project/wkafka-mcp/" target="_blank" class="planet p-mcp-kafka" title="wkafka-mcp: FastMCP tools for Kafka topic telemetry & event streaming">
                                 <i class="fas fa-stream"></i>
                                 <span>kafka-mcp</span>
+                            </a>
+                            <a href="https://pypi.org/project/wmilvus-mcp/" target="_blank" class="planet p-mcp-milvus" title="wmilvus-mcp: FastMCP Server for Milvus vector collections & semantic similarity">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>milvus-mcp</span>
+                            </a>
+                            <a href="https://pypi.org/project/wclickhouse-mcp/" target="_blank" class="planet p-mcp-clickhouse" title="wclickhouse-mcp: FastMCP Server for ClickHouse OLAP analytics">
+                                <i class="fas fa-chart-line"></i>
+                                <span>click-mcp</span>
+                            </a>
+                            <a href="https://pypi.org/project/wmariadb-mcp/" target="_blank" class="planet p-mcp-mariadb" title="wmariadb-mcp: FastMCP Server for MariaDB database agent integration">
+                                <i class="fas fa-server"></i>
+                                <span>maria-mcp</span>
                             </a>
                         </div>
                     </div>
@@ -3163,6 +3208,240 @@
                         </div>
                         <div class="lib-footer">
                             <a href="https://pypi.org/project/wisrovi-python/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" data-search="wtinydb database nosql tinydb pydantic document mapper and embedded datastore. lightweight zero-configuration storage." id="card-wtinydb">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-file-code" style="color: #10b981;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wtinydb')" title="Copy pip install wtinydb">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wtinydb">NoSQL TinyDB</span>
+                            </div>
+                        </div>
+                        <h3>wtinydb</h3>
+                        <p id="libdesc-wtinydb">TinyDB Pydantic document mapper and lightweight query suite. Zero-config embedded document persistence for edge and microservice state.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Embedded</span>Storage</div><div class="lib-stat"><span>Pydantic v2</span>Schema</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wtinydb/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" data-search="wtinydb-mcp mcp fastmcp agent tools for wtinydb schema inspection, query execution, and json document manipulation." id="card-wtinydb-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-robot" style="color: #10b981;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wtinydb-mcp')" title="Copy pip install wtinydb-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wtinydb-mcp">FastMCP Agent</span>
+                            </div>
+                        </div>
+                        <h3>wtinydb-mcp</h3>
+                        <p id="libdesc-wtinydb-mcp">Official FastMCP Server for WTinyDB. Provides autonomous LLM agents with structured document retrieval, table inspection, and state queries.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>FastMCP</span>Protocol</div><div class="lib-stat"><span>Embedded</span>Tools</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wtinydb-mcp/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" data-search="wmilvus milvus vector database client and similarity search suite. high-performance embeddings indexing and vector search." id="card-wmilvus">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-project-diagram" style="color: #0ea5e9;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wmilvus')" title="Copy pip install wmilvus">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wmilvus">Vector DB</span>
+                            </div>
+                        </div>
+                        <h3>wmilvus</h3>
+                        <p id="libdesc-wmilvus">High-throughput Milvus vector database client and similarity search suite. Distributed embeddings indexing, collection management, and cosine/L2 distance search.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Vector</span>Search</div><div class="lib-stat"><span>Embeddings</span>Scalable</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wmilvus/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" data-search="wmilvus-mcp mcp fastmcp vector similarity tools for milvus collections, semantic search, and clustering audits." id="card-wmilvus-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-brain" style="color: #0ea5e9;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wmilvus-mcp')" title="Copy pip install wmilvus-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wmilvus-mcp">FastMCP Agent</span>
+                            </div>
+                        </div>
+                        <h3>wmilvus-mcp</h3>
+                        <p id="libdesc-wmilvus-mcp">Official FastMCP Server for Milvus. Equips AI agents with vector collection querying, hybrid dense/sparse search, and semantic similarity tooling.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Vector MCP</span>Tools</div><div class="lib-stat"><span>RAG / Search</span>Hybrid</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wmilvus-mcp/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" data-search="wmysql database relational high-throughput mysql pydantic orm wrapper. connection pooling, query builder and transactional safety." id="card-wmysql">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-database" style="color: #f59e0b;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wmysql')" title="Copy pip install wmysql">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wmysql">MySQL ORM</span>
+                            </div>
+                        </div>
+                        <h3>wmysql</h3>
+                        <p id="libdesc-wmysql">High-throughput MySQL Pydantic ORM wrapper. Connection pooling, declarative migrations, schema verification, and transactional consistency.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>MySQL</span>Pooling</div><div class="lib-stat"><span>ACID</span>Transactions</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wmysql/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" data-search="wmariadb database relational mariadb connection pooling, declarative orm, and enterprise high-availability query builder." id="card-wmariadb">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-server" style="color: #c026d3;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wmariadb')" title="Copy pip install wmariadb">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wmariadb">MariaDB Suite</span>
+                            </div>
+                        </div>
+                        <h3>wmariadb</h3>
+                        <p id="libdesc-wmariadb">Enterprise MariaDB connection pooling and query builder. High-availability cluster routing, Pydantic model serialization, and thread-safe operations.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>MariaDB</span>Cluster</div><div class="lib-stat"><span>HA Pool</span>Resilient</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wmariadb/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" data-search="wmariadb-mcp mcp fastmcp server for mariadb database schema inspection, query generation, and agentic database diagnostics." id="card-wmariadb-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-robot" style="color: #c026d3;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wmariadb-mcp')" title="Copy pip install wmariadb-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wmariadb-mcp">FastMCP Agent</span>
+                            </div>
+                        </div>
+                        <h3>wmariadb-mcp</h3>
+                        <p id="libdesc-wmariadb-mcp">Official FastMCP Server for MariaDB. Enables autonomous LLM agents to inspect database catalogs, query tables, and diagnose replication status.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>FastMCP</span>Protocol</div><div class="lib-stat"><span>Schema</span>Auditing</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wmariadb-mcp/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="mcp" data-search="wclickhouse-mcp mcp fastmcp server for clickhouse olap analytical queries, column inspections, and distributed aggregations." id="card-wclickhouse-mcp">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-chart-line" style="color: #eab308;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wclickhouse-mcp')" title="Copy pip install wclickhouse-mcp">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-mcp" id="libtag-wclickhouse-mcp">FastMCP Agent</span>
+                            </div>
+                        </div>
+                        <h3>wclickhouse-mcp</h3>
+                        <p id="libdesc-wclickhouse-mcp">Official FastMCP Server for ClickHouse. Exposes columnar analytical queries, real-time log exploration, and aggregation benchmarks to AI agents.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>OLAP MCP</span>Analytics</div><div class="lib-stat"><span>Columnar</span>Real-time</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wclickhouse-mcp/" target="_blank" class="btn-pypi">
+                                <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lib-card" data-cat="database" data-search="wsnowflake snowflake cloud datastore sql client and schema mapper. warehouse elasticity, secure authentication and dataframe integration." id="card-wsnowflake">
+                    <div>
+                        <div class="lib-header">
+                            <div class="lib-icon"><i class="fas fa-snowflake" style="color: #38bdf8;"></i></div>
+                            <div class="lib-header-right">
+                                <button type="button" class="btn-copy-mini" onclick="copyText('pip install wsnowflake')" title="Copy pip install wsnowflake">
+                                    <i class="fas fa-terminal"></i> pip
+                                </button>
+                                <span class="lib-type-tag tag-db" id="libtag-wsnowflake">Cloud DW</span>
+                            </div>
+                        </div>
+                        <h3>wsnowflake</h3>
+                        <p id="libdesc-wsnowflake">Dynamic Snowflake SQL client and schema mapper. Managed data warehouse queries, async cursor fetch, and Arrow/Pandas DataFrame extraction.</p>
+                    </div>
+                    <div>
+                        <div class="lib-stats">
+                            <div class="lib-stat"><span>Snowflake</span>Cloud</div><div class="lib-stat"><span>DataFrames</span>Fast Fetch</div>
+                        </div>
+                        <div class="lib-footer">
+                            <a href="https://pypi.org/project/wsnowflake/" target="_blank" class="btn-pypi">
                                 <i class="fab fa-python"></i> <span data-i18n="pypi_view_pkg">PyPI Package</span>
                             </a>
                         </div>

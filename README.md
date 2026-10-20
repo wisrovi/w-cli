@@ -33,7 +33,7 @@ Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear solucio
 | **WMySQL** | Cliente MySQL con pool & Pydantic ORM | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wmysql?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wmysql) | [📦](https://pypi.org/project/wmysql/) | - |
 | **WMariaDB** | MariaDB enterprise connection pooling | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wmariadb?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wmariadb) | [📦](https://pypi.org/project/wmariadb/) | - |
 | **WSnowflake** | Cloud Data Warehouse client & mapper | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wsnowflake?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wsnowflake) | [📦](https://pypi.org/project/wsnowflake/) | - |
-| **WPipe Studio** | IDE visual y diagramador reactivo de pipelines | - | - | [wisrovi.dev#studio](https://wisrovi.dev/#studio) |
+| **WPipe Studio** | IDE No-Code visual por bloques (Blockly/Scratch) y compilador Python | - | - | [wisrovi.dev#studio](https://wisrovi.dev/#studio) |
 
 ---
 
@@ -41,7 +41,7 @@ Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear solucio
 
 El portal web y el ecosistema de herramientas de **wisrovi.dev** se apoyan en un conjunto selecto de tecnologías y librerías clave:
 
-- **WPipe & WPipe Studio**: Motor de ejecución reactiva y orquestación distribuida en Python, junto con su IDE visual para pipelines de datos y flujos de IA.
+- **WPipe & WPipe Studio**: Motor de ejecución reactiva y orquestación distribuida en Python, junto con su IDE visual No-Code por bloques (Blockly/Scratch) que compila a código Python nativo y microservicios FastAPI.
 - **FastMCP Constellation**: Servidores de protocolo MCP (`wtinydb-mcp`, `wmilvus-mcp`, `wclickhouse-mcp`, `wmariadb-mcp`, `wpipe-mcp`, `wyolo-mcp`, `wredis-mcp`, `wsqlite-mcp`, `wpostgresql-mcp`, `wkafka-mcp`) para conectar herramientas de datos directamente con Claude, Cursor y agentes autónomos.
 - **Motores de Persistencia y Vector Stores**: `WSQLite`, `WPostgreSQL`, `WMilvus`, `WTinyDB`, `WClickHouse`, `WRedis`, `WMySQL`, `WMariaDB`, `WSnowflake`.
 - **Visión y Audio**: `WYOLO`, `ProcessAudio`, `AudioProcessingWisrovi`, `AudioAugmentation`.

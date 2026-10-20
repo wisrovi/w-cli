@@ -2,7 +2,7 @@
 
 ## 🎯 Bienvenido a la Suite de Librerías Profesionales
 
-Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear soluciones innovadoras y de alto rendimiento para Python. He desarrollado una suite completa de **15 librerías profesionales** que transforman la forma en que los desarrolladores construyen aplicaciones escalables, seguras y performantes.
+Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear soluciones innovadoras y de alto rendimiento para Python. He desarrollado una suite completa de **34 herramientas y librerías profesionales** que transforman la forma en que los desarrolladores construyen aplicaciones escalables, seguras y performantes.
 
 ### 🔗 [Visita wisrovi.dev](https://wisrovi.dev) - Tu portal de marketing profesional
 
@@ -33,6 +33,7 @@ Soy **Wisrovi Rodriguez**, arquitecto de software especializado en crear solucio
 | **WMySQL** | Cliente MySQL con pool & Pydantic ORM | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wmysql?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wmysql) | [📦](https://pypi.org/project/wmysql/) | - |
 | **WMariaDB** | MariaDB enterprise connection pooling | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wmariadb?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wmariadb) | [📦](https://pypi.org/project/wmariadb/) | - |
 | **WSnowflake** | Cloud Data Warehouse client & mapper | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wsnowflake?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wsnowflake) | [📦](https://pypi.org/project/wsnowflake/) | - |
+| **WMessenger (wconnect)** | Mensajería asíncrona unificada, WebSockets y colas | [![PyPI Downloads](https://static.pepy.tech/personalized-badge/wconnect?period=total&units=NONE&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/wconnect) | [📦](https://pypi.org/project/wconnect/) | - |
 | **WPipe Studio** | IDE No-Code visual por bloques (Blockly/Scratch) y compilador Python | - | - | [wisrovi.dev#studio](https://wisrovi.dev/#studio) |
 
 ---
@@ -44,6 +45,7 @@ El portal web y el ecosistema de herramientas de **wisrovi.dev** se apoyan en un
 - **WPipe & WPipe Studio**: Motor de ejecución reactiva y orquestación distribuida en Python, junto con su IDE visual No-Code por bloques (Blockly/Scratch) que compila a código Python nativo y microservicios FastAPI.
 - **FastMCP Constellation**: Servidores de protocolo MCP (`wtinydb-mcp`, `wmilvus-mcp`, `wclickhouse-mcp`, `wmariadb-mcp`, `wpipe-mcp`, `wyolo-mcp`, `wredis-mcp`, `wsqlite-mcp`, `wpostgresql-mcp`, `wkafka-mcp`) para conectar herramientas de datos directamente con Claude, Cursor y agentes autónomos.
 - **Motores de Persistencia y Vector Stores**: `WSQLite`, `WPostgreSQL`, `WMilvus`, `WTinyDB`, `WClickHouse`, `WRedis`, `WMySQL`, `WMariaDB`, `WSnowflake`.
+- **Mensajería y Eventos Distribuidos**: `WKafka`, `WMessenger (wconnect)`.
 - **Visión y Audio**: `WYOLO`, `ProcessAudio`, `AudioProcessingWisrovi`, `AudioAugmentation`.
 - **Frontend Interactivo**: HTML5, Vanilla ES6+ sin frameworks pesados, FontAwesome 6, CSS Solar Orbits y Bento Grid responsive.
 - **CI/CD y Despliegue Continuo**: GitHub Actions (`actions/deploy-pages@v4`, `actions/upload-pages-artifact@v3`), GitHub Pages con dominio propio (`wisrovi.dev`) y `.nojekyll`.
@@ -52,7 +54,7 @@ El portal web y el ecosistema de herramientas de **wisrovi.dev** se apoyan en un
 
 ## 🌟 Características Clave
 
-✅ **20+ Librerías Profesionales** - Arquitectura modular y totalmente integrable  
+✅ **30+ Paquetes PyPI & 34 Herramientas de la Suite** - Arquitectura modular y totalmente integrable  
 ✅ **10M+ Descargas** - Confiables y probadas en producción  
 ✅ **Open Source MIT** - Código abierto y libre para usar  
 ✅ **Performance** - Optimizadas para máxima velocidad y eficiencia  

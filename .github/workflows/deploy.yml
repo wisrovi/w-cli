@@ -29,6 +29,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
+          cp *.webp *.png *.svg _site/ 2>/dev/null || true
           [ -f CNAME ] && cp CNAME _site/
           [ -f .nojekyll ] && cp .nojekyll _site/ || touch _site/.nojekyll
       - name: Upload artifact
